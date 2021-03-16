@@ -1,0 +1,75 @@
+/*------------------------------BODY, HTML--------------------------------------*/
+
+html,
+* {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/*------------------------------FOOTER------------------------------------------*/
+
+footer {
+    width: 100%;
+    background: teal;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    
+}
+
+footer table {
+    width: 30%;
+    margin: 0 auto;
+    border-bottom: 2px solid white;
+    padding: 1em;
+}
+
+footer .contact .svg-holder {
+    width: 40px;
+    background: white;
+    padding: 0.5em;
+    border-radius: 50%;
+}
+
+.contact .svg-holder img {
+    width: 100%;
+}
+
+
+@media only screen and (min-width: 768px) {
+/*-----------footer-----------------*/
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+footer table {
+    border: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+}
+footer table td {
+    padding-left: 1em;
+}
+footer .contact h2 {
+    text-align: left;
+}
+footer .info h2 {
+    padding-bottom: 3rem;
+}
+table p {
+    padding: 0;
+    margin: 0;
+}
+}

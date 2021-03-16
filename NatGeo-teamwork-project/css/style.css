@@ -1,0 +1,2903 @@
+@charset "UTF-8";
+/***********GALLERY SECTION*******/
+/********BLOG SECTION**********/
+/* ---------------- NAVBAR ----------------*/
+/*************************************** SECTION BLOG ******************************************/
+html,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+nav {
+  font-family: "Questrial";
+  background: #1a1a1a;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ---------------- HAMBURGER MENU ----------------*/
+.nav-block {
+  display: block;
+}
+
+nav .nav-main-menu {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: top 1.2s ease;
+  display: none;
+  background-color: #1a1a1a;
+}
+@media only screen and (min-width: 768px) {
+  nav .nav-main-menu nav .nav-main-menu {
+    z-index: -1;
+  }
+}
+nav ul {
+  border: 0.5rem solid #facd3c;
+}
+nav ul li {
+  list-style: none;
+  padding: 0 1rem 0 0;
+}
+nav ul li a {
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 2em;
+  z-index: 2000;
+}
+nav ul #nav-signedIn-user {
+  display: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  margin-left: 1rem;
+}
+
+.nav-span {
+  position: relative;
+  width: 36px;
+  height: 4px;
+  background-color: #fff;
+  display: block;
+  margin: 8px 0;
+  transition: 0.5s;
+}
+
+.nav-toggle {
+  padding: 1.7rem 0 1.7rem 0;
+  cursor: pointer;
+  z-index: 1000;
+  margin-right: 10%;
+}
+.nav-toggle .nav-span:nth-child(1) {
+  transform-origin: left;
+}
+.nav-toggle .nav-span:nth-child(2) {
+  transform-origin: center;
+}
+.nav-toggle .nav-span:nth-child(3) {
+  transform-origin: left;
+}
+
+.nav-toggle.active .nav-span:nth-child(1) {
+  transform: rotate(45deg);
+  left: 2px;
+}
+.nav-toggle.active .nav-span:nth-child(2) {
+  transform: rotate(315deg);
+  right: 3px;
+}
+.nav-toggle.active .nav-span:nth-child(3) {
+  transform: scaleX(0);
+}
+
+.nav-list-icons {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 100%;
+  color: white;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+.nav-list-icons a {
+  text-decoration: none;
+  color: white;
+}
+.nav-list-icons a:hover {
+  color: #facd3c;
+  transition: all 0.5s ease;
+}
+
+/* ---------------- NAVBAR HOVER ----------------*/
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #facd3c;
+  color: #facd3c;
+  overflow: hidden;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+nav ul li a:hover {
+  color: #facd3c;
+  transition: all 0.5s ease;
+}
+
+/* ---------------- LOGO ----------------*/
+.nav-logo-wrapper {
+  height: 100%;
+  max-height: 100%;
+  width: 10rem;
+  max-width: 10rem;
+  padding: 1.5rem 0 1.5rem 0;
+  margin-left: 10%;
+}
+
+.nav-logo {
+  width: 100%;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.toggle-logo-wrapper {
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.toggle-logo-wrapper img {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+/* ---------------- NAVBAR MEDIA QUERIES ----------------*/
+@media only screen and (max-height: 570px) {
+  .nav-list-icons {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .toggle-logo-wrapper {
+    display: none;
+  }
+  .toggle-logo-wrapper img {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  nav {
+    display: inline-block;
+    justify-content: flex-end;
+    position: relative;
+  }
+  nav .nav-main-menu {
+    height: 100px;
+    width: 90%;
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    border: none;
+  }
+  nav ul li:nth-child(6) {
+    margin-right: 0rem;
+    padding-right: 0;
+  }
+  nav ul li a {
+    color: white;
+    font-size: 1.5rem;
+    position: relative;
+    padding: 5px 0;
+  }
+  nav ul li a:hover {
+    color: white;
+  }
+
+  .nav-link {
+    margin-right: 1.2rem;
+  }
+
+  .nav-click {
+    padding: 5px 0;
+  }
+
+  .nav-logo {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .nav-list-icons {
+    display: none;
+  }
+
+  /* ---------------- NAVBAR ANIMATION ----------------*/
+  .nav-main-menu li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #facd3c;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: all 0.5s ease;
+  }
+  .nav-main-menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #facd3c;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.5s ease;
+  }
+  .nav-main-menu li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  .nav-main-menu li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+/* ----------------HOME SECTION----------------*/
+.home {
+  width: 100%;
+  max-width: 100%;
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-container {
+  width: 80%;
+  max-width: 80%;
+}
+
+.home-image-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+.home-image-wrapper img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.home-spectacular-wrapper {
+  width: 100%;
+  max-width: 100%;
+  color: white;
+  border: 6px solid #facd3c;
+  text-align: center;
+  text-align: justify;
+  font-family: "Questrial";
+  font-weight: lighter;
+  padding: 1.5rem 1rem;
+}
+.home-spectacular-wrapper h2,
+.home-spectacular-wrapper p {
+  margin: 1rem auto;
+}
+.home-spectacular-wrapper p {
+  line-height: 1.5rem;
+}
+
+.home-button {
+  width: 200px;
+  position: relative;
+  height: 2.2rem;
+  padding: 0.3rem 1.8rem;
+  background: #1a1a1a;
+  color: white;
+  border: 2px solid white;
+  font-family: "Questrial";
+  margin-bottom: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 1;
+  transition: color 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-button::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.3s ease-in;
+  transform: scalex(0);
+  background: whitesmoke;
+  transform-origin: left;
+}
+.home-button:hover {
+  color: black;
+}
+.home-button:hover::after {
+  transform: scaleX(1);
+}
+
+.home-gessel {
+  color: white;
+  text-transform: uppercase;
+  font-family: "Questrial";
+  font-size: 0.8rem;
+  margin: 0.8rem 0;
+  margin-bottom: 1em;
+}
+
+/* ---------------- MODAL ----------------*/
+.home-modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 30px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-family: "Lato";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+.home-modal-bg .home-modal {
+  position: relative;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+  width: 90%;
+  border: 4px solid #facd3c;
+  text-align: center;
+  padding-bottom: 1.5em;
+}
+.home-modal-bg .home-modal .home-modal-img-holder {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.home-modal-bg .home-modal .home-modal-img-holder img {
+  width: 100%;
+  max-width: 100%;
+}
+.home-modal-bg .home-modal p {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+.home-modal-bg .home-modal h2 {
+  font-size: 1.8rem;
+  margin: 3rem 0 1rem 0;
+  text-align: center;
+}
+.home-modal-bg .home-modal a {
+  font-size: 1.2rem;
+  color: #facd3c;
+  margin: 1rem 0 2rem 0;
+}
+.home-modal-bg .home-modal .home-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  transition: all ease 0.5s;
+}
+.home-modal-bg .home-modal .home-modal-close:hover {
+  color: #facd3c;
+}
+
+/* ---------------- HOME MEDIA QUERIES ----------------*/
+@media only screen and (min-width: 1024px) {
+  .home-text-and-image-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 450px;
+    margin-top: 3rem;
+  }
+
+  .home-button {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .home-image-wrapper {
+    width: 70%;
+    max-width: 70%;
+    height: 100%;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+  .home-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .home-spectacular-wrapper {
+    width: 30%;
+    max-width: 30%;
+    height: 100%;
+    margin-left: 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .home-spectacular-wrapper h2 {
+    font-size: 2rem;
+  }
+  .home-spectacular-wrapper p {
+    font-size: 1.2rem;
+  }
+
+  .home-gessel {
+    width: 100%;
+    display: block;
+  }
+
+  /* ---------------- MODAL ----------------*/
+  .home-modal-bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 30px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+  }
+  .home-modal-bg .home-modal {
+    position: relative;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: white;
+    width: 40%;
+    border: 4px solid #facd3c;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+  .home-modal-bg .home-modal .home-modal-img-holder {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .home-modal-bg .home-modal .home-modal-img-holder img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .home-modal-bg p {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+  .home-modal-bg h2 {
+    font-size: 2.5rem;
+    margin: 1.5rem 0;
+  }
+  .home-modal-bg a {
+    font-size: 1.3rem;
+    color: #facd3c;
+    margin-top: 1rem;
+  }
+  .home-modal-bg .home-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-weight: bold;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    transition: all ease 0.5s;
+  }
+  .home-modal-bg .home-modal-close:hover {
+    color: #facd3c;
+  }
+}
+#first-section {
+  background: #1a1a1a;
+  color: white;
+  width: 100%;
+}
+#first-section #winners-article {
+  display: grid;
+  height: 600px;
+  min-height: 500px;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+@media only screen and (min-width: 768px) {
+  #first-section #winners-article {
+    height: 350px;
+    width: 87%;
+    margin: 0 auto;
+    min-height: 500px;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 1fr;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #first-section #winners-article {
+    min-height: 500px;
+  }
+}
+#first-section #winners-article #winners-box {
+  grid-column: 1/2;
+  width: 80%;
+  margin-top: 10%;
+  height: 200px;
+  padding-left: 18px;
+  border: solid 6px #facd3c;
+}
+@media only screen and (min-width: 768px) {
+  #first-section #winners-article #winners-box {
+    padding-left: 1.2rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #first-section #winners-article #winners-box {
+    padding-left: 5%;
+  }
+}
+#first-section #winners-article #winners-box p {
+  font-family: "Lato";
+  font-size: 55px;
+  margin-top: 30px;
+}
+@media only screen and (min-width: 768px) {
+  #first-section #winners-article #winners-box p {
+    font-size: 45px;
+  }
+}
+#first-section #winners-article #winners-info {
+  font-family: "Questrial";
+  height: 200px;
+  padding-right: 10%;
+  padding-left: 10%;
+  margin-top: 3%;
+}
+@media only screen and (min-width: 768px) {
+  #first-section #winners-article #winners-info {
+    display: grid;
+    grid-column: 2/3;
+    padding-left: 0;
+  }
+}
+#first-section #winners-article #winners-info .w-title-p {
+  font-size: 30px;
+  margin-top: 3.5%;
+  margin-bottom: 0.5rem;
+}
+@media only screen and (min-width: 1024px) {
+  #first-section #winners-article #winners-info .w-title-p {
+    font-size: 2rem;
+  }
+}
+#first-section #winners-article #winners-info #w-content-p {
+  line-height: 1.5rem;
+  font-size: 1.1rem;
+}
+@media only screen and (min-width: 1024px) {
+  #first-section #winners-article #winners-info #w-content-p {
+    margin-top: 2%;
+    font-size: 1.3rem;
+  }
+}
+#first-section #winners-article #winners-info #winners-info button {
+  width: 100px;
+}
+#first-section #winners-article #winners-info .more-b {
+  background: none;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  border-bottom: 3px solid #facd3c;
+  padding: 0.3em;
+  margin-top: 1em;
+  cursor: pointer;
+  font-size: 0.7em;
+  font-weight: bold;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.5em;
+  font-size: 0.9rem;
+  width: 100px;
+}
+#first-section #winners-article #winners-info .more-b a {
+  text-decoration: none;
+  color: white;
+}
+#first-section #winners-article #winners-info .more-b a:hover {
+  color: black;
+}
+#first-section #winners-article #winners-info .more-b:hover {
+  color: black;
+}
+#first-section #winners-article #winners-info .more-b:hover::after {
+  transform: scaleX(1);
+}
+#first-section #winners-article #winners-info .more-b::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.3s ease-in;
+  transform: scaleY(0);
+  background: #facd3c;
+  transform-origin: bottom;
+}
+@media only screen and (min-width: 768px) {
+  #first-section #winners-article #winners-info .more-b {
+    margin-top: 3%;
+    width: 95px;
+    height: 20px;
+    padding-bottom: 1.5em;
+    width: 100px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #first-section #winners-article #winners-info .more-b {
+    margin-top: 5%;
+    padding-bottom: 1.5em;
+  }
+}
+#first-section #story-article {
+  background-image: url(../03-project-nature-images/328afb3199d85943c4bb62cc16640f50.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+@media only screen and (min-width: 768px) {
+  #first-section #story-article {
+    overflow: visible;
+  }
+}
+#first-section #story-article #yellow-box {
+  background-color: #facd3c;
+  position: absolute;
+  width: 50%;
+  max-width: 305px;
+  min-width: 245px;
+  height: 350px;
+  top: 90px;
+  left: 23%;
+  padding: 14px 14px;
+  overflow: visible;
+}
+@media only screen and (min-width: 768px) {
+  #first-section #story-article #yellow-box {
+    position: absolute;
+    width: 40%;
+    max-width: 365px;
+    min-width: 305px;
+    height: 320px;
+    top: -200px;
+    left: 50%;
+    padding: 14px 14px;
+    overflow: visible;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #first-section #story-article #yellow-box {
+    left: 55%;
+    top: -150px;
+    width: 40%;
+    height: 400px;
+    max-width: 600px;
+    min-width: 365px;
+    padding-top: 14px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 14px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+#first-section #story-article #yellow-box #story-box {
+  padding-left: 15px;
+  width: 97%;
+  margin: 0px 0px;
+  min-height: 350px;
+  background-color: #1a1a1a;
+  padding-bottom: 40px;
+}
+@media only screen and (min-width: 1024px) {
+  #first-section #story-article #yellow-box #story-box {
+    width: 110%;
+    margin-left: -5rem;
+    min-width: 370;
+    height: 410px;
+  }
+}
+#first-section #story-article #yellow-box #story-box #s-title-p {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  padding: 10px 5px 0 0;
+  font-weight: lighter;
+  font-family: "Questrial";
+}
+@media only screen and (min-width: 1024px) {
+  #first-section #story-article #yellow-box #story-box #s-title-p {
+    padding-top: 5%;
+    font-size: 3rem;
+  }
+}
+#first-section #story-article #yellow-box #story-box #s-content-p {
+  padding-right: 8px;
+  font-family: "Questrial";
+  line-height: 1.2rem;
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  #first-section #story-article #yellow-box #story-box #s-content-p {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #first-section #story-article #yellow-box #story-box #s-content-p {
+    margin-top: 0.6rem;
+    height: 130px;
+    font-size: 1.3rem;
+    padding-right: 2.2rem;
+    line-height: 1.6rem;
+  }
+}
+#first-section #story-article #yellow-box #story-box .more-b {
+  background: none;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  border-bottom: 3px solid #facd3c;
+  padding: 0.3em;
+  margin-top: 1em;
+  cursor: pointer;
+  font-size: 0.7em;
+  font-weight: bold;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  font-size: 0.9rem;
+}
+#first-section #story-article #yellow-box #story-box .more-b a {
+  text-decoration: none;
+  color: white;
+}
+#first-section #story-article #yellow-box #story-box .more-b a:hover {
+  color: black;
+}
+#first-section #story-article #yellow-box #story-box .more-b:hover {
+  color: black;
+}
+#first-section #story-article #yellow-box #story-box .more-b:hover::after {
+  transform: scaleX(1);
+}
+#first-section #story-article #yellow-box #story-box .more-b::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.3s ease-in;
+  transform: scaleY(0);
+  background: #facd3c;
+  transform-origin: bottom;
+}
+@media only screen and (min-width: 768px) {
+  #first-section #story-article #yellow-box #story-box .more-b {
+    margin-top: 1em;
+    width: 100px;
+    height: 20px;
+    padding-bottom: 1.5em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #first-section #story-article #yellow-box #story-box .more-b {
+    margin-top: 10%;
+  }
+}
+
+html,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/******************* GALLERY SECTION ***********************************/
+.imageTextBox {
+  position: absolute;
+  bottom: 2%;
+  margin: 10px;
+  padding: 10px;
+  background: #222;
+  height: 10px;
+  overflow: hidden;
+  width: 10px;
+  transition: width 0.3s, height 0.3s;
+  background-color: #222;
+  background-image: url("../03-project-nature-images/info_btn.png");
+  background-size: cover;
+  font-size: 0;
+}
+
+.imageTextBox2 {
+  position: absolute;
+  bottom: 2%;
+  background: #222;
+  width: 86%;
+  height: 20%;
+  overflow-y: auto;
+  margin: 10px;
+  padding: 10px;
+  transition: width 0.7s, height 0.7s;
+}
+
+.gallery-container {
+  width: 100%;
+  padding: 10px 0;
+  margin: 0;
+  font-family: "Questrial", "Lato";
+  background: #1a1a1a;
+  color: white;
+  box-sizing: content-box;
+}
+
+/* body css beállítások a gallery-containerben! */
+.slider-section {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/*
+.view_more_button{
+  @include s.setBorder(1px,basic-yellow);
+  background: transparent;
+  @include s.setColor(white);
+  padding: 10px 20px;
+  margin: 10px auto;
+  display: block;
+  outline:none;
+}
+*/
+.view_more_button {
+  /*       @include s.setBorder(1px,basic-yellow);
+  background: transparent;
+  @include s.setColor(white); */
+  margin: 10px auto;
+  display: block;
+  height: 2.1rem;
+  padding: 0.2rem 2rem;
+  background: #facd3c;
+  color: black;
+  font-family: "Questrial";
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  outline: none;
+}
+
+.view_more_button:hover::after {
+  transform: scaleX(1);
+}
+
+.view_more_button::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.3s ease-in;
+  transform: scaleX(0);
+  background: whitesmoke;
+  transform-origin: left;
+}
+
+.slider-header {
+  text-align: center;
+}
+
+.slider-header h2 {
+  font-size: 2em;
+  font-weight: normal;
+  margin: 0.75em 0;
+}
+
+.slider-header p {
+  font-size: 1em;
+  margin: 1.12em 0;
+}
+
+.slider-header hr {
+  width: 20%;
+  border-color: #facd3c;
+  margin: 0 auto;
+}
+
+.slider-gallery img {
+  width: 90vw;
+  height: 90vw;
+  padding: 10px 0;
+}
+
+.slider {
+  display: none;
+  position: fixed;
+  background: #1a1a1a;
+  width: 97%;
+  height: 97%;
+  top: 1%;
+  left: 1%;
+  z-Index: 1;
+  border: 2px solid #facd3c;
+}
+
+.slider_close {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 3%;
+  font-size: 3.5em;
+  background: none;
+  border: none;
+  color: #ffffff;
+  transition: transform 0.5s;
+  z-Index: 1;
+}
+.slider_close:hover, .slider_close:focus {
+  color: #facd3c;
+  text-decoration: none;
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
+.slider_gallery_grid {
+  width: 90%;
+  height: 90%;
+  margin: 3% auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 10vh;
+}
+
+.slider_big_image {
+  display: inline-block;
+  position: relative;
+}
+
+.slider_big_image img {
+  width: 100%;
+  height: 80vh;
+  object-fit: contain;
+}
+
+.slider_thumbnails img {
+  width: 18%;
+  height: 10vh;
+  object-fit: fill;
+  margin: 3px 2px;
+}
+
+.slider_thumbnail_selected_border {
+  border: 5px solid #facd3c;
+}
+
+.slider_thumbnail_unselected_border {
+  border-top: 5px solid #1a1a1a;
+  border-bottom: 5px solid #1a1a1a;
+}
+
+.slider_prev {
+  display: none;
+  background: none;
+  position: fixed;
+  top: 40%;
+  left: 2%;
+  font-size: 3em;
+  border: none;
+  z-Index: 1;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+.slider_prev:hover {
+  color: #facd3c;
+}
+
+.slider_next {
+  display: none;
+  background: none;
+  position: fixed;
+  top: 40%;
+  right: 3%;
+  font-size: 3em;
+  border: none;
+  z-Index: 1;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+.slider_next:hover {
+  color: #facd3c;
+}
+
+.golden_sunrise_left {
+  width: 80vw;
+  margin: 20% auto;
+  position: relative;
+}
+
+.golden_sunrise_left img {
+  max-width: 100%;
+}
+
+.golden_sunrise_left_border {
+  width: 60%;
+  height: 65vw;
+  position: absolute;
+  top: -8%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border: 6px solid #facd3c;
+}
+
+.golden_sunrise_right {
+  width: 180px;
+  height: 180px;
+  margin: 20% auto;
+  position: relative;
+  border: 3px solid #facd3c;
+  padding: 20px;
+  top: 30px;
+}
+
+.golden_sunrise_right h2 {
+  margin-top: 1em;
+}
+
+.golden_sunrise_right p {
+  margin: 1.12em 0;
+}
+
+/*
+.golden_sunrise_button{
+  background:none;
+  border:none;
+  @include s.setColor(white);
+  border-bottom: 1px solid map.get($map:s.$colors-map, $key:basic-yellow);
+  padding-bottom: 3px;
+  outline:none;
+}
+.golden_sunrise_button:hover{
+  @include s.setColor(black);
+  transition: all 0.3s ease-in;
+  background: #facd3c;
+  transform: scaleY(1);
+}
+*/
+.golden_sunrise_button {
+  /*     background:none;
+  border:none;
+  @include s.setColor(white);
+  border-bottom: 1px solid map.get($map:s.$colors-map, $key:basic-yellow);
+  padding-bottom: 3px; */
+  background: none;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  border-bottom: 3px solid #facd3c;
+  padding: 0.3em 0;
+  margin-top: 1em;
+  cursor: pointer;
+  font-size: 0.5em;
+  font-weight: bold;
+  outline: none;
+  width: 70px;
+  position: relative;
+  z-index: 1;
+}
+
+.golden_sunrise_button a {
+  text-decoration: none;
+  color: white;
+}
+
+.golden_sunrise_button a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.golden_sunrise_button:hover {
+  color: black;
+}
+
+.golden_sunrise_button:hover::after {
+  transform: scaleX(1);
+}
+
+.golden_sunrise_button::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.3s ease-in;
+  transform: scaleY(0);
+  background: #facd3c;
+  transform-origin: bottom;
+}
+
+/**************************************** TABLET SCREEN *******************************************/
+@media screen and (min-width: 768px) {
+  /******************* GALLERY SECTION ***********************************/
+  .imageTextBox {
+    bottom: 5%;
+  }
+
+  .imageTextBox2 {
+    bottom: 5%;
+    width: 92%;
+  }
+
+  .slider-header h2 {
+    font-size: 3em;
+  }
+
+  .slider-header p {
+    font-size: 1.5em;
+  }
+
+  .slider-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .slider-gallery img {
+    width: 28vw;
+    height: 30vw;
+    padding: 10px 0;
+  }
+
+  .slider_gallery_grid {
+    grid-template-rows: 1fr 15vh;
+  }
+
+  .slider_big_image img {
+    height: 70vh;
+  }
+
+  .slider_thumbnails img {
+    height: 15vh;
+    margin: 3px 1%;
+    width: 17%;
+  }
+
+  .golden_sunrise_left {
+    width: 100vw;
+    margin: 10% 0;
+    position: relative;
+  }
+
+  .golden_sunrise_left img {
+    max-width: 64vw;
+    padding-left: 5%;
+  }
+
+  .golden_sunrise_left_border {
+    width: 50%;
+    height: 120%;
+    position: absolute;
+    top: 50%;
+    left: 27%;
+    transform: translate(-30%, -50%);
+    border: 6px solid #facd3c;
+  }
+
+  .golden_sunrise_right {
+    width: 20vw;
+    height: 20vw;
+    margin: inherit;
+    position: absolute;
+    border: 3px solid #facd3c;
+    padding: 20px;
+    padding-left: 40px;
+    right: 5%;
+    top: 0;
+  }
+
+  .golden_sunrise_right h2 {
+    font-size: 2.5vw;
+  }
+
+  .golden_sunrise_right p {
+    font-size: 1.8vw;
+  }
+
+  .golden_sunrise_button {
+    width: 9vw;
+    font-size: 1.4vw;
+  }
+}
+/**************************************** FULL SCREEN *******************************************/
+@media screen and (min-width: 1024px) {
+  /******************* GALLERY SECTION ***********************************/
+  .imageTextBox2 {
+    width: 96%;
+  }
+
+  .golden_sunrise_button {
+    width: 8.7vw;
+    font-size: 1.2vw;
+  }
+
+  .golden_sunrise_corner_top {
+    width: 40px;
+    height: 40px;
+    margin: inherit;
+    position: absolute;
+    right: 2%;
+    top: -8%;
+    background: url(../03-project-nature-images/corner_top.png);
+  }
+
+  .golden_sunrise_corner_bottom {
+    width: 40px;
+    height: 40px;
+    margin: inherit;
+    position: absolute;
+    right: 31%;
+    top: 60%;
+    background: url(../03-project-nature-images/corner_bottom.png);
+  }
+}
+.blog {
+  background: #1a1a1a;
+  color: white;
+  font-family: "Questrial";
+  padding-bottom: 2rem;
+}
+
+/************************** blog posts *****************************/
+.blog-posts {
+  background: #1a1a1a;
+}
+@media only screen and (min-width: 768px) {
+  .blog-posts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.blog-posts .blog-card {
+  width: 80%;
+  height: 33rem;
+  margin: 0 auto;
+  perspective: 1000px;
+  cursor: pointer;
+  background: #333333;
+  filter: brightness(0.7);
+}
+.blog-posts .blog-card:hover {
+  filter: brightness(1);
+  transition: 0.7s;
+}
+@media only screen and (min-width: 768px) {
+  .blog-posts .blog-card {
+    width: 50%;
+    height: 34rem;
+    filter: brightness(0.5);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .blog-posts .blog-card {
+    width: 25%;
+    height: 44rem;
+  }
+}
+.blog-posts .blog-card .blog-card-inner {
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  text-align: center;
+  line-height: 1.5em;
+}
+.blog-posts .blog-card .blog-card-inner .blog-card-back {
+  font-size: 1em;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.blog-posts .blog-card .blog-card-inner .blog-card-back h1 {
+  padding: 1.5em;
+}
+.blog-posts .blog-card .blog-card-inner .blog-card-back .read-me-btn {
+  margin: auto;
+  margin-bottom: 0.4em;
+  padding: 0.3em;
+  width: auto;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1em;
+  position: relative;
+  bottom: 0;
+  z-index: 1;
+  padding-top: 3em;
+}
+.blog-posts .blog-card .blog-card-inner .blog-card-back .read-me-btn .btn-toggle {
+  cursor: pointer;
+}
+.blog-posts .blog-card .blog-card-inner .blog-card-back .read-me-btn .btn-toggle .btn-span {
+  width: 15px;
+  height: 2px;
+  position: relative;
+  background-color: #fff;
+  display: block;
+  margin: 3px 0;
+  margin-right: 7px;
+  transition: 0.5s;
+}
+.blog-posts .blog-card .blog-card-inner .blog-card-back .read-me-btn:hover::after {
+  transform: scaleY(1);
+}
+.blog-posts .blog-card .blog-card-inner .blog-card-back .read-me-btn::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.3s ease-in;
+  transform: scaleX(0);
+  border-bottom: 2px solid white;
+  transform-origin: left;
+}
+@media only screen and (min-width: 768px) {
+  .blog-posts .blog-card .blog-card-inner .blog-card-back {
+    padding: 3em;
+    font-size: 1.2em;
+    height: 34rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .blog-posts .blog-card .blog-card-inner .blog-card-back {
+    font-size: 1em;
+    padding: 2em;
+    height: 44rem;
+  }
+}
+.blog-posts .blog-card .blog-card-inner .blog-card-front {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.blog-posts .blog-card .blog-card-inner .blog-card-front:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.blog-posts .blog-card .blog-card-inner .blog-card-front .blog-card-img-holder {
+  width: 100%;
+  height: 27rem;
+  overflow: hidden;
+}
+.blog-posts .blog-card .blog-card-inner .blog-card-front .blog-card-img-holder:hover {
+  transition: 0.3s;
+  animation-name: border;
+  border-bottom: 5px solid #facd3c;
+}
+@media only screen and (min-width: 1024px) {
+  .blog-posts .blog-card .blog-card-inner .blog-card-front .blog-card-img-holder {
+    width: 100%;
+    height: 35rem;
+  }
+}
+.blog-posts .blog-card .blog-card-inner .blog-card-front .blog-card-img-holder .blog-card-img-holder img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  object-fit: cover;
+}
+.blog-posts .blog-card .blog-card-inner .blog-card-front .blog-card-img-holder .blog-card-img-holder img:hover {
+  transform: scale(3.5);
+}
+@media only screen and (min-width: 1024px) {
+  .blog-posts .blog-card .blog-card-inner .blog-card-front .blog-card-img-holder .blog-card-img-holder img {
+    height: 100%;
+  }
+}
+.blog-posts .blog-card .blog-card-inner .blog-card-front .blog-card-text {
+  background: #333333;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding-top: 1em;
+}
+@media only screen and (min-width: 768px) {
+  .blog-posts .blog-card .blog-card-inner .blog-card-front .blog-card-text {
+    padding: 1.5em;
+    max-height: 100%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .blog-posts .blog-card .blog-card-inner .blog-card-front .blog-card-text {
+    padding-top: 2.5em;
+    font-size: 0.9em;
+  }
+}
+
+/************************** main post *******************************/
+.blog-main-post {
+  width: 80%;
+  height: 100%;
+  max-width: 80%;
+  max-height: 100%;
+  margin: 1em auto;
+}
+@media only screen and (min-width: 768px) {
+  .blog-main-post {
+    position: relative;
+  }
+}
+.blog-main-post #photographer {
+  text-transform: uppercase;
+  padding-top: 1.5em;
+  padding-bottom: 5em;
+  font-size: 0.9em;
+}
+.blog-main-post .blog-text-box-border {
+  border: 5px solid #facd3c;
+  width: 100%;
+  height: 100%;
+  margin: 1.5em auto;
+}
+@media only screen and (min-width: 768px) {
+  .blog-main-post .blog-text-box-border {
+    margin: 22rem 0 0 0;
+    padding-top: 9rem;
+    width: 60%;
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .blog-main-post .blog-text-box-border {
+    margin: 27em 0 0 0;
+    padding-top: 0;
+    width: 60%;
+    height: 100%;
+  }
+}
+.blog-main-post .blog-text-box-border .blog-text-box {
+  max-width: 100%;
+  font-size: 1rem;
+  font-family: "Lato";
+  padding: 1.5em;
+}
+@media only screen and (min-width: 768px) {
+  .blog-main-post .blog-text-box-border .blog-text-box {
+    font-size: 1.5em;
+  }
+}
+.blog-main-post .blog-text-box-border .blog-text-box h2 {
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  font-family: "Questrial";
+}
+@media only screen and (min-width: 1400px) {
+  .blog-main-post .blog-text-box-border .blog-text-box {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+}
+.blog-main-post .blog-text-box-border .blog-text-box .default-button {
+  background: none;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  border-bottom: 3px solid #facd3c;
+  padding: 0.3em;
+  margin-top: 1em;
+  cursor: pointer;
+  font-size: 0.7em;
+  font-weight: bold;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+.blog-main-post .blog-text-box-border .blog-text-box .default-button:hover {
+  color: black;
+}
+.blog-main-post .blog-text-box-border .blog-text-box .default-button:hover::after {
+  transform: scaleX(1);
+}
+.blog-main-post .blog-text-box-border .blog-text-box .default-button::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.3s ease-in;
+  transform: scaleY(0);
+  background: #facd3c;
+  transform-origin: bottom;
+}
+.blog-main-post .right-side {
+  position: relative;
+  height: 400px;
+  background: #1a1a1a;
+}
+@media only screen and (min-width: 768px) {
+  .blog-main-post .right-side {
+    top: -35%;
+    right: 0;
+    bottom: 0;
+    left: 30%;
+    width: 70%;
+    position: absolute;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .blog-main-post .right-side {
+    width: 60%;
+    height: 110%;
+    top: -50%;
+    right: 0;
+    bottom: 0;
+    left: 40%;
+  }
+}
+.blog-main-post .right-side .photo-border {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  top: none;
+  right: 0;
+  bottom: 0;
+  left: 45%;
+  transform: translate(-50%, 0);
+  border: 10px solid #facd3c;
+}
+@media only screen and (min-width: 768px) {
+  .blog-main-post .right-side .photo-border {
+    top: 0;
+    right: 10%;
+    bottom: 10%;
+    left: none;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .blog-main-post .right-side .photo-border {
+    top: 10%;
+    right: 5%;
+    bottom: none;
+    left: none;
+  }
+}
+.blog-main-post .right-side .photo-border-angle {
+  border-right: 10px solid #facd3c;
+  border-bottom: 10px solid #facd3c;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  top: none;
+  right: 0;
+  bottom: -9%;
+  left: none;
+}
+@media only screen and (min-width: 768px) {
+  .blog-main-post .right-side .photo-border-angle {
+    top: -8%;
+    right: none;
+    bottom: none;
+    left: -8%;
+    border: none;
+    border-left: 10px solid #facd3c;
+    border-top: 10px solid #facd3c;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .blog-main-post .right-side .photo-border-angle {
+    border: none;
+    border-right: 10px solid #facd3c;
+    border-bottom: 10px solid #facd3c;
+    top: 100%;
+    right: none;
+    bottom: none;
+    left: 95%;
+  }
+}
+.blog-main-post .right-side .photo-img-holder {
+  width: 90%;
+  height: 90%;
+  position: relative;
+  top: none;
+  right: -10%;
+  bottom: -1%;
+  left: none;
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+  .blog-main-post .right-side .photo-img-holder {
+    top: 10%;
+    right: none;
+    bottom: none;
+    left: 10%;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .blog-main-post .right-side .photo-img-holder {
+    top: 0;
+    right: none;
+    bottom: none;
+    left: none;
+  }
+}
+.blog-main-post .right-side .photo-img-holder img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  object-fit: cover;
+}
+.blog-main-post .right-side .photo-img-holder img:hover {
+  transform: scale(1.2);
+}
+
+@keyframes fade {
+  from {
+    opacity: 10%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+footer {
+  color: white;
+  background: #1a1a1a;
+  padding: 1px;
+  /* ---- FOOTER / TOP ------*/
+  /* --------- FOOTER / BELOW --------- */
+  /* -------- FOOTER FORM MODAL -------- */
+  /* --------- REGISTER MODAL -------------- */
+}
+footer h2,
+footer h3 {
+  font-family: "Questrial";
+}
+footer p {
+  font-family: "Lato";
+}
+footer .footer-top {
+  background: #1a1a1a;
+  width: 80%;
+  margin: 0 auto;
+  /* -------- FOOTER FORM ------------ */
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-top {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer .footer-top {
+    align-items: center;
+    padding: 2rem;
+    padding-left: 0;
+  }
+}
+footer .footer-top-title {
+  width: 100%;
+  height: 120px;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 4px solid #facd3c;
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-top-title {
+    width: 50%;
+    text-align: left;
+    justify-content: left;
+    padding: 2rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer .footer-top-title {
+    width: 200px;
+    height: 200px;
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+  }
+}
+footer .footer-top-text {
+  line-height: 1.3rem;
+  margin: 2rem 0 2rem 0;
+  text-align: justify;
+  font-size: 1.1rem;
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-top-text {
+    width: 50%;
+    height: 120px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer .footer-top-text {
+    width: 30%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-top-form {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer .footer-top-form {
+    width: 42%;
+    margin: 0;
+    padding: 2rem;
+  }
+}
+footer .footer-top-form-button-holder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-top-form-button-holder {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+footer .footer-top-form-button {
+  height: 2.2rem;
+  background: #1a1a1a;
+  color: white;
+  border: 4px solid #facd3c;
+  font-family: "Questrial";
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-top-form-button {
+    width: 49%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-top-form-button {
+    width: 48%;
+  }
+}
+footer .footer-top-form-button-unsubscribe {
+  margin-top: 0.5rem;
+  border-color: #706b6b;
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-top-form-button-unsubscribe {
+    margin-top: 0;
+  }
+}
+footer .footer-top-form .footer-form-click-login {
+  border: none;
+  background: transparent;
+  color: #facd3c;
+  font-family: "Questrial";
+  text-transform: uppercase;
+  margin-top: 1em;
+  padding-bottom: 0.5em;
+  margin-right: 0.2em;
+  width: auto;
+  font-weight: bold;
+  position: relative;
+  bottom: 0;
+  z-index: 1;
+  margin-bottom: 0.4em;
+  cursor: pointer;
+}
+footer .footer-top-form .footer-form-click-login:hover::after {
+  transform: scaleY(1);
+}
+footer .footer-top-form .footer-form-click-login::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.3s ease-in;
+  transform: scaleX(0);
+  border-bottom: 2px solid #facd3c;
+  transform-origin: left;
+}
+footer .footer-top-form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+@media only screen and (min-width: 1024px) {
+  footer .footer-top-form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+}
+footer .footer-top-form form input {
+  height: 2.2rem;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+footer .footer-below {
+  background: url(../03-project-nature-images/bede34b805e4263477be45b6aa3c7940.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+@media only screen and (min-width: 1024px) {
+  footer .footer-below {
+    background-position: right 0 top -5rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-below-content-top {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2rem 0 2rem 0;
+  }
+}
+footer .footer-below-darken {
+  width: 100%;
+  background: linear-gradient(#1a1a1a, rgba(0, 0, 0, 0.7));
+}
+footer .footer-below-content {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1px;
+}
+footer .footer-below-img-holder {
+  width: 80%;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-below-img-holder {
+    width: 40%;
+    height: 120px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer .footer-below-img-holder {
+    width: 25%;
+  }
+}
+footer .footer-below-img-holder img {
+  width: 100%;
+}
+footer .footer-below-ikon-holder {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #facd3c;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-size: 0.8rem;
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-below-ikon-holder {
+    width: 30%;
+    height: 120px;
+    margin: 0;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer .footer-below-ikon-holder {
+    width: 20%;
+  }
+}
+footer .footer-below-ikon-holder a {
+  text-decoration: none;
+  color: #facd3c;
+}
+footer .footer-below-ikon-holder a:hover {
+  color: #c5a331;
+}
+footer .footer-below-text-holder {
+  margin: 3rem 0 3rem 0;
+  text-align: center;
+}
+footer #register-modal,
+footer #fail-modal,
+footer #unsub-modal {
+  width: 70%;
+  height: 280px;
+  padding-top: 0.2rem;
+  background: #1a1a1a;
+  color: white;
+  text-align: center;
+  border: 5px solid #facd3c;
+  position: fixed;
+  z-index: 4000;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%);
+}
+@media only screen and (min-width: 768px) {
+  footer #register-modal,
+footer #fail-modal,
+footer #unsub-modal {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer #register-modal,
+footer #fail-modal,
+footer #unsub-modal {
+    width: 38%;
+  }
+}
+footer #register-modal .register-modal-close,
+footer #fail-modal .register-modal-close,
+footer #unsub-modal .register-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-weight: bold;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: white;
+  transition: all ease 0.5s;
+}
+footer #register-modal .register-modal-close:hover,
+footer #fail-modal .register-modal-close:hover,
+footer #unsub-modal .register-modal-close:hover {
+  color: #facd3c;
+}
+footer #register-modal .modal-body,
+footer #fail-modal .modal-body,
+footer #unsub-modal .modal-body {
+  width: 100%;
+  height: 100px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 5rem;
+}
+footer #register-modal .modal-body input,
+footer #fail-modal .modal-body input,
+footer #unsub-modal .modal-body input {
+  width: 70%;
+  margin-top: 1.5rem;
+  height: 2.2rem;
+}
+footer #register-modal .modal-footer,
+footer #fail-modal .modal-footer,
+footer #unsub-modal .modal-footer {
+  width: 100%;
+  height: 20%;
+  padding-bottom: 1rem;
+  position: absolute;
+  bottom: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer #register-modal .modal-footer-button,
+footer #fail-modal .modal-footer-button,
+footer #unsub-modal .modal-footer-button {
+  height: 2.2rem;
+  width: 35%;
+  background: #1a1a1a;
+  color: white;
+  border: 3px solid #706b6b;
+  font-family: "Questrial";
+}
+footer .subs-modal-bg,
+footer .subs-fail-modal-bg,
+footer .unSub-modal-bg,
+footer .login-modal-bg,
+footer .register-modal-bg,
+footer .forgot-password-modal-bg,
+footer .generate-confirm-code-modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 30px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+footer .subs-modal-bg .register-modal,
+footer .subs-fail-modal-bg .register-modal,
+footer .unSub-modal-bg .register-modal,
+footer .login-modal-bg .register-modal,
+footer .register-modal-bg .register-modal,
+footer .forgot-password-modal-bg .register-modal,
+footer .generate-confirm-code-modal-bg .register-modal {
+  position: relative;
+  overflow: auto;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+  width: 80%;
+  border: 4px solid #facd3c;
+  padding: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  footer .subs-modal-bg .register-modal,
+footer .subs-fail-modal-bg .register-modal,
+footer .unSub-modal-bg .register-modal,
+footer .login-modal-bg .register-modal,
+footer .register-modal-bg .register-modal,
+footer .forgot-password-modal-bg .register-modal,
+footer .generate-confirm-code-modal-bg .register-modal {
+    max-width: 780px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer .subs-modal-bg .register-modal,
+footer .subs-fail-modal-bg .register-modal,
+footer .unSub-modal-bg .register-modal,
+footer .login-modal-bg .register-modal,
+footer .register-modal-bg .register-modal,
+footer .forgot-password-modal-bg .register-modal,
+footer .generate-confirm-code-modal-bg .register-modal {
+    max-width: 900px;
+  }
+}
+footer .subs-modal-bg .register-modal #newPasswordSaveBtn,
+footer .subs-fail-modal-bg .register-modal #newPasswordSaveBtn,
+footer .unSub-modal-bg .register-modal #newPasswordSaveBtn,
+footer .login-modal-bg .register-modal #newPasswordSaveBtn,
+footer .register-modal-bg .register-modal #newPasswordSaveBtn,
+footer .forgot-password-modal-bg .register-modal #newPasswordSaveBtn,
+footer .generate-confirm-code-modal-bg .register-modal #newPasswordSaveBtn {
+  margin: 3rem 0 2rem 0;
+}
+footer .subs-modal-bg .register-modal #remember-forgot-wrapper,
+footer .subs-fail-modal-bg .register-modal #remember-forgot-wrapper,
+footer .unSub-modal-bg .register-modal #remember-forgot-wrapper,
+footer .login-modal-bg .register-modal #remember-forgot-wrapper,
+footer .register-modal-bg .register-modal #remember-forgot-wrapper,
+footer .forgot-password-modal-bg .register-modal #remember-forgot-wrapper,
+footer .generate-confirm-code-modal-bg .register-modal #remember-forgot-wrapper {
+  height: 4rem;
+  width: 70%;
+  padding-left: 1%;
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 600px) {
+  footer .subs-modal-bg .register-modal #remember-forgot-wrapper,
+footer .subs-fail-modal-bg .register-modal #remember-forgot-wrapper,
+footer .unSub-modal-bg .register-modal #remember-forgot-wrapper,
+footer .login-modal-bg .register-modal #remember-forgot-wrapper,
+footer .register-modal-bg .register-modal #remember-forgot-wrapper,
+footer .forgot-password-modal-bg .register-modal #remember-forgot-wrapper,
+footer .generate-confirm-code-modal-bg .register-modal #remember-forgot-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 66%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .subs-modal-bg .register-modal #remember-forgot-wrapper,
+footer .subs-fail-modal-bg .register-modal #remember-forgot-wrapper,
+footer .unSub-modal-bg .register-modal #remember-forgot-wrapper,
+footer .login-modal-bg .register-modal #remember-forgot-wrapper,
+footer .register-modal-bg .register-modal #remember-forgot-wrapper,
+footer .forgot-password-modal-bg .register-modal #remember-forgot-wrapper,
+footer .generate-confirm-code-modal-bg .register-modal #remember-forgot-wrapper {
+    width: 56%;
+    padding-left: 0%;
+  }
+}
+footer .subs-modal-bg .register-modal #subscribe-conatiner,
+footer .subs-fail-modal-bg .register-modal #subscribe-conatiner,
+footer .unSub-modal-bg .register-modal #subscribe-conatiner,
+footer .login-modal-bg .register-modal #subscribe-conatiner,
+footer .register-modal-bg .register-modal #subscribe-conatiner,
+footer .forgot-password-modal-bg .register-modal #subscribe-conatiner,
+footer .generate-confirm-code-modal-bg .register-modal #subscribe-conatiner {
+  padding-top: 2rem;
+}
+footer .subs-modal-bg .register-modal .remember-me-holder,
+footer .subs-fail-modal-bg .register-modal .remember-me-holder,
+footer .unSub-modal-bg .register-modal .remember-me-holder,
+footer .login-modal-bg .register-modal .remember-me-holder,
+footer .register-modal-bg .register-modal .remember-me-holder,
+footer .forgot-password-modal-bg .register-modal .remember-me-holder,
+footer .generate-confirm-code-modal-bg .register-modal .remember-me-holder {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: left;
+  font-family: "Lato";
+}
+@media only screen and (min-width: 600px) {
+  footer .subs-modal-bg .register-modal .remember-me-holder,
+footer .subs-fail-modal-bg .register-modal .remember-me-holder,
+footer .unSub-modal-bg .register-modal .remember-me-holder,
+footer .login-modal-bg .register-modal .remember-me-holder,
+footer .register-modal-bg .register-modal .remember-me-holder,
+footer .forgot-password-modal-bg .register-modal .remember-me-holder,
+footer .generate-confirm-code-modal-bg .register-modal .remember-me-holder {
+    width: 130px;
+  }
+}
+footer .subs-modal-bg .register-modal .remember-me-holder input,
+footer .subs-fail-modal-bg .register-modal .remember-me-holder input,
+footer .unSub-modal-bg .register-modal .remember-me-holder input,
+footer .login-modal-bg .register-modal .remember-me-holder input,
+footer .register-modal-bg .register-modal .remember-me-holder input,
+footer .forgot-password-modal-bg .register-modal .remember-me-holder input,
+footer .generate-confirm-code-modal-bg .register-modal .remember-me-holder input {
+  justify-self: flex-start;
+  height: 14px;
+  width: 10%;
+}
+footer .subs-modal-bg .register-modal .remember-me-holder label,
+footer .subs-fail-modal-bg .register-modal .remember-me-holder label,
+footer .unSub-modal-bg .register-modal .remember-me-holder label,
+footer .login-modal-bg .register-modal .remember-me-holder label,
+footer .register-modal-bg .register-modal .remember-me-holder label,
+footer .forgot-password-modal-bg .register-modal .remember-me-holder label,
+footer .generate-confirm-code-modal-bg .register-modal .remember-me-holder label {
+  justify-self: flex-end;
+  width: 100%;
+  font-size: 1.1rem;
+}
+footer .subs-modal-bg .register-modal #forgotPassword,
+footer .subs-fail-modal-bg .register-modal #forgotPassword,
+footer .unSub-modal-bg .register-modal #forgotPassword,
+footer .login-modal-bg .register-modal #forgotPassword,
+footer .register-modal-bg .register-modal #forgotPassword,
+footer .forgot-password-modal-bg .register-modal #forgotPassword,
+footer .generate-confirm-code-modal-bg .register-modal #forgotPassword {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+@media only screen and (min-width: 600px) {
+  footer .subs-modal-bg .register-modal #forgotPassword,
+footer .subs-fail-modal-bg .register-modal #forgotPassword,
+footer .unSub-modal-bg .register-modal #forgotPassword,
+footer .login-modal-bg .register-modal #forgotPassword,
+footer .register-modal-bg .register-modal #forgotPassword,
+footer .forgot-password-modal-bg .register-modal #forgotPassword,
+footer .generate-confirm-code-modal-bg .register-modal #forgotPassword {
+    text-align: left;
+    margin: 0;
+    margin-top: 0;
+  }
+}
+footer .subs-modal-bg .register-modal .checkbox-container,
+footer .subs-fail-modal-bg .register-modal .checkbox-container,
+footer .unSub-modal-bg .register-modal .checkbox-container,
+footer .login-modal-bg .register-modal .checkbox-container,
+footer .register-modal-bg .register-modal .checkbox-container,
+footer .forgot-password-modal-bg .register-modal .checkbox-container,
+footer .generate-confirm-code-modal-bg .register-modal .checkbox-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  justify-content: flex-start;
+  width: 80%;
+}
+@media only screen and (min-width: 600px) {
+  footer .subs-modal-bg .register-modal .checkbox-container,
+footer .subs-fail-modal-bg .register-modal .checkbox-container,
+footer .unSub-modal-bg .register-modal .checkbox-container,
+footer .login-modal-bg .register-modal .checkbox-container,
+footer .register-modal-bg .register-modal .checkbox-container,
+footer .forgot-password-modal-bg .register-modal .checkbox-container,
+footer .generate-confirm-code-modal-bg .register-modal .checkbox-container {
+    width: 75%;
+  }
+}
+@media only screen and (min-width: 700px) {
+  footer .subs-modal-bg .register-modal .checkbox-container,
+footer .subs-fail-modal-bg .register-modal .checkbox-container,
+footer .unSub-modal-bg .register-modal .checkbox-container,
+footer .login-modal-bg .register-modal .checkbox-container,
+footer .register-modal-bg .register-modal .checkbox-container,
+footer .forgot-password-modal-bg .register-modal .checkbox-container,
+footer .generate-confirm-code-modal-bg .register-modal .checkbox-container {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .subs-modal-bg .register-modal .checkbox-container,
+footer .subs-fail-modal-bg .register-modal .checkbox-container,
+footer .unSub-modal-bg .register-modal .checkbox-container,
+footer .login-modal-bg .register-modal .checkbox-container,
+footer .register-modal-bg .register-modal .checkbox-container,
+footer .forgot-password-modal-bg .register-modal .checkbox-container,
+footer .generate-confirm-code-modal-bg .register-modal .checkbox-container {
+    width: 55%;
+  }
+}
+footer .subs-modal-bg .register-modal .checkbox-container label,
+footer .subs-fail-modal-bg .register-modal .checkbox-container label,
+footer .unSub-modal-bg .register-modal .checkbox-container label,
+footer .login-modal-bg .register-modal .checkbox-container label,
+footer .register-modal-bg .register-modal .checkbox-container label,
+footer .forgot-password-modal-bg .register-modal .checkbox-container label,
+footer .generate-confirm-code-modal-bg .register-modal .checkbox-container label {
+  font-size: 1rem;
+  justify-self: flex-start;
+  width: 100%;
+}
+footer .subs-modal-bg .register-modal .checkbox-container input[type=checkbox],
+footer .subs-fail-modal-bg .register-modal .checkbox-container input[type=checkbox],
+footer .unSub-modal-bg .register-modal .checkbox-container input[type=checkbox],
+footer .login-modal-bg .register-modal .checkbox-container input[type=checkbox],
+footer .register-modal-bg .register-modal .checkbox-container input[type=checkbox],
+footer .forgot-password-modal-bg .register-modal .checkbox-container input[type=checkbox],
+footer .generate-confirm-code-modal-bg .register-modal .checkbox-container input[type=checkbox] {
+  justify-self: flex-start;
+  background: yellow;
+  width: 1rem;
+  margin-right: 0.5rem;
+}
+footer .subs-modal-bg .register-modal .checkbox-container input[type=checkbox]:checked,
+footer .subs-fail-modal-bg .register-modal .checkbox-container input[type=checkbox]:checked,
+footer .unSub-modal-bg .register-modal .checkbox-container input[type=checkbox]:checked,
+footer .login-modal-bg .register-modal .checkbox-container input[type=checkbox]:checked,
+footer .register-modal-bg .register-modal .checkbox-container input[type=checkbox]:checked,
+footer .forgot-password-modal-bg .register-modal .checkbox-container input[type=checkbox]:checked,
+footer .generate-confirm-code-modal-bg .register-modal .checkbox-container input[type=checkbox]:checked {
+  background-color: #a77e2d !important;
+  color: #ffffff !important;
+}
+footer .subs-modal-bg .register-modal .random-num-input-holder,
+footer .subs-fail-modal-bg .register-modal .random-num-input-holder,
+footer .unSub-modal-bg .register-modal .random-num-input-holder,
+footer .login-modal-bg .register-modal .random-num-input-holder,
+footer .register-modal-bg .register-modal .random-num-input-holder,
+footer .forgot-password-modal-bg .register-modal .random-num-input-holder,
+footer .generate-confirm-code-modal-bg .register-modal .random-num-input-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+footer .subs-modal-bg .register-modal .random-num-input-holder input,
+footer .subs-fail-modal-bg .register-modal .random-num-input-holder input,
+footer .unSub-modal-bg .register-modal .random-num-input-holder input,
+footer .login-modal-bg .register-modal .random-num-input-holder input,
+footer .register-modal-bg .register-modal .random-num-input-holder input,
+footer .forgot-password-modal-bg .register-modal .random-num-input-holder input,
+footer .generate-confirm-code-modal-bg .register-modal .random-num-input-holder input {
+  width: 3rem;
+  height: 4rem;
+  margin: 0 0.7rem 0 0.7rem;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+footer .subs-modal-bg .register-modal .validate-random-num-error,
+footer .subs-fail-modal-bg .register-modal .validate-random-num-error,
+footer .unSub-modal-bg .register-modal .validate-random-num-error,
+footer .login-modal-bg .register-modal .validate-random-num-error,
+footer .register-modal-bg .register-modal .validate-random-num-error,
+footer .forgot-password-modal-bg .register-modal .validate-random-num-error,
+footer .generate-confirm-code-modal-bg .register-modal .validate-random-num-error {
+  margin: 1rem 0 2rem 0;
+  display: block;
+  font-size: 1.2rem;
+  color: white;
+}
+footer .subs-modal-bg .register-modal .validate-random-num-error #random-num-try,
+footer .subs-fail-modal-bg .register-modal .validate-random-num-error #random-num-try,
+footer .unSub-modal-bg .register-modal .validate-random-num-error #random-num-try,
+footer .login-modal-bg .register-modal .validate-random-num-error #random-num-try,
+footer .register-modal-bg .register-modal .validate-random-num-error #random-num-try,
+footer .forgot-password-modal-bg .register-modal .validate-random-num-error #random-num-try,
+footer .generate-confirm-code-modal-bg .register-modal .validate-random-num-error #random-num-try {
+  display: inline-block;
+  font-size: 1.4rem;
+  margin-left: 1rem;
+  color: #facd3c;
+}
+footer .subs-modal-bg .register-modal small,
+footer .subs-fail-modal-bg .register-modal small,
+footer .unSub-modal-bg .register-modal small,
+footer .login-modal-bg .register-modal small,
+footer .register-modal-bg .register-modal small,
+footer .forgot-password-modal-bg .register-modal small,
+footer .generate-confirm-code-modal-bg .register-modal small {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  display: none;
+  color: #ff4b4b;
+}
+footer .subs-modal-bg .register-modal .subscribe-error,
+footer .subs-fail-modal-bg .register-modal .subscribe-error,
+footer .unSub-modal-bg .register-modal .subscribe-error,
+footer .login-modal-bg .register-modal .subscribe-error,
+footer .register-modal-bg .register-modal .subscribe-error,
+footer .forgot-password-modal-bg .register-modal .subscribe-error,
+footer .generate-confirm-code-modal-bg .register-modal .subscribe-error {
+  color: #facd3c;
+}
+footer .subs-modal-bg .register-modal h2,
+footer .subs-fail-modal-bg .register-modal h2,
+footer .unSub-modal-bg .register-modal h2,
+footer .login-modal-bg .register-modal h2,
+footer .register-modal-bg .register-modal h2,
+footer .forgot-password-modal-bg .register-modal h2,
+footer .generate-confirm-code-modal-bg .register-modal h2 {
+  font-size: 1.8rem;
+  margin: 1rem 0 0 0;
+  text-align: center;
+}
+footer .subs-modal-bg .register-modal label,
+footer .subs-fail-modal-bg .register-modal label,
+footer .unSub-modal-bg .register-modal label,
+footer .login-modal-bg .register-modal label,
+footer .register-modal-bg .register-modal label,
+footer .forgot-password-modal-bg .register-modal label,
+footer .generate-confirm-code-modal-bg .register-modal label {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  font-family: "Lato";
+}
+@media only screen and (min-width: 768px) {
+  footer .subs-modal-bg .register-modal label,
+footer .subs-fail-modal-bg .register-modal label,
+footer .unSub-modal-bg .register-modal label,
+footer .login-modal-bg .register-modal label,
+footer .register-modal-bg .register-modal label,
+footer .forgot-password-modal-bg .register-modal label,
+footer .generate-confirm-code-modal-bg .register-modal label {
+    font-size: 1.5rem;
+  }
+}
+footer .subs-modal-bg .register-modal input,
+footer .subs-fail-modal-bg .register-modal input,
+footer .unSub-modal-bg .register-modal input,
+footer .login-modal-bg .register-modal input,
+footer .register-modal-bg .register-modal input,
+footer .forgot-password-modal-bg .register-modal input,
+footer .generate-confirm-code-modal-bg .register-modal input {
+  width: 70%;
+  height: 2rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+}
+footer .subs-modal-bg .register-modal input:disabled,
+footer .subs-fail-modal-bg .register-modal input:disabled,
+footer .unSub-modal-bg .register-modal input:disabled,
+footer .login-modal-bg .register-modal input:disabled,
+footer .register-modal-bg .register-modal input:disabled,
+footer .forgot-password-modal-bg .register-modal input:disabled,
+footer .generate-confirm-code-modal-bg .register-modal input:disabled {
+  background: #6f6c6c;
+}
+@media only screen and (min-width: 600px) {
+  footer .subs-modal-bg .register-modal input,
+footer .subs-fail-modal-bg .register-modal input,
+footer .unSub-modal-bg .register-modal input,
+footer .login-modal-bg .register-modal input,
+footer .register-modal-bg .register-modal input,
+footer .forgot-password-modal-bg .register-modal input,
+footer .generate-confirm-code-modal-bg .register-modal input {
+    width: 66%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .subs-modal-bg .register-modal input,
+footer .subs-fail-modal-bg .register-modal input,
+footer .unSub-modal-bg .register-modal input,
+footer .login-modal-bg .register-modal input,
+footer .register-modal-bg .register-modal input,
+footer .forgot-password-modal-bg .register-modal input,
+footer .generate-confirm-code-modal-bg .register-modal input {
+    width: 57%;
+  }
+}
+footer .subs-modal-bg .register-modal .fa-eye,
+footer .subs-fail-modal-bg .register-modal .fa-eye,
+footer .unSub-modal-bg .register-modal .fa-eye,
+footer .login-modal-bg .register-modal .fa-eye,
+footer .register-modal-bg .register-modal .fa-eye,
+footer .forgot-password-modal-bg .register-modal .fa-eye,
+footer .generate-confirm-code-modal-bg .register-modal .fa-eye {
+  float: right;
+  margin-left: 58%;
+  margin-top: -23.5px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  color: black;
+}
+@media only screen and (min-width: 600px) {
+  footer .subs-modal-bg .register-modal .fa-eye,
+footer .subs-fail-modal-bg .register-modal .fa-eye,
+footer .unSub-modal-bg .register-modal .fa-eye,
+footer .login-modal-bg .register-modal .fa-eye,
+footer .register-modal-bg .register-modal .fa-eye,
+footer .forgot-password-modal-bg .register-modal .fa-eye,
+footer .generate-confirm-code-modal-bg .register-modal .fa-eye {
+    margin-left: 53%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .subs-modal-bg .register-modal .fa-eye,
+footer .subs-fail-modal-bg .register-modal .fa-eye,
+footer .unSub-modal-bg .register-modal .fa-eye,
+footer .login-modal-bg .register-modal .fa-eye,
+footer .register-modal-bg .register-modal .fa-eye,
+footer .forgot-password-modal-bg .register-modal .fa-eye,
+footer .generate-confirm-code-modal-bg .register-modal .fa-eye {
+    margin-left: 48%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer .subs-modal-bg .register-modal .fa-eye,
+footer .subs-fail-modal-bg .register-modal .fa-eye,
+footer .unSub-modal-bg .register-modal .fa-eye,
+footer .login-modal-bg .register-modal .fa-eye,
+footer .register-modal-bg .register-modal .fa-eye,
+footer .forgot-password-modal-bg .register-modal .fa-eye,
+footer .generate-confirm-code-modal-bg .register-modal .fa-eye {
+    margin-left: 50%;
+  }
+}
+footer .subs-modal-bg .register-modal a,
+footer .subs-fail-modal-bg .register-modal a,
+footer .unSub-modal-bg .register-modal a,
+footer .login-modal-bg .register-modal a,
+footer .register-modal-bg .register-modal a,
+footer .forgot-password-modal-bg .register-modal a,
+footer .generate-confirm-code-modal-bg .register-modal a {
+  font-size: 1.2rem;
+  color: #facd3c;
+  margin: 0.4rem 0 0.3rem 0;
+}
+footer .subs-modal-bg .register-modal-close,
+footer .subs-fail-modal-bg .register-modal-close,
+footer .unSub-modal-bg .register-modal-close,
+footer .login-modal-bg .register-modal-close,
+footer .register-modal-bg .register-modal-close,
+footer .forgot-password-modal-bg .register-modal-close,
+footer .generate-confirm-code-modal-bg .register-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-weight: bold;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: white;
+  transition: all ease 0.5s;
+}
+footer .subs-modal-bg .register-modal-close:hover,
+footer .subs-fail-modal-bg .register-modal-close:hover,
+footer .unSub-modal-bg .register-modal-close:hover,
+footer .login-modal-bg .register-modal-close:hover,
+footer .register-modal-bg .register-modal-close:hover,
+footer .forgot-password-modal-bg .register-modal-close:hover,
+footer .generate-confirm-code-modal-bg .register-modal-close:hover {
+  color: #facd3c;
+}
+footer .subs-modal-bg .login-modal-btn,
+footer .subs-modal-bg .register-modal-btn,
+footer .subs-fail-modal-bg .login-modal-btn,
+footer .subs-fail-modal-bg .register-modal-btn,
+footer .unSub-modal-bg .login-modal-btn,
+footer .unSub-modal-bg .register-modal-btn,
+footer .login-modal-bg .login-modal-btn,
+footer .login-modal-bg .register-modal-btn,
+footer .register-modal-bg .login-modal-btn,
+footer .register-modal-bg .register-modal-btn,
+footer .forgot-password-modal-bg .login-modal-btn,
+footer .forgot-password-modal-bg .register-modal-btn,
+footer .generate-confirm-code-modal-bg .login-modal-btn,
+footer .generate-confirm-code-modal-bg .register-modal-btn {
+  height: 2.2rem;
+  padding: 0.3rem 4rem;
+  background: #facd3c;
+  color: black;
+  font-family: "Questrial";
+  margin: 0.5rem 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+footer .subs-modal-bg .login-modal-btn:hover::after,
+footer .subs-modal-bg .register-modal-btn:hover::after,
+footer .subs-fail-modal-bg .login-modal-btn:hover::after,
+footer .subs-fail-modal-bg .register-modal-btn:hover::after,
+footer .unSub-modal-bg .login-modal-btn:hover::after,
+footer .unSub-modal-bg .register-modal-btn:hover::after,
+footer .login-modal-bg .login-modal-btn:hover::after,
+footer .login-modal-bg .register-modal-btn:hover::after,
+footer .register-modal-bg .login-modal-btn:hover::after,
+footer .register-modal-bg .register-modal-btn:hover::after,
+footer .forgot-password-modal-bg .login-modal-btn:hover::after,
+footer .forgot-password-modal-bg .register-modal-btn:hover::after,
+footer .generate-confirm-code-modal-bg .login-modal-btn:hover::after,
+footer .generate-confirm-code-modal-bg .register-modal-btn:hover::after {
+  transform: scaleX(1);
+}
+footer .subs-modal-bg .login-modal-btn::after,
+footer .subs-modal-bg .register-modal-btn::after,
+footer .subs-fail-modal-bg .login-modal-btn::after,
+footer .subs-fail-modal-bg .register-modal-btn::after,
+footer .unSub-modal-bg .login-modal-btn::after,
+footer .unSub-modal-bg .register-modal-btn::after,
+footer .login-modal-bg .login-modal-btn::after,
+footer .login-modal-bg .register-modal-btn::after,
+footer .register-modal-bg .login-modal-btn::after,
+footer .register-modal-bg .register-modal-btn::after,
+footer .forgot-password-modal-bg .login-modal-btn::after,
+footer .forgot-password-modal-bg .register-modal-btn::after,
+footer .generate-confirm-code-modal-bg .login-modal-btn::after,
+footer .generate-confirm-code-modal-bg .register-modal-btn::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.3s ease-in;
+  transform: scalex(0);
+  background: whitesmoke;
+  transform-origin: left;
+}
+footer .subs-modal-bg .login-modal-btn:disabled,
+footer .subs-modal-bg .register-modal-btn:disabled,
+footer .subs-fail-modal-bg .login-modal-btn:disabled,
+footer .subs-fail-modal-bg .register-modal-btn:disabled,
+footer .unSub-modal-bg .login-modal-btn:disabled,
+footer .unSub-modal-bg .register-modal-btn:disabled,
+footer .login-modal-bg .login-modal-btn:disabled,
+footer .login-modal-bg .register-modal-btn:disabled,
+footer .register-modal-bg .login-modal-btn:disabled,
+footer .register-modal-bg .register-modal-btn:disabled,
+footer .forgot-password-modal-bg .login-modal-btn:disabled,
+footer .forgot-password-modal-bg .register-modal-btn:disabled,
+footer .generate-confirm-code-modal-bg .login-modal-btn:disabled,
+footer .generate-confirm-code-modal-bg .register-modal-btn:disabled {
+  background: rgba(139, 139, 139, 0.877);
+}
+footer .subs-modal-bg .login-modal-btn:disabled::after,
+footer .subs-modal-bg .register-modal-btn:disabled::after,
+footer .subs-fail-modal-bg .login-modal-btn:disabled::after,
+footer .subs-fail-modal-bg .register-modal-btn:disabled::after,
+footer .unSub-modal-bg .login-modal-btn:disabled::after,
+footer .unSub-modal-bg .register-modal-btn:disabled::after,
+footer .login-modal-bg .login-modal-btn:disabled::after,
+footer .login-modal-bg .register-modal-btn:disabled::after,
+footer .register-modal-bg .login-modal-btn:disabled::after,
+footer .register-modal-bg .register-modal-btn:disabled::after,
+footer .forgot-password-modal-bg .login-modal-btn:disabled::after,
+footer .forgot-password-modal-bg .register-modal-btn:disabled::after,
+footer .generate-confirm-code-modal-bg .login-modal-btn:disabled::after,
+footer .generate-confirm-code-modal-bg .register-modal-btn:disabled::after {
+  background: none;
+}
+footer .topic-register-modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 30px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+footer .topic-register-modal-bg .form-container {
+  width: 100%;
+  margin: 5% auto;
+  position: relative;
+  background-color: #1a1a1a;
+  border: solid 2px #facd3c;
+}
+@media only screen and (min-width: 768px) {
+  footer .topic-register-modal-bg .form-container {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer .topic-register-modal-bg .form-container {
+    max-width: 640px;
+  }
+}
+footer .topic-register-modal-bg .form-container .topic-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-weight: bold;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: white;
+  transition: all ease 0.5s;
+}
+footer .topic-register-modal-bg .form-container .topic-modal-close:hover {
+  color: #facd3c;
+}
+footer .topic-register-modal-bg .form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  background: #1a1a1a;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: 0px 0px 5px 0 #1a1a1a;
+}
+footer .topic-register-modal-bg .form-container select {
+  width: 248px;
+  border-radius: 6px;
+  height: 38px;
+}
+footer .topic-register-modal-bg .form-container input,
+footer .topic-register-modal-bg .form-container select,
+footer .topic-register-modal-bg .form-container label,
+footer .topic-register-modal-bg .form-container small {
+  width: 75%;
+  display: block;
+  margin: 2% auto;
+  font-size: 1.3rem;
+}
+@media only screen and (min-width: 1024px) {
+  footer .topic-register-modal-bg .form-container input,
+footer .topic-register-modal-bg .form-container select,
+footer .topic-register-modal-bg .form-container label,
+footer .topic-register-modal-bg .form-container small {
+    width: 60%;
+  }
+}
+footer .topic-register-modal-bg .form-container small {
+  color: red;
+  display: none;
+}
+footer .topic-register-modal-bg .form-container input,
+footer .topic-register-modal-bg .form-container textarea {
+  margin: 0 auto;
+  max-width: 75%;
+  min-width: 75%;
+  height: 2rem;
+  border-radius: 0.5rem;
+}
+@media only screen and (min-width: 1024px) {
+  footer .topic-register-modal-bg .form-container input,
+footer .topic-register-modal-bg .form-container textarea {
+    max-width: 60%;
+    min-width: 60%;
+  }
+}
+footer .topic-register-modal-bg .form-container #slideArticle {
+  height: 150px;
+  width: 300px;
+}
+footer .topic-register-modal-bg .form-container button {
+  width: 10rem;
+  height: 3rem;
+  margin: 5% auto;
+  font-size: 1.3rem;
+  font-family: "Questrial";
+  background: none;
+  color: white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #facd3c;
+}
+footer .alert {
+  min-width: 310px;
+  padding: 1em;
+  height: 40px;
+  background: #facd3c;
+  position: fixed;
+  color: black;
+  bottom: 0;
+  left: 50%;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+}
+
+/* ----- MODAL ANIMATION ----- */
+.modal-moves-out {
+  -webkit-animation: modal-moves-out 1s;
+  animation: modal-moves-out 1s;
+}
+
+.modal-moves-in {
+  -webkit-animation: modal-moves-in 1s;
+  animation: modal-moves-in 1s;
+}
+
+/* ---MODAL ANIMATION / keyframes -----  */
+@keyframes modal-moves-in {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 5%;
+  }
+}
+@-webkit-keyframes modal-moves-in {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 5%;
+  }
+}
+@keyframes modal-moves-out {
+  0% {
+    top: 5%;
+  }
+  100% {
+    top: -400px;
+  }
+}
+@-webkit-keyframes modal-moves-out {
+  0% {
+    top: 5%;
+  }
+  100% {
+    top: -400px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

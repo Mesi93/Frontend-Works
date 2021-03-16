@@ -1,0 +1,425 @@
+@use 'settings' as s;
+@use 'sass:map';
+@mixin gallery-section {
+    @include s.basic-css-settings();
+    /******************* GALLERY SECTION ***********************************/
+    .imageTextBox {
+        position: absolute;
+        bottom: 2%;
+        margin: 10px;
+        padding: 10px;
+        background: #222;
+        height: 10px;
+        overflow: hidden;
+        width: 10px;
+        transition: width 0.3s, height 0.3s;
+        background-color: #222;
+        background-image: url('../03-project-nature-images/info_btn.png');
+        background-size: cover;
+        font-size: 0;
+    }
+    .imageTextBox2 {
+        position: absolute;
+        bottom: 2%;
+        background: #222;
+        width: 86%;
+        height: 20%;
+        overflow-y: auto;
+        margin: 10px;
+        padding: 10px;
+        transition: width 0.7s, height 0.7s;
+    }
+    .gallery-container {
+        width: 100%;
+        padding: 10px 0;
+        margin: 0;
+        font-family: map.get($map: s.$font-types-map, $key: font-type-main), map.get($map: s.$font-types-map, $key: font-type-secondary);
+        background: map.get($map: s.$colors-map, $key: background);
+        @include s.setColor(font-color);
+        box-sizing: content-box;
+    }
+    /* body css beállítások a gallery-containerben! */
+    .slider-section {
+        width: 90%;
+        margin: 0 auto;
+    }
+    /*
+    .view_more_button{
+      @include s.setBorder(1px,basic-yellow);
+      background: transparent;
+      @include s.setColor(white);
+      padding: 10px 20px;
+      margin: 10px auto;
+      display: block;
+      outline:none;
+    }
+    */
+    .view_more_button {
+        /*       @include s.setBorder(1px,basic-yellow);
+        background: transparent;
+        @include s.setColor(white); */
+        margin: 10px auto;
+        display: block;
+        height: 2.1rem;
+        padding: 0.2rem 2rem;
+        background: #facd3c;
+        color: black;
+        font-family: "Questrial";
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        outline: none;
+    }
+    .view_more_button:hover::after {
+        transform: scaleX(1);
+    }
+    .view_more_button::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: all 0.3s ease-in;
+        transform: scaleX(0);
+        background: whitesmoke;
+        transform-origin: left;
+    }
+    .slider-header {
+        text-align: center;
+    }
+    .slider-header h2 {
+        font-size: 2em;
+        font-weight: normal;
+        margin: .75em 0;
+    }
+    .slider-header p {
+        font-size: 1em;
+        margin: 1.12em 0;
+    }
+    .slider-header hr {
+        width: 20%;
+        border-color: map.get($map: s.$colors-map, $key: basic-yellow);
+        margin: 0 auto;
+    }
+    .slider-gallery img {
+        width: 90vw;
+        height: 90vw;
+        padding: 10px 0;
+    }
+    .slider {
+        display: none;
+        position: fixed;
+        background: map.get($map: s.$colors-map, $key: background);
+        width: 97%;
+        height: 97%;
+        top: 1%;
+        left: 1%;
+        //border-radius: 20px;
+        z-Index: 1;
+        border: 2px solid map.get($map: s.$colors-map, $key: basic-yellow);
+    }
+    .slider_close {
+        display: none;
+        position: fixed;
+        top: 10px;
+        right: 3%;
+        font-size: 3.5em;
+        background: none;
+        border: none;
+        @include s.setColor(white);
+        transition: transform .5s;
+        &:hover,
+        &:focus {
+            color: map.get(s.$colors-map, basic-yellow);
+            text-decoration: none;
+            cursor: pointer;
+            transform: scale(1.3);
+        }
+        z-Index:1;
+    }
+    .slider_gallery_grid {
+        width: 90%;
+        height: 90%;
+        margin: 3% auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 10vh;
+    }
+    .slider_big_image {
+        display: inline-block;
+        position: relative;
+    }
+    .slider_big_image img {
+        width: 100%;
+        height: 80vh;
+        //object-fit: fill;
+        object-fit: contain;
+        //   border-radius: 20px;
+    }
+    .slider_thumbnails img {
+        width: 18%;
+        height: 10vh;
+        object-fit: fill;
+        margin: 3px 2px;
+    }
+    .slider_thumbnail_selected_border {
+        @include s.setBorder(5px,
+        basic-yellow);
+    }
+    .slider_thumbnail_unselected_border {
+        border-top: 5px solid map.get($map: s.$colors-map, $key: background);
+        border-bottom: 5px solid map.get($map: s.$colors-map, $key: background);
+    }
+    .slider_prev {
+        display: none;
+        //background: #ffffff;
+        background: none;
+        position: fixed;
+        top: 40%;
+        left: 2%;
+        font-size: 3em;
+        //@include s.setBorder(1px,slider-border-color);
+        border: none;
+        //opacity: 0.5;
+        z-Index: 1;
+        color: map.get(s.$colors-map, white);
+        outline: none;
+        cursor: pointer;
+        &:hover {
+            color: map.get(s.$colors-map, basic-yellow);
+        }
+    }
+    .slider_next {
+        display: none;
+        // background: map.get($map:s.$colors-map, $key:white);
+        background: none;
+        position: fixed;
+        top: 40%;
+        right: 3%;
+        font-size: 3em;
+        //@include s.setBorder(1px,slider-border-color);
+        border: none;
+        //opacity: 0.5;
+        z-Index: 1;
+        color: map.get(s.$colors-map, white);
+        outline: none;
+        cursor: pointer;
+        &:hover {
+            color: map.get(s.$colors-map, basic-yellow);
+        }
+    }
+    .golden_sunrise_left {
+        width: 80vw;
+        margin: 20% auto;
+        position: relative;
+    }
+    .golden_sunrise_left img {
+        max-width: 100%;
+    }
+    .golden_sunrise_left_border {
+        width: 60%;
+        height: 65vw;
+        position: absolute;
+        top: -8%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        @include s.setBorder(6px,
+        basic-yellow);
+    }
+    .golden_sunrise_right {
+        width: 180px;
+        height: 180px;
+        margin: 20% auto;
+        position: relative;
+        @include s.setBorder(3px,
+        basic-yellow);
+        padding: 20px;
+        top: 30px;
+    }
+    .golden_sunrise_right h2 {
+        margin-top: 1em;
+    }
+    .golden_sunrise_right p {
+        margin: 1.12em 0;
+    }
+    /*
+  .golden_sunrise_button{
+    background:none;
+    border:none;
+    @include s.setColor(white);
+    border-bottom: 1px solid map.get($map:s.$colors-map, $key:basic-yellow);
+    padding-bottom: 3px;
+    outline:none;
+  }
+  .golden_sunrise_button:hover{
+    @include s.setColor(black);
+    transition: all 0.3s ease-in;
+    background: #facd3c;
+    transform: scaleY(1);
+  }
+  */
+    .golden_sunrise_button {
+        /*     background:none;
+        border:none;
+        @include s.setColor(white);
+        border-bottom: 1px solid map.get($map:s.$colors-map, $key:basic-yellow);
+        padding-bottom: 3px; */
+        background: none;
+        color: white;
+        text-transform: uppercase;
+        border: none;
+        border-bottom: 3px solid #facd3c;
+        padding: 0.3em 0;
+        margin-top: 1em;
+        cursor: pointer;
+        font-size: 0.5em;
+        font-weight: bold;
+        outline: none;
+        width: 70px;
+        position: relative;
+        z-index: 1;
+    }
+    .golden_sunrise_button a {
+        text-decoration: none;
+        color: white;
+    }
+    .golden_sunrise_button a:hover {
+        color: black;
+        text-decoration: none;
+    }
+    .golden_sunrise_button:hover {
+        color: black;
+    }
+    .golden_sunrise_button:hover::after {
+        transform: scaleX(1);
+    }
+    .golden_sunrise_button::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: all 0.3s ease-in;
+        transform: scaleY(0);
+        background: #facd3c;
+        transform-origin: bottom;
+    }
+    /**************************************** TABLET SCREEN *******************************************/
+    @media screen and (min-width: 768px) {
+        /******************* GALLERY SECTION ***********************************/
+        .imageTextBox {
+            bottom: 5%;
+        }
+        .imageTextBox2 {
+            bottom: 5%;
+            width: 92%;
+        }
+        .slider-header h2 {
+            font-size: 3em;
+        }
+        .slider-header p {
+            font-size: 1.5em;
+        }
+        .slider-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+        }
+        .slider-gallery img {
+            width: 28vw;
+            height: 30vw;
+            padding: 10px 0;
+        }
+        .slider_gallery_grid {
+            grid-template-rows: 1fr 15vh;
+        }
+        .slider_big_image img {
+            height: 70vh;
+        }
+        .slider_thumbnails img {
+            height: 15vh;
+            margin: 3px 1%;
+            width: 17%;
+        }
+        .golden_sunrise_left {
+            width: 100vw;
+            margin: 10% 0;
+            position: relative;
+        }
+        .golden_sunrise_left img {
+            max-width: 64vw;
+            padding-left: 5%;
+        }
+        .golden_sunrise_left_border {
+            width: 50%;
+            height: 120%;
+            position: absolute;
+            top: 50%;
+            left: 27%;
+            transform: translate(-30%, -50%);
+            @include s.setBorder(6px,
+            basic-yellow);
+        }
+        .golden_sunrise_right {
+            width: 20vw;
+            height: 20vw;
+            margin: inherit;
+            position: absolute;
+            @include s.setBorder(3px,
+            basic-yellow);
+            padding: 20px;
+            padding-left: 40px;
+            right: 5%;
+            top: 0;
+        }
+        .golden_sunrise_right h2 {
+            font-size: 2.5vw;
+        }
+        .golden_sunrise_right p {
+            font-size: 1.8vw;
+        }
+        .golden_sunrise_button {
+            // font-size: 1.2vw;
+            width: 9vw;
+            font-size: 1.4vw;
+        }
+    }
+    /**************************************** FULL SCREEN *******************************************/
+    @media screen and (min-width: 1024px) {
+        /******************* GALLERY SECTION ***********************************/
+        .imageTextBox2 {
+            width: 96%;
+        }
+        .golden_sunrise_button {
+            width: 8.7vw;
+            font-size: 1.2vw;
+        }
+        .golden_sunrise_corner_top {
+            width: 40px;
+            height: 40px;
+            margin: inherit;
+            position: absolute;
+            right: 2%;
+            top: -8%;
+            background: url(../03-project-nature-images/corner_top.png);
+        }
+        .golden_sunrise_corner_bottom {
+            width: 40px;
+            height: 40px;
+            margin: inherit;
+            position: absolute;
+            right: 31%;
+            top: 60%;
+            background: url(../03-project-nature-images/corner_bottom.png);
+        }
+    }
+}

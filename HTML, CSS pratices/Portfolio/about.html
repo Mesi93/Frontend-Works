@@ -1,0 +1,145 @@
+<!-- About: ezen az oldalon legyen egy hosszabb bemutatkozás, de itt is elég 5-10 mondat. 
+    Helyezz el egy nagyobb képet magadról (vagy arról akit bemutatsz) az oldal bal felső sarkában.
+    Mit csináltam eddig, mik az erősségeim, mi a hobbim, milyen nyelveket beszélek. 
+    Használd a megfelelő HTML elemeket a felsorolásokhoz, legyen benne számmal, 
+    ponttal való felsorolás is.  -->
+
+<!-- Az oldal alján legyen egy űrlap, amin keresztül üzenetet tudnak neked küldeni. 
+Az adatokat ellenőrizni is kell, az alábbiak szerint:
+Név 
+Email (valid email címnek kell lennie).
+Üzenet  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cf21d33a00.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+    <title>About</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <p>About</p>
+            <p>
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="works.html">Works</a>
+            </p>
+        </nav>
+    </header>
+
+    <main class="main-about">
+
+        <section class="about">
+            <div class="img-container">
+                <img src="mes.jpg">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quasi ad tenetur ex quisquam sunt obcaecati iste ducimus! Iste facere voluptate vero perferendis totam. Architecto, quidem! Maiores numquam ratione nihil. Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Provident animi non, vitae quia, dignissimos ducimus molestias itaque doloremque odio modi deserunt. Doloribus culpa quibusdam suscipit, ducimus a repellendus libero dolores? Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Quos, eveniet, sint ratione voluptatem modi illum saepe vel autem cum repellendus suscipit tenetur accusamus eius iure, perferendis eum? Aliquid, vel non. Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Voluptatibus accusantium cupiditate id dolore autem maiores rem optio necessitatibus qui. Non, minima ipsam. Quos ad autem repellat ut reiciendis eos! Fugiat! Vivamus fermentum condimentum elit, at condimentum libero vulputate in.
+                Quisque sollicitudin auctor ante id interdum. Fusce urna elit, dapibus ac eros sed, euismod varius elit. Suspendisse ac mi vel magna blandit consequat vel vitae arcu. Quisque ut blandit sapien. Morbi id elit suscipit, pulvinar erat vitae,
+                mattis massa. </p>
+        </section>
+
+
+        <section class="about-card">
+
+            <div class="skills">
+                <h3>Skills</h3>
+                <p>Adobe Photoshop</p>
+                <div class="skillbar">
+                    <div class="skill photoshop">60%</div>
+                </div>
+                <p>Adobe Illustrator</p>
+                <div class="skillbar">
+                    <div class="skill illustrator">50%</div>
+                </div>
+                <p>HTML,CSS</p>
+                <div class="skillbar">
+                    <div class="skill html-css">45%</div>
+                </div>
+                <p>JavaScript</p>
+                <div class="skillbar">
+                    <div class="skill js">10%</div>
+                </div>
+            </div>
+
+
+            <div class=languages>
+                <h3>Languages</h3>
+                <p>English - "B2" language exam</p>
+                <p>Spanish - "B2" language exam</p>
+            </div>
+
+            <div class="hobbies">
+                <h3>Interests</h3>
+                <table class="interests">
+                    <tr>
+                        <td><i class="fas fa-camera fa-2x"></i></td>
+                        <td><i class="fas fa-bicycle fa-2x"></i></td>
+                        <td><i class="fas fa-book fa-2x"></i></td>
+                        <td><i class="fas fa-music fa-2x"></i></td>
+                        <td><i class="fas fa-pen fa-2x"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Photography</td>
+                        <td>Bicycle</td>
+                        <td>Reading</td>
+                        <td>Music and singing</td>
+                        <td>Drawing</td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
+
+
+        <section class="form-section">
+            <form>
+                <h3>Let's Keep in Touch!</h3>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name..">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email..">
+
+                <label for="message">Message</label>
+                <textarea name="message" cols="50" rows="5" placeholder="Write somtehing..."></textarea>
+                <button>Send Message</button>
+            </form>
+
+
+
+        </section>
+
+    </main>
+
+
+
+
+    <footer id="footer">
+        <h3>Follow Me!</h3>
+        <ul>
+            <li><i class="fa fa-facebook-square"></i> Facebook</li>
+            <li><i class="fa fa-pinterest"></i> Pinterest</li>
+            <li><i class="fa fa-envelope"></i> Gmail</li>
+        </ul>
+
+        <div class="arrow">
+            <a href="#nav">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>

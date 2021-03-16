@@ -1,0 +1,310 @@
+<section>
+    <div class="darken py-3 py-md-5">
+        <div class="container">
+            <div class="menu-holder">
+                <div class="button-holder">
+                    <button (click)="showCoupons()" class="btn  text-white">Coupons</button>
+                    <button (click)="showOrders()" class="btn text-white">My Orders</button>
+                    <button (click)="showOrderStatus()" class="btn  text-white">Order Status</button>
+                </div>
+
+                <div *ngIf="couponsIsActive" class="selected-data-holder data-holder-coupons">
+                    <div class="redeem-code-holder">
+                        <form [formGroup]="redeemCodeForm" (ngSubmit)="redeemCode()">
+                            <label for="redeem-code" placeholder="Enter coupon code">Redeem Code: </label>
+                            <input formControlName="code" id="redeem-code" type="text">
+                            <button>Redeem</button> <br>
+                            <small *ngIf = "redeemCodeInvalid"  class="text-danger">Invalid Coupon Code</small>
+                        </form>
+                    </div>
+                    <br>
+                    <div *ngIf="pastaCoupon" id="pasta" class="coupon">
+                        <div class="coupon-darken-background">
+                            <div class="text-holder">
+                                <h4>Coupon for pasta</h4>
+                                <p>Discount: 10%</p>
+                            </div>
+                            <div class="svg-holder"> <img class="filter-white" src="../../assets/spaguetti.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="pizzaCoupon" id="pizza" class="coupon">
+                        <div class="coupon-darken-background">
+                            <div class="text-holder">
+                                <h4>Coupon for pizza</h4>
+                                <p>Discount: 20%</p>
+                            </div>
+                            <div class="svg-holder"> <img class="filter-white" src="../../assets/pizza.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="dessertCoupon" id="dessert" class="coupon">
+                        <div class="coupon-darken-background">
+                            <div class="text-holder">
+                                <h4>Coupon for dessert</h4>
+                                <p>Discount: 5%</p>
+                            </div>
+                            <div class="svg-holder"> <img class="filter-white" src="../../assets/donut.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="saladCoupon" id="salad" class="coupon">
+                        <div class="coupon-darken-background">
+                            <div class="text-holder">
+                                <h4>Coupon for salad</h4>
+                                <p>Discount: 15%</p>
+                            </div>
+                            <div class="svg-holder"> <img class="filter-white" src="../../assets/salad.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="ordersIsActive" class="selected-data-holder" id="data-holder-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ordered products</th>
+                                <th>Price</th>
+                                <th>Date</th>
+                                <th>Re-order</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let order of previousOrders">
+                                <td>{{order.foodName}}</td>
+                                <td>{{order.foodPrice}}</td>
+                                <td>{{order.orderedDate}}</td>
+                                <td><button (click)="addToPendingCart(order)">Add to cart</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div *ngIf="reservationsIsActive && gotOrderStatus" class="selected-data-holder"
+                    id="data-holder-order-status">
+                    <div class="order-status-img-holder">
+                        <img [src]="currentOrderObj.imgUrl" alt="">
+
+                        <h2>{{currentOrderObj.text}}</h2>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="user-data-holder pb-3">
+                <h2>~ Hello {{userFromDb.name}}! ~</h2>
+                <h3>User Info</h3>
+
+
+                <h5 class="mb-0">Full Name: <span class="user-data"> {{userFromDb.name}}</span></h5>
+                <hr>
+                <h5 class="mb-0">Username: <span class="user-data"> {{userFromDb.username}}</span></h5>
+                <hr>
+                <h5 class="mb-0">Email address: <span class="user-data"> {{userFromDb.email}}</span></h5>
+                <a class="change-data" data-toggle="modal" data-target="#modal-to-change-email">Change email address</a>
+
+                <hr>
+
+                <h5 class="mb-0">Delivery Address: <span class="user-data">{{userFromDb.address}}</span></h5>
+                <a class="change-data" data-toggle="modal" data-target="#modal-to-setup-address">Setup delivery
+                    address</a>
+                <hr>
+
+                <h5 class="mb-0">Secondary Email Address: <span class="user-data">{{userFromDb.secondaryEmail}}</span>
+                </h5>
+                <a class="change-data" data-toggle="modal" data-target="#modal-to-setup-secondary-email">Setup secondary
+                    email address</a>
+                <hr>
+                <h5 class="mb-0"><span class="user-data">{{userFromDb.pwReminder}}</span></h5>
+                <a class="change-data" data-toggle="modal" data-target="#modal-to-setup-pw-reminder">Setup password
+                    reminder</a>
+                <hr>
+                <a class="change-data" data-toggle="modal" data-target="#modal-to-change-pw">Change password</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SUCCESFULLY ADDED TO CART -->
+<div *ngIf="showAddedToCartModal" class="succesfully-added-modal">
+    <p>Succesfully added to cart!</p>
+</div>
+
+
+
+<!-- MODAL FOR CHANGE EMAIL -->
+
+<div class="modal fade" id="modal-to-change-email" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Change email</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="changeEmailForm">
+                    <div class="form-group">
+                        <label for="user-change-email" class="col-form-label">Enter your new email address:</label>
+                        <input type="email" class="form-control" formControlName="userChangeEmail"
+                            id="user-change-email" #userChangeEmail>
+                        <small *ngIf="displayEmailErrorSmall" class="text-danger">The given email is already being used
+                            or invalid</small>
+                        <br>
+                        <label for="user-password" class="col-form-label">Enter your password:</label>
+                        <input type="password" class="form-control" formControlName="userPassword" id="user-password"
+                            #userPassword>
+                        <small class="text-danger"
+                            *ngIf="changeEmailForm.get('userPassword').touched && currentPwIsInvalid">
+                            Password is invalid
+                        </small>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button data-toggle="modal" data-target="#modal-to-change-email"
+                    [disabled]="changeEmailForm.invalid && displayEmailErrorSmall" (click)="changeEmail()" type="button"
+                    class="btn btn-primary">Change email</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL FOR SETUP ADDRESS -->
+
+
+<div class="modal fade" id="modal-to-setup-address" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Setup delivery address</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="user-delivery-address" class="col-form-label">Delivery address:</label>
+                        <input type="string" class="form-control" id="user-delivery-address" #userDeliveryAddress>
+                    </div>
+                    <!-- <div class="form-group">
+              <label for="user-password" class="col-form-label">Password:</label>
+              <input type="password" class="form-control" id="user-password">
+            </div> -->
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button data-toggle="modal" data-target="#modal-to-setup-address" (click)="setupDeliveryAddress()"
+                    type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL FOR SETUP SECONDARY EMAIL ADDRESS -->
+
+<div class="modal fade" id="modal-to-setup-secondary-email" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Setup secondary email</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="user-secondary-email-address" class="col-form-label">Secondary email
+                            address:</label>
+                        <input type="email" class="form-control" id="user-secondary-email-address"
+                            #userSecondaryEmailAddress>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button data-toggle="modal" data-target="#modal-to-setup-secondary-email"
+                    (click)="setupSecondaryEmail()" type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL FOR SETUP PW REMINDER -->
+
+<div class="modal fade" id="modal-to-setup-pw-reminder" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Setup password reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="user-pw-reminder" class="col-form-label">Password reminder:</label>
+                        <input type="text" class="form-control" id="user-pw-reminder" #userPwReminder>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button data-toggle="modal" data-target="#modal-to-setup-pw-reminder" (click)="setupPwReminder()"
+                    type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL FOR CHANGE PW -->
+
+<div class="modal fade" id="modal-to-change-pw" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Change password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="changePwForm">
+                    <div class="form-group">
+                        <label for="user-change-pw" class="col-form-label">Enter your previous password:</label>
+                        <input type="password" class="form-control" formControlName="oldUserPassword"
+                            id="old-user-password">
+                        <small class="text-danger" *ngIf="currentPwForChangePwIsInvalid">Invalid password</small>
+                        <br>
+                        <label for="user-password" class="col-form-label">Enter your new password:</label>
+                        <input type="password" class="form-control" formControlName="newUserPassword"
+                            id="new-user-password">
+                        <small class="text-danger"
+                            *ngIf="changePwForm.get('newUserPassword').invalid && changePwForm.get('newUserPassword').touched">
+                            Password must be at least 8 characters long!
+                        </small>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button data-toggle="modal" data-target="#modal-to-change-pw"
+                    [disabled]="changePwForm.invalid && currentPwForChangePwIsInvalid" (click)="changePassword()"
+                    type="button" class="btn btn-primary">Change password</button>
+            </div>
+        </div>
+    </div>
+</div>

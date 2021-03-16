@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a routerLink="" class="navbar-logo"><img src="../../assets/logo.png" alt=""> </a>
+    <a routerLink="" class="navbar-brand">Italian Restaurant</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+            <a class="nav-link active" routerLink="">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" routerLink="/menu">Menu</a>
+            <a class="nav-link" routerLink="/reservation">Reservation</a>
+            <a *ngIf="storageAvailable === false" class="nav-link" routerLink="/register">Sign in</a>
+            <a *ngIf="storageAvailable" class="nav-link" routerLink="/account">User account</a>
+            <a *ngIf="storageAvailable" (click)="signOut()" class="nav-link" routerLink="">Sign Out</a>
+            <a class="nav-link " routerLink="/cart" tabindex="-1"><i class="fa pr-3 fa-shopping-cart fa-lg d-block d-lg-none"></i></a>
+            <a class="nav-link " routerLink="/cart" tabindex="-1"><i class="fa pr-3 fa-shopping-cart fa-lg d-none d-lg-block cart" attr.myValue="{{cartCounter}}"></i>
+            </a>
+
+            <form [formGroup]="darkModeForm">
+
+                <label class="switch mt-2" *ngIf="homePageIsActive">
+             <input class="switch-input" type="checkbox"  id="switch-input" (click) = 'changeDarkMode()' ng-checked="checkBox" formControlName = "darkModeSwitcher">
+                <span class="slider round"></span>
+             </label>
+
+            </form>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,322 @@
+/* EMESE */
+
+* {
+    box-sizing: border-box;
+}
+
+.cart-container {
+    font-family: "Merienda", cursive;
+    background-image: url("../../assets/background.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.darken {
+    background: linear-gradient(#252323f3, rgba(0, 0, 0, 0.7));
+    width: 100%;
+    min-height: 1000px;
+    height: 100%;
+}
+
+.continueShoppingBtn {
+    border: none;
+    position: relative;
+    z-index: 1;
+}
+
+.continueShoppingBtn::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.4s ease-in;
+    transform: scaleX(0);
+    background: rgb(216, 104, 0);
+    transform-origin: left;
+}
+
+.continueShoppingBtn:hover::after {
+    transform: scaleX(1);
+}
+
+
+/***** FOODS IN CART ******/
+
+.cart {
+    width: 100%;
+    padding-bottom: 3em;
+}
+
+.cart-cards {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rokkitt', serif;
+}
+
+.cart-card {
+    background: white;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    width: 100%;
+}
+
+.cart-card-text {
+    padding-left: 1em;
+    width: 100%;
+}
+
+.cart-card .img-holder {
+    width: 150px;
+    height: 150px;
+}
+
+.cart-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/***** CHECKOUT ******/
+
+.order-data {
+    color: white;
+    height: 100%;
+    margin: 1em auto;
+    width: 100%;
+    padding: 1em;
+    font-family: 'Rokkitt', serif;
+    background: rgba(255, 255, 255, 0.144);
+    box-shadow: 2px 0 8px 0 black;
+}
+
+
+/* LOGIN */
+
+.login-btn,
+.place-order-btn,
+.register-btn {
+    border: none;
+    width: 100%;
+    background-color: rgb(216, 104, 0);
+}
+
+.social-login {
+    background: #ea4335;
+    width: 100%;
+    border: none;
+}
+
+.login .reg-btn {
+    background: none;
+    border: none;
+    width: 100%;
+    font-size: 0.8em;
+}
+
+.social-login:hover {
+    background: #e82e1e;
+}
+
+.login .order-btn {
+    width: 100%;
+}
+
+button:focus,
+button:active {
+    outline: none;
+    border: none;
+}
+
+.quantity-right-plus,
+.quantity-left-minus {
+    background-color: rgb(216, 104, 0);
+    border: none;
+    outline: none;
+}
+
+.quantity-btns {
+    width: 50%;
+}
+
+
+/* REGISTER */
+
+.control {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.control .caption {
+    position: relative;
+    top: .2rem;
+    color: #888;
+}
+
+.control .caption a {
+    color: white;
+}
+
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.control__indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border-radius: 4px;
+}
+
+.control--radio .control__indicator {
+    border-radius: 50%;
+}
+
+.control:hover input~.control__indicator,
+.control input:focus~.control__indicator {
+    background: #ccc;
+}
+
+.control input:checked~.control__indicator {
+    background: rgb(216, 104, 0);
+}
+
+.control:hover input:not([disabled]):checked~.control__indicator,
+.control input:checked:focus~.control__indicator {
+    background: rgb(216, 104, 0);
+}
+
+.control input:disabled~.control__indicator {
+    background: #e6e6e6;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+
+/* ------------------ CUOPONS --------------- */
+
+.cuopon-holder {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.enabled {
+    pointer-events: auto;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.coupon {
+    position: relative;
+    width: 45%;
+    margin: 0.5em;
+    color: whitesmoke;
+    height: auto;
+    min-height: 100px;
+    border: 2px solid rgba(51, 50, 50, 0.837);
+    background: rgba(68, 68, 68, 0.857);
+}
+
+.text-holder {
+    padding: 5px;
+}
+
+.coupon .svg-holder {
+    position: absolute;
+    bottom: 10%;
+    right: 0%;
+    transform: translate(-50%);
+    width: 20%;
+    margin: 0 auto;
+}
+
+.coupon .svg-holder img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.coupon .svg-holder .filter-white {
+    filter: brightness(0) invert(1);
+}
+
+
+/* COUPONS BG */
+
+.coupon-darken-background {
+    background: linear-gradient(#131212f3, rgba(0, 0, 0, 0.7));
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#dessert {
+    background-image: url('https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pizza {
+    background-image: url('https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#salad {
+    background-image: url('https://images.pexels.com/photos/257816/pexels-photo-257816.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pasta {
+    background-image: url('https://images.pexels.com/photos/6287534/pexels-photo-6287534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*-------------------- Gábor Order Status animation ---------------------- */
+
+.order-finished {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.order-finished .img-holder {
+    width: 80%;
+    max-width: 80%;
+    padding: 0;
+    margin: 0;
+}
+
+.order-finished .img-holder img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.order-finished h3 {
+    margin: 10px auto;
+}

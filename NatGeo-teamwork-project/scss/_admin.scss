@@ -1,0 +1,183 @@
+        @use 'sass:map';
+        @use 'parts' as p;
+        @use 'settings' as s;
+        @include s.basic-css-settings;
+        @include p.header;
+        main {
+            font-family: map.get($map: s.$font-types-map, $key: font-type-main);
+            background: url(https://images.pexels.com/photos/1666012/pexels-photo-1666012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            .admin-background {
+                background: linear-gradient(#1a1a1ad8, rgba(0, 0, 0, 0.541));
+                width: 100%;
+                height: 100%;
+                min-height: 1000px;
+                .admin-container {
+                    width: 80%;
+                    margin: 0 auto;
+                    padding-top: 2em;
+                    .admin-navbar {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        h1 {
+                            color: white;
+                            @media only screen and (max-width: 768px) {
+                                font-size: 1em;
+                            }
+                        }
+                        .switch {
+                            position: relative;
+                            display: inline-block;
+                            width: 60px;
+                            height: 34px;
+                            @media only screen and (max-width: 768px) {
+                                width: 40px;
+                                height: 20px;
+                            }
+                        }
+                        .switch input {
+                            opacity: 0;
+                            width: 0;
+                            height: 0;
+                        }
+                        .slider {
+                            position: absolute;
+                            cursor: pointer;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: #ccc;
+                            transition: .4s;
+                        }
+                        .slider:before {
+                            position: absolute;
+                            content: "";
+                            height: 26px;
+                            width: 26px;
+                            left: 4px;
+                            bottom: 4px;
+                            background-color: white;
+                            transition: .4s;
+                            @media only screen and (max-width: 768px) {
+                                width: 13px;
+                                height: 13px;
+                            }
+                        }
+                        input:checked+.slider {
+                            background-color: map.get($map: s.$colors-map, $key: basic-yellow);
+                        }
+                        input:checked+.slider:before {
+                            transform: translateX(26px);
+                            @media only screen and (max-width: 768px) {
+                                transform: translateX(17px);
+                            }
+                            @media only screen and (max-width: 339px) {
+                                transform: translateX(90%);
+                            }
+                        }
+                        .slider.round {
+                            border-radius: 35px;
+                            @media only screen and (max-width: 768px) {
+                                border-radius: 15px;
+                            }
+                        }
+                        .slider.round:before {
+                            border-radius: 50%;
+                        }
+                    }
+                    .admin-flex-holder {
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        .admin-card-holder {
+                            width: 100%;
+                            padding: 1em 0;
+                            @media only screen and (min-width: 768px) {
+                                width: 49%;
+                            }
+                            @media only screen and (min-width: 1024px) {
+                                width: 32%;
+                            }
+                            .admin-blog-holder {
+                                width: 100%;
+                                background: map.get($map: s.$colors-map, $key: basic-background);
+                                margin: 0 auto;
+                                height: 650px;
+                                max-height: 650px;
+                                overflow-y: scroll;
+                                &::-webkit-scrollbar {
+                                    width: 0;
+                                    height: 0;
+                                }
+                                .admin-blog-img-holder {
+                                    width: 100%;
+                                    height: 250px;
+                                    margin: 0;
+                                    padding: 0;
+                                    border-bottom: 5px solid map.get($map: s.$colors-map, $key: basic-yellow);
+                                }
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                                .admin-blog-text-holder {
+                                    color: white;
+                                    padding: 1.5em;
+                                    width: 100%;
+                                    h3 {
+                                        padding-bottom: 1em;
+                                    }
+                                    h5 {
+                                        padding-bottom: 1em;
+                                        color: grey;
+                                    }
+                                    h6 {
+                                        padding-bottom: 1em;
+                                    }
+                                    p {
+                                        padding-bottom: 0.5em;
+                                        line-height: 1.5em;
+                                    }
+                                }
+                            }
+                            .admin-card-button-holder {
+                                width: 100%;
+                                display: flex;
+                                margin-top: 0.5em;
+                                .admin-card-button {
+                                    width: 50%;
+                                    margin: 0.5em;
+                                    padding: 0.5em;
+                                    outline: none;
+                                    background: transparent;
+                                    color: white;
+                                    font-weight: bold;
+                                    i {
+                                        font-size: 1.1em;
+                                    }
+                                }
+                                #admin-confirm-button {
+                                    border: 3px solid map.get($map: s.$colors-map, $key: basic-yellow);
+                                    &:hover {
+                                        color: map.get($map: s.$colors-map, $key: basic-yellow);
+                                    }
+                                }
+                                #admin-decline-button {
+                                    border: 3px solid grey;
+                                    &:hover {
+                                        color: grey;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }

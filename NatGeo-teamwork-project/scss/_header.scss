@@ -1,0 +1,530 @@
+@use 'sass:map';
+@use 'settings' as s;
+
+/* ---------------- NAVBAR ----------------*/
+
+@mixin header {
+    nav {
+        font-family: map.get($map: s.$font-types-map, $key: font-type-main);
+        background: map.get($map: s.$colors-map, $key: basic-background);
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    /* ---------------- HAMBURGER MENU ----------------*/
+    .nav-block {
+        display: block;
+    }
+    nav {
+        .nav-main-menu {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: top 1.2s ease;
+            display: none;
+            background-color: map.get($map: s.$colors-map, $key: basic-background);
+            @media only screen and (min-width: 768px) {
+                nav .nav-main-menu {
+                    z-index: -1;
+                }
+            }
+        }
+        ul {
+            border: .5rem solid map.get($map: s.$colors-map, $key: basic-yellow);
+            li {
+                list-style: none;
+                padding: 0 1rem 0 0;
+                a {
+                    font-weight: bold;
+                    text-decoration: none;
+                    color: map.get($map: s.$colors-map, $key: font-color);
+                    text-transform: uppercase;
+                    font-size: 2rem;
+                    line-height: 2em;
+                    z-index: 2000;
+                }
+            }
+            #nav-signedIn-user {
+                display: none;
+                cursor: pointer;
+                margin: 0;
+                padding: 0;
+                margin-left: 1rem;
+            }
+        }
+    }
+    .nav-span {
+        position: relative;
+        width: 36px;
+        height: 4px;
+        background-color: #fff;
+        display: block;
+        margin: 8px 0;
+        transition: .5s;
+    }
+    .nav-toggle {
+        padding: 1.7rem 0 1.7rem 0;
+        cursor: pointer;
+        z-index: 1000;
+        margin-right: 10%;
+        .nav-span:nth-child(1) {
+            transform-origin: left;
+        }
+        .nav-span:nth-child(2) {
+            transform-origin: center;
+        }
+        .nav-span:nth-child(3) {
+            transform-origin: left;
+        }
+    }
+    .nav-toggle.active {
+        .nav-span:nth-child(1) {
+            transform: rotate(45deg);
+            left: 2px;
+        }
+        .nav-span:nth-child(2) {
+            transform: rotate(315deg);
+            right: 3px;
+        }
+        .nav-span:nth-child(3) {
+            transform: scaleX(0)
+        }
+    }
+    .nav-list-icons {
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-end;
+        height: 100%;
+        color: white;
+        margin-bottom: 2rem;
+        cursor: pointer;
+        a {
+            text-decoration: none;
+            color: white;
+            &:hover {
+                color: map.get($map: s.$colors-map, $key: basic-yellow);
+                transition: all .5s ease;
+            }
+        }
+    }
+    /* ---------------- NAVBAR HOVER ----------------*/
+    nav {
+        ul {
+            li {
+                a {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background: map.get($map: s.$colors-map, $key: basic-yellow);
+                        color: map.get($map: s.$colors-map, $key: basic-yellow);
+                        overflow: hidden;
+                        transform: scaleX(0);
+                        transform-origin: right;
+                    }
+                    &:hover {
+                        color: map.get($map: s.$colors-map, $key: basic-yellow);
+                        transition: all .5s ease;
+                    }
+                }
+            }
+        }
+    }
+    /* ---------------- LOGO ----------------*/
+    .nav-logo-wrapper {
+        height: 100%;
+        max-height: 100%;
+        width: 10rem;
+        max-width: 10rem;
+        padding: 1.5rem 0 1.5rem 0;
+        margin-left: 10%;
+    }
+    .nav-logo {
+        width: 100%;
+        max-width: 100%;
+        cursor: pointer;
+    }
+    .toggle-logo-wrapper {
+        width: 80%;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        img {
+            width: 100%;
+            max-width: 100%;
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+    }
+    //ezt a részt kikommenteltem, mert nem tetszett az oldalnak, merge conflict volt, mikor pulloltam (mesike voltam)
+    /* ---------------- NAVBAR MEDIA QUERIES ----------------*/
+    @media only screen and (max-height: 570px) {
+        .nav-list-icons {
+            display: none;
+        }
+    }
+    @media only screen and (min-width: 1024px) {
+        .toggle-logo-wrapper {
+            display: none;
+            img {
+                display: none;
+            }
+        }
+        .nav-toggle {
+            display: none;
+        }
+        nav {
+            display: inline-block;
+            justify-content: flex-end;
+            position: relative;
+            .nav-main-menu {
+                height: 100px;
+                width: 90%;
+                position: absolute;
+                z-index: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                border: none;
+            }
+            ul {
+                li {
+                    &:nth-child(6) {
+                        margin-right: 0rem;
+                        padding-right: 0;
+                    }
+                    a {
+                        color: map.get($map: s.$colors-map, $key: font-color);
+                        font-size: 1.5rem;
+                        position: relative;
+                        padding: 5px 0;
+                        &:hover {
+                            color: map.get($map: s.$colors-map, $key: font-color);
+                        }
+                    }
+                }
+            }
+        }
+        .nav-link {
+            margin-right: 1.2rem;
+        }
+        .nav-click {
+            padding: 5px 0;
+        }
+        .nav-logo {
+            position: relative;
+            z-index: 1000;
+        }
+        .nav-list-icons {
+            display: none;
+        }
+        /* ---------------- NAVBAR ANIMATION ----------------*/
+        .nav-main-menu {
+            li {
+                a {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background-color: map.get($map: s.$colors-map, $key: basic-yellow);
+                        z-index: -1;
+                        transform: scaleX(0);
+                        transform-origin: right;
+                        transition: all .5s ease;
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background-color: map.get($map: s.$colors-map, $key: basic-yellow);
+                        z-index: -1;
+                        transform: scaleX(0);
+                        transform-origin: left;
+                        transition: all .5s ease;
+                    }
+                }
+                a:hover::before {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
+                a:hover::after {
+                    transform: scaleX(1);
+                    transform-origin: right;
+                }
+            }
+        }
+    }
+    /* ----------------HOME SECTION----------------*/
+    .home {
+        width: 100%;
+        max-width: 100%;
+        background-color: map.get($map: s.$colors-map, $key: basic-background);
+        @include s.flex-center-elements();
+        flex-direction: column;
+    }
+    .home-container {
+        width: 80%;
+        max-width: 80%;
+    }
+    .home-image-wrapper {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+    .home-spectacular-wrapper {
+        width: 100%;
+        max-width: 100%;
+        color: map.get($map: s.$colors-map, $key: font-color);
+        border: 6px solid map.get($map: s.$colors-map, $key: basic-yellow);
+        text-align: center;
+        text-align: justify;
+        font-family: map.get($map: s.$font-types-map, $key: font-type-main);
+        font-weight: lighter;
+        padding: 1.5rem 1rem;
+        h2,
+        p {
+            margin: 1rem auto;
+        }
+        p {
+            line-height: 1.5rem;
+        }
+    }
+    .home-button {
+        width: 200px;
+        position: relative;
+        height: 2.2rem;
+        padding: .3rem 1.8rem;
+        background: map.get($map: s.$colors-map, $key: basic-background);
+        color: white;
+        border: 2px solid map.get($map: s.$colors-map, $key: font-color);
+        font-family: map.get($map: s.$font-types-map, $key: font-type-main);
+        margin-bottom: 1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 600;
+        z-index: 1;
+        transition: color .5s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::after {
+            @include s.button-after();
+            transform: scalex(0);
+            background: whitesmoke;
+            transform-origin: left;
+        }
+        &:hover {
+            color: black;
+            &::after {
+                transform: scaleX(1);
+            }
+        }
+    }
+    .home-gessel {
+        color: map.get($map: s.$colors-map, $key: font-color);
+        text-transform: uppercase;
+        font-family: map.get($map: s.$font-types-map, $key: font-type-main);
+        font-size: .8rem;
+        margin: .8rem 0;
+        margin-bottom: 1em;
+    }
+    /* ---------------- MODAL ----------------*/
+    .home-modal-bg {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 30px;
+        left: 0;
+        background-color: rgba(0, 0, 0, .7);
+        font-family: map.get($map: s.$font-types-map, $key: font-type-secondary);
+        @include s.flex-center-elements();
+        z-index: 3000;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity .5s;
+        .home-modal {
+            position: relative;
+            background: map.get($map: s.$colors-map, $key: basic-background);
+            @include s.flex-center-elements();
+            flex-direction: column;
+            justify-content: flex-start;
+            color: map.get(s.$colors-map, font-color);
+            width: 90%;
+            border: 4px solid map.get(s.$colors-map, basic-yellow);
+            text-align: center;
+            padding-bottom: 1.5em;
+            .home-modal-img-holder {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                img {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+            p {
+                font-size: 1.5rem;
+                padding: .5rem;
+                font-weight: bold;
+            }
+            h2 {
+                font-size: 1.8rem;
+                margin: 3rem 0 1rem 0;
+                text-align: center;
+            }
+            a {
+                font-size: 1.2rem;
+                color: map.get($map: s.$colors-map, $key: basic-yellow);
+                margin: 1rem 0 2rem 0;
+            }
+            .home-modal-close {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                font-weight: bold;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: map.get($map: s.$colors-map, $key: font-color);
+                transition: all ease .5s;
+                &:hover {
+                    color: map.get($map: s.$colors-map, $key: basic-yellow);
+                }
+            }
+        }
+    }
+    /* ---------------- HOME MEDIA QUERIES ----------------*/
+    @media only screen and (min-width: 1024px) {
+        .home-text-and-image-holder {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 450px;
+            margin-top: 3rem;
+        }
+        .home-button {
+            width: 100%;
+            max-width: 200px;
+        }
+        .home-image-wrapper {
+            width: 70%;
+            max-width: 70%;
+            height: 100%;
+            margin-top: 0rem;
+            margin-bottom: 0rem;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .home-spectacular-wrapper {
+            width: 30%;
+            max-width: 30%;
+            height: 100%;
+            margin-left: 2rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            text-align: left;
+            h2 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1.2rem;
+            }
+        }
+        .home-gessel {
+            width: 100%;
+            display: block;
+        }
+        /* ---------------- MODAL ----------------*/
+        .home-modal-bg {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 30px;
+            left: 0;
+            background-color: rgba(0, 0, 0, .7);
+            @include s.flex-center-elements();
+            z-index: 3000;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity .5s;
+            .home-modal {
+                position: relative;
+                background: map.get($map: s.$colors-map, $key: basic-background);
+                @include s.flex-center-elements();
+                flex-direction: column;
+                justify-content: flex-start;
+                color: map.get(s.$colors-map, font-color);
+                width: 40%;
+                // height: 40%;
+                border: 4px solid map.get(s.$colors-map, basic-yellow);
+                padding-bottom: 2rem;
+                text-align: center;
+                .home-modal-img-holder {
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    img {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+            p {
+                font-size: 1.5rem;
+                padding: .5rem;
+            }
+            h2 {
+                font-size: 2.5rem;
+                margin: 1.5rem 0;
+            }
+            a {
+                font-size: 1.3rem;
+                color: map.get($map: s.$colors-map, $key: basic-yellow);
+                margin-top: 1rem;
+            }
+            .home-modal-close {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                font-weight: bold;
+                font-size: 2rem;
+                cursor: pointer;
+                color: map.get($map: s.$colors-map, $key: font-color);
+                transition: all ease .5s;
+                &:hover {
+                    color: map.get($map: s.$colors-map, $key: basic-yellow);
+                }
+            }
+        }
+    }
+}

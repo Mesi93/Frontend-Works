@@ -1,0 +1,245 @@
+@use 'settings' as s;
+@use 'sass:map';
+@mixin indexViki {
+    #first-section {
+        background: map.get(s.$colors-map, basic-background);
+        color: map.get(s.$colors-map, font-color);
+        width: 100%;
+        #winners-article {
+            display: grid;
+            height: 600px;
+            min-height: 500px;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            @media only screen and (min-width: 768px) {
+                height: 350px;
+                width: 87%;
+                margin: 0 auto;
+                min-height: 500px;
+                grid-template-columns: 40% 60%;
+                grid-template-rows: 1fr;
+            }
+            @media only screen and (min-width:1024px) {
+                min-height: 500px;
+            }
+            #winners-box {
+                grid-column: 1/2;
+                width: 80%;
+                margin-top: 10%;
+                height: 200px;
+                padding-left: 18px;
+                border: solid 6px map.get(s.$colors-map, basic-yellow);
+                @media only screen and (min-width: 768px) {
+                    padding-left: 1.2rem;
+                }
+                @media only screen and (min-width:1024px) {
+                    padding-left: 5%;
+                }
+                p {
+                    font-family: map.get(s.$font-types-map, font-type-secondary);
+                    font-size: 55px;
+                    margin-top: 30px;
+                    @media only screen and (min-width: 768px) {
+                        font-size: 45px;
+                    }
+                }
+            }
+            #winners-info {
+                font-family: map.get(s.$font-types-map, font-type-main);
+                height: 200px;
+                padding-right: 10%;
+                padding-left: 10%;
+                margin-top: 3%;
+                @media only screen and (min-width: 768px) {
+                    display: grid;
+                    grid-column: 2/3;
+                    padding-left: 0;
+                }
+                .w-title-p {
+                    font-size: 30px;
+                    margin-top: 3.5%;
+                    margin-bottom: 0.5rem;
+                    @media only screen and (min-width: 1024px) {
+                        font-size: 2rem;
+                    }
+                }
+                #w-content-p {
+                    line-height: 1.5rem;
+                    font-size: 1.1rem;
+                    @media only screen and (min-width: 1024px) {
+                        margin-top: 2%;
+                        font-size: 1.3rem;
+                    }
+                }
+                #winners-info button {
+                    width: 100px;
+                }
+                .more-b {
+                    a {
+                        text-decoration: none;
+                        color: map.get(s.$colors-map, font-color);
+                        &:hover {
+                            color: black;
+                            
+                        }
+                    }
+                    @include s.default-button;
+                    position: relative;
+                    z-index: 1;
+                    margin-bottom: 1.5em;
+                    font-size: 0.9rem;
+                    width: 100px;
+                    &:hover {
+                        color: black;
+                        &::after {
+                            transform: scaleX(1);
+                        }
+                    }
+                    &::after {
+                        @include s.button-after();
+                        transform: scaleY(0);
+                        background: map.get(s.$colors-map, basic-yellow);
+                        transform-origin: bottom;
+                    }
+                    @media only screen and (min-width:768px) {
+                        margin-top: 3%;
+                        width: 95px;
+                        height: 20px;
+                        padding-bottom: 1.5em;
+                        width: 100px;
+                    }
+                    @media only screen and (min-width:1024px) {
+                        margin-top: 5%;
+                        padding-bottom: 1.5em;
+                    }
+                }
+            }
+        }
+        #story-article {
+            background-image: url(../03-project-nature-images/328afb3199d85943c4bb62cc16640f50.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            width: 100%;
+            height: 700px;
+            position: relative;
+            @media only screen and (min-width: 768px) {
+                overflow: visible;
+            }
+            #yellow-box {
+                background-color: map.get(s.$colors-map, basic-yellow);
+                position: absolute;
+                width: 50%;
+                max-width: 305px;
+                min-width: 245px;
+                height: 350px;
+                top: 90px;
+                left: 23%;
+                padding: 14px 14px;
+                overflow: visible;
+                @media only screen and (min-width: 768px) {
+                    position: absolute;
+                    width: 40%;
+                    max-width: 365px;
+                    min-width: 305px;
+                    height: 320px;
+                    top: -200px;
+                    left: 50%;
+                    padding: 14px 14px;
+                    overflow: visible;
+                }
+                @media only screen and (min-width:1024px) {
+                    left: 55%;
+                    top: -150px;
+                    width: 40%;
+                    height: 400px;
+                    max-width: 600px;
+                    min-width: 365px;
+                    padding-top: 14px;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 14px;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+                #story-box {
+                    padding-left: 15px;
+                    width: 97%;
+                    margin: 0px 0px;
+                    min-height: 350px;
+                    background-color: map.get(s.$colors-map, basic-background);
+                    padding-bottom: 40px;
+                    @media only screen and (min-width: 1024px) {
+                        width: 110%;
+                        margin-left: -5rem;
+                        min-width: 370;
+                        height: 410px;
+                    }
+                    #s-title-p {
+                        font-size: 2rem;
+                        margin-bottom: 10px;
+                        margin-top: 0px;
+                        padding: 10px 5px 0 0;
+                        font-weight: lighter;
+                        font-family: map.get(s.$font-types-map, font-type-main);
+                        @media only screen and (min-width: 1024px) {
+                            padding-top: 5%;
+                            font-size: 3rem;
+                        }
+                    }
+                    #s-content-p {
+                        padding-right: 8px;
+                        font-family: map.get(s.$font-types-map, font-type-main);
+                        line-height: 1.2rem;
+                        margin-bottom: 1rem;
+                        @media only screen and (min-width: 768px) {
+                            font-size: 1.1rem;
+                        }
+                        @media only screen and (min-width: 1024px) {
+                            margin-top: 0.6rem;
+                            height: 130px;
+                            font-size: 1.3rem;
+                            padding-right: 2.2rem;
+                            line-height: 1.6rem;
+                        }
+                    }
+                    .more-b {
+                        a {
+                            text-decoration: none;
+                            color: map.get(s.$colors-map, font-color);
+                            &:hover {
+                                color: black;
+
+                            }
+                        }
+                        @include s.default-button;
+                        position: relative;
+                        z-index: 1;
+                        font-size: 0.9rem;
+                        &:hover {
+                            color: black;
+                            &::after {
+                                transform: scaleX(1);
+                            }
+                        }
+                        &::after {
+                            @include s.button-after();
+                            transform: scaleY(0);
+                            background: map.get(s.$colors-map, basic-yellow);
+                            transform-origin: bottom;
+                        }
+                        @media only screen and (min-width:768px) {
+                            margin-top: 1em;
+                            width: 100px;
+                            height: 20px;
+                            padding-bottom: 1.5em;
+                        }
+                        @media only screen and (min-width:1024px) {
+                            margin-top: 10%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

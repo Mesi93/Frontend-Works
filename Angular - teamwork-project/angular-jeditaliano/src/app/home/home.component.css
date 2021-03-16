@@ -1,0 +1,437 @@
+/* Tibi: Slide Show */
+
+.carousel-img {
+    height: 600px;
+    object-fit: cover;
+}
+
+.carousel-item {
+    position: relative;
+    font-family: "Merienda", cursive;
+}
+
+.carousel-caption {
+    width: 60%;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -60%);
+}
+
+
+/* Tibi: Restaurant  */
+
+.restaurant-container {
+    font-family: "Merienda", cursive;
+}
+
+.content-holder {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(100px, auto);
+    padding: 20px;
+    background: rgba(245, 245, 245);
+    font-size: 0.98rem;
+}
+
+.content-holder h2 {
+    font-size: 1.7rem;
+}
+
+.content-holder h3 {
+    font-size: 1.4rem;
+}
+
+.location-img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cuisine-text-holder {
+    margin-top: 1.5rem;
+}
+
+.cuisine-img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (min-width: 992px) {
+    .restaurant-container {
+        margin-top: 3rem;
+    }
+    .content-holder {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: minmax(100px, auto);
+        gap: 1.5rem;
+    }
+    .dark-content-holder {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: minmax(100px, auto);
+        gap: 1.5rem;
+    }
+    .location-text-holder {
+        grid-area: 1/1/2/2;
+    }
+    .location-img-holder {
+        grid-area: 1/2/2/3;
+    }
+    .cuisine-text-holder {
+        grid-area: 2/2/3/3;
+        margin-top: 0;
+    }
+    .cuisine-img-holder {
+        grid-area: 2/1/3/2;
+    }
+}
+
+
+/* Emese: Menu   */
+
+.menu-container {
+    font-family: "Merienda", cursive;
+}
+
+.menu-background {
+    background: rgba(245, 245, 245);
+    padding: 1em 0;
+}
+
+.card {
+    border: 2px solid rgb(240, 240, 240);
+    margin: 0;
+    padding: 0;
+}
+
+.list-group {
+    border-bottom: none;
+    font-size: 0.8em;
+    background: transparent;
+}
+
+.list-group-item {
+    background: transparent;
+}
+
+.card-img-holder {
+    height: 250px;
+}
+
+.list-group-item:hover {
+    background: rgba(240, 240, 240, 0.87);
+    cursor: pointer;
+}
+
+.view-menu-btn {
+    position: relative;
+    padding: 15px 20px;
+    width: 250px;
+    border: 2px solid rgb(66, 66, 66);
+    display: inline-block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.view-menu-btn:before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 12px);
+    background: rgba(245, 245, 245);
+    transition: 0.5s ease-in-out;
+    transform: scaleY(1);
+}
+
+.view-menu-btn:after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% - 12px);
+    background: rgba(245, 245, 245);
+    transition: 0.5s ease-in-out;
+    transform: scaleX(1);
+    transition-delay: 0.5s;
+}
+
+.light-span {
+    z-index: 3;
+    position: relative;
+    color: rgb(58, 58, 58);
+    text-transform: uppercase;
+}
+
+.dark-span {
+    z-index: 3;
+    position: relative;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.view-menu-btn:hover:before {
+    transform: scaleY(0);
+}
+
+.view-menu-btn:hover:after {
+    transform: scaleX(0);
+}
+
+@media only screen and (min-width: 768px) {
+    .card-img-holder {
+        height: 350px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .card-img-holder {
+        height: 185px;
+    }
+}
+
+.card-img-holder img {
+    object-fit: cover;
+}
+
+
+/*  Viki: Reservation */
+
+.img-holder {
+    /*    max-width: 960px; */
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1100px;
+    position: relative;
+}
+
+.img-holder img {
+    width: 100%;
+    height: 100%;
+}
+
+.table-title {
+    font-family: "Merienda", cursive;
+}
+
+.reservation-title {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    padding-top: 25%;
+    font-family: "Merienda", cursive;
+    background-color: rgba(0, 0, 0, 0.466);
+    top: 0px;
+    height: 100%;
+    font-size: 30px;
+}
+
+.reservation-title a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    bottom: 0;
+}
+
+.reservation-title a::after {
+    transform: scaleX(0);
+    border-bottom: 3px solid white;
+    transform-origin: left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.3s ease-in;
+}
+
+@media only screen and (min-width: 768px) {
+    .reservation-title {
+        font-size: 50px;
+    }
+}
+
+.reservation-title a:hover::after {
+    transform: scaleY(1);
+}
+
+.reservation-title a:hover {
+    color: white;
+}
+
+
+/* Gábor: Location */
+
+.footer-title {
+    font-family: "Merienda", cursive;
+    font-size: 36px;
+}
+
+.footer-comp-holder {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-map-holder {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.footer-map {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.footer-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (min-width: 992px) {
+    .footer-map-holder {
+        width: 100%;
+    }
+    .footer-map {
+        width: 100%;
+        padding-bottom: 2rem;
+        margin: 0;
+    }
+}
+
+.footer-details {
+    font-family: "Merienda", cursive;
+}
+
+agm-map {
+    height: 400px;
+}
+
+agm-map .agm-map-container-inner:nth-child(1) {
+    display: none;
+}
+
+.info {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.24);
+    margin: 1.5em 0;
+}
+
+
+/*************** dark style **************************/
+
+.dark-home-container {
+    font-family: "Merienda", cursive;
+    background-image: url("../../assets/background.jpg");
+    background-size: cover;
+    width: 100%;
+    min-height: 1000px;
+    background-repeat: no-repeat;
+    background-position: right 0 top 0;
+    color: white;
+}
+
+.dark-darken {
+    background: linear-gradient(#252323f3, rgba(17, 17, 17, 0.884));
+    width: 100%;
+    min-height: 1000px;
+    height: 100%;
+}
+
+.dark-content-holder {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(100px, auto);
+    padding: 20px;
+    background: rgba(253, 247, 243, 0.075);
+    font-size: 0.98rem;
+}
+
+@media only screen and (min-width: 992px) {
+    .restaurant-container {
+        margin-top: 3rem;
+    }
+    .dark-content-holder {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: minmax(100px, auto);
+        gap: 1.5rem;
+    }
+    .location-text-holder {
+        grid-area: 1/1/2/2;
+    }
+    .location-img-holder {
+        grid-area: 1/2/2/3;
+    }
+    .cuisine-text-holder {
+        grid-area: 2/2/3/3;
+        margin-top: 0;
+    }
+    .cuisine-img-holder {
+        grid-area: 2/1/3/2;
+    }
+}
+
+.dark-menu-background {
+    background: rgb(41, 41, 41);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dark-card {
+    border: 1px solid rgb(58, 58, 58);
+    margin: 0;
+    padding: 0;
+    background: rgb(34, 34, 34);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dark-list-group-item:hover {
+    background: rgba(61, 61, 61, 0.7);
+    cursor: pointer;
+}
+
+.dark-view-menu-btn {
+    position: relative;
+    padding: 15px 20px;
+    width: 250px;
+    border: 2px solid whitesmoke;
+    display: inline-block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.dark-view-menu-btn:before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 12px);
+    background: rgb(41, 41, 41);
+    transition: 0.5s ease-in-out;
+    transform: scaleY(1);
+}
+
+.dark-view-menu-btn:after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% - 12px);
+    background: rgb(41, 41, 41);
+    transition: 0.5s ease-in-out;
+    transform: scaleX(1);
+    transition-delay: 0.5s;
+}

@@ -1,0 +1,26 @@
+@use 'parts' as p;
+@use 'settings' as s;
+
+ @include s.basic-css-settings;
+
+    //header külön fájl
+   @include p.header;
+
+    //Viki
+    @include p.indexViki;
+
+
+
+    //Peti
+    @include p.gallery-section;
+
+
+
+    //Emese
+
+    @include p.Mesike74;
+ 
+
+
+    //footer külön fájl
+   @include p.footer;

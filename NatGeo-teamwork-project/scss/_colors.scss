@@ -1,0 +1,15 @@
+@use 'sass:map';
+$colors-map: ( basic-yellow: #facd3c, 
+                basic-yellow-hover: #c5a331,  
+                background: #1a1a1a, 
+                basic-background: #1a1a1a, 
+                basic-gray: #333333, 
+                font-color: white, 
+                white: #ffffff, 
+                black: #000000, 
+                slider-border-color: #222);
+
+
+
+$font-types-map: ( font-type-main: 'Questrial', 
+                    font-type-secondary: 'Lato');

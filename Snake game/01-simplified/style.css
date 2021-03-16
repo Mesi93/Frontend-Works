@@ -1,0 +1,17 @@
+body {
+    background: url('https://happywall-img-gallery.imgix.net/6590/dark_blue_jungle_display.jpg');
+    opacity: 0.9;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#div-container {
+    margin: 10% auto;
+    position: relative;
+    max-width: 700px;
+    text-align: center;
+}
+
+#main-canvas {
+    margin: 0 auto;
+}

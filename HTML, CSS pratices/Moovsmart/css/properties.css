@@ -1,0 +1,59 @@
+/*------ houses -------*/
+
+.house {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.house article {
+    width: 100%;
+    box-shadow: 1px 2px 8px 1px rgba(0, 0, 0, 0.4);
+    height: 300px;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.house .house-img-wrapper {
+    width: 97%;
+    height: 200px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.house-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*------------------------------MEDIA QUERY TABLET-------------------------------*/
+
+@media only screen and (min-width: 768px) {
+    /*----------houses-------------*/
+    .house {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .house article {
+        width: 45%;
+        margin: 1% auto;
+    }
+}
+
+
+/*------------------------------MEDIA QUERY DESKTOP-------------------------------*/
+
+
+/*----------houses----------------*/
+
+@media only screen and (min-width: 1000px) {
+    .house {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .house article {
+        width: 30%;
+        margin: 1% auto;
+    }
+}

@@ -1,0 +1,290 @@
+    @use 'sass:map';
+    @use 'parts' as p;
+    @use 'settings' as s;
+    @include s.basic-css-settings;
+    @include p.header;
+    @include p.footer;
+    // #logPw-field {
+    //     float: right;
+    //     margin-left: 54%;
+    //     margin-top: -25px;
+    //     position: relative;
+    //     cursor: pointer;
+    //     z-index: 2;
+    //     color: blue;
+    // }
+    /************************************************************************************************************************/
+    
+    #blog-section {
+        background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1834&q=80");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        /*-----------------------------------TITLE----------------------------*/
+        #title-wrapper {
+            width: 100%;
+            padding-top: 0.5rem;
+            p {
+                font-size: 35px;
+                font-family: map.get(s.$font-types-map, font-type-main);
+                padding: 2%;
+                padding-left: 8%;
+                padding-bottom: 1%;
+                margin: 0;
+                margin-left: 2%;
+                color: white;
+                @media only screen and (min-width: 1024px) {
+                    font-size: 45px;
+                }
+                &::first-letter {
+                    color: map.get(s.$colors-map, basic-yellow);
+                    font-size: 75px;
+                }
+            }
+        }
+        #title-article {
+            background: map.get(s.$colors-map, basic-background);
+            color: map.get(s.$colors-map, font-color);
+            padding-bottom: 20px;
+            /*------------------------------def---------------------------------*/
+            #def-wrapper {
+                max-width: 1738px;
+                margin: 5% 10%;
+                margin-top: 0;
+                padding-top: 5%;
+                p {
+                    font-family: map.get(s.$font-types-map, font-type-secondary);
+                    line-height: 28px;
+                    font-size: 20px;
+                    @media only screen and (min-width: 1024px) {
+                        font-size: 23px;
+                    }
+                }
+                &:last-child {
+                    font-family: map.get(s.$font-types-map, font-type-main);
+                }
+                #def-title {
+                    font-size: 25px;
+                    margin-bottom: 1%;
+                    @media only screen and (min-width: 1024px) {
+                        font-size: 30px;
+                    }
+                }
+            }
+            /*-------------------------slide-wrapper-or-for-both-------------------------------*/
+            #slideshow-wrapper {
+                @media only screen and (min-width: 1024px) {
+                    #slideshow-wrapper {
+                        max-width: 1767px;
+                        margin: auto;
+                    }
+                }
+                 ::-webkit-scrollbar {
+                    @media only screen and (min-width: 1024px) {
+                        width: 0px;
+                        background: transparent;
+                    }
+                }
+                #fix-heights {
+                    margin-bottom: 10%;
+                    @media only screen and (min-width: 1024px) {
+                        max-width: 1767px;
+                        margin: auto;
+                        display: grid;
+                        grid-template-columns: 30% 70%;
+                        grid-template-rows: 1fr;
+                        max-width: 1767px;
+                        margin: 0 10%;
+                    }
+                    #slideshow-container {
+                        box-sizing: border-box;
+                        max-width: 1200px;
+                        position: relative;
+                        margin: auto;
+                        @media only screen and (min-width: 1024px) {
+                            margin: 0 1%;
+                            grid-column: 2/3;
+                            grid-row: 1/2;
+                            max-width: 98%;
+                            margin: 0 auto;
+                        }
+                        .mySlides {
+                            display: none;
+                            @media only screen and (min-width: 1024px) {
+                                min-height: 97%;
+                                max-height: 738px;
+                                overflow: hidden;
+                            }
+                            img {
+                                width: 100%;
+                                vertical-align: middle;
+                                @media only screen and (min-width: 1024px) {
+                                    min-height: 500px;
+                                    max-height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+                        /* Next & previous buttons */
+                        .prev,
+                        .next {
+                            cursor: pointer;
+                            position: absolute;
+                            top: 50%;
+                            width: auto;
+                            padding: 16px;
+                            margin-top: -22px;
+                            color: white;
+                            font-weight: bold;
+                            font-size: 18px;
+                            transition: 0.6s ease;
+                            border-radius: 0 3px 3px 0;
+                            user-select: none;
+                        }
+                        /* Position the "next button" to the right */
+                        .next {
+                            right: 0;
+                            border-radius: 3px 0 0 3px;
+                        }
+                        /* On hover, add a yellow background color */
+                        .prev:hover,
+                        .next:hover {
+                            background: map.get(s.$colors-map, basic-background);
+                            color: map.get(s.$colors-map, basic-yellow);
+                        }
+                    }
+                    /*--------------------------------slide-szövegek---------------------------*/
+                    #slidestory-container {
+                        min-height: 500px;
+                        padding: 0 1%;
+                        max-width: 1200px;
+                        margin: auto;
+                        @media only screen and (min-width: 1024px) {
+                            grid-column: 1/2;
+                            grid-row: 1/2;
+                            width: 100%;
+                            margin: 0 auto;
+                            min-height: 400px;
+                            top: 0px;
+                        }
+                        .mySlides {
+                            border: solid 3px rgb(83, 82, 82);
+                            box-shadow: 5px 5px 4px rgb(83, 82, 82);
+                            padding-top: 3%;
+                            padding-left: 2%;
+                            padding-right: 2%;
+                            padding-bottom: 3%;
+                            display: none;
+                            background-color: rgb(22, 22, 22);
+                            @media only screen and (min-width: 1024px) {
+                                overflow-y: scroll;
+                                max-height: 458px;
+                                min-height: 100%;
+                            }
+                            #slide-title {
+                                font-family: map.get(s.$font-types-map, font-type-main);
+                                width: auto;
+                                border-bottom: solid 2px map.get(s.$colors-map, basic-yellow);
+                                padding-bottom: 1%;
+                                font-size: 20px;
+                                line-height: 35px;
+                                padding-top: 2%;
+                            }
+                            #slide-author {
+                                color: gray;
+                                padding-top: 4%;
+                            }
+                            #slide-article {
+                                font-family: map.get(s.$font-types-map, font-type-secondary);
+                                line-height: 25px;
+                                font-size: 20px;
+                                padding-top: 5%;
+                            }
+                            #numbertext {
+                                color: gray;
+                                padding-top: 5%;
+                            }
+                        }
+                    }
+                }
+                /*-----------------------------categories---------------------------*/
+                #categories-wrapper {
+                    text-align: center;
+                    width: 90%;
+                    padding-top: 2rem;
+                    margin: 0 auto;
+                    margin-bottom: 25px;
+                    @media only screen and (min-width: 1024px) {
+                        top: 0;
+                        margin-top: 2%;
+                        grid-area: 2/1/3/3;
+                    }
+                    .active {
+                        background-color: map.get(s.$colors-map, basic-yellow);
+                        color: black;
+                        outline: none;
+                    }
+                    button {
+                        border-top: none;
+                        border-bottom: none;
+                        border-left: map.get(s.$colors-map, basic-yellow) 2px solid;
+                        background: none;
+                        color: map.get(s.$colors-map, font-color);
+                        font-family: map.get(s.$font-types-map, font-type-secondary);
+                        padding-top: 0.25rem;
+                        padding-bottom: 0.25rem;
+                        padding-left: 1%;
+                        padding-right: 1%;
+                        font-size: 20px;
+                        text-decoration: none;
+                        cursor: pointer;
+                        outline: none;
+                        &:hover {
+                            background-color: map.get(s.$colors-map, basic-yellow);
+                            color: black;
+                        }
+                        &::after {
+                            @include s.button-after();
+                            transform: scalex(0);
+                            background: map.get(s.$colors-map, basic-yellow);
+                            transform-origin: left;
+                        }
+                        &:last-child {
+                            border-right: map.get(s.$colors-map, basic-yellow) 2px solid;
+                        }
+                    }
+                }
+            }
+        }
+        /********************************************************Second********************************************************/
+        #blog-article {
+            height: 700px;
+            #img-upload {
+                border: solid 5px map.get(s.$colors-map, basic-yellow);
+                color: white;
+                width: 250px;
+                height: 275px;
+                margin: 8% auto;
+                text-align: center;
+                font-size: 40px;
+                font-family: map.get(s.$font-types-map, font-type-secondary);
+                line-height: 60px;
+                background-color: rgba(10, 9, 9, 0.644);
+                button {
+                    text-decoration: none;
+                    width: 100%;
+                    height: 100%;
+                    background: none;
+                    color: white;
+                    font-size: 2.4rem;
+                    line-height: 60px;
+                    text-align: left;
+                    padding-left: 10%;
+                    font-weight: 100;
+                    letter-spacing: 2px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }

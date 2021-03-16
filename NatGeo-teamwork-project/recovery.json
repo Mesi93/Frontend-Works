@@ -1,0 +1,440 @@
+{
+    "blogcards": [{
+            "title": "I was desoerate to come back to Moraine lake",
+            "author": "Photo By Dave Valler",
+            "url": "../03-project-nature-images/266351c6304af6422c68b5bea308e42f.jpeg",
+            "backtitle": "Moraine Lake",
+            "text": "Its waters are the most amazing colour, a vivid shade of turquoise that changes in intensity through the summer as the glaciers melt. Set in the rugged Valley of the Ten Peaks, Moraine Lake is surrounded by mountains, waterfalls, and rock piles, creating a scene so stunning it almost seems unreal. Sit lakeside and absorb the sights and pure mountain air, or explore further by canoeing and hiking..."
+        },
+        {
+            "title": "Walking into Torres del Paine National park",
+            "author": "Photo By Daniel Klazkin",
+            "url": "../03-project-nature-images/a291fc0a2514cacf9dcb18022d78adc9.jpeg",
+            "backtitle": "Torres del Paine National Park",
+            "text": "A JOURNEY THROUGH the wilds of Torres del Paine National Park is no small feat. To fully experience this rugged and beautiful landscape, it requires driving, hiking, horseback riding, and boating in unpredictable conditions. But the rewards are unparalleled: sunsets on the lagoon, hikes to the edges of glaciers, and sweeping views that will get your heart racing."
+        },
+        {
+            "title": "A flight above the Pórsmörk highlands in Iceland",
+            "author": "Photo By Nils Junker",
+            "url": "../03-project-nature-images/922519d5a3e1b440c817868696bb29aa.jpeg",
+            "backtitle": "Þórsmörk in Iceland",
+            "text": "If you are looking to visit Thorsmork Iceland, you are in for a real treat! This nature reserve located in the southern Icelandic highlands and is full of stunning remote nature and wonderful hikes in Iceland. The valley is named after the Norse god Thor and the name translates into “Thor’s Valley” in English..."
+        },
+        {
+            "title": "The highest residental building in asia.",
+            "author": "Photo By Albert Dros",
+            "url": "../03-project-nature-images/a21449219198a87eb857f48538996635.jpeg",
+            "backtitle": "Highest residental building in Asia",
+            "text": "Every country in the world dreams of constructing sometime big, fabulous and historic – mainly to put their trademark on the map. And in Asia, this dream is now becoming a modern reality. The race to build mega structures is on, and these tallest buildings in Asia is a proof that the future of architecture is here to mesmerize us all!"
+        }
+    ],
+    "wildlife": [{
+            "title": "A loss of tourism threatens Costa Rica’s lush paradise",
+            "author": "JAMIE SHREEVE",
+            "article": "CELEDONIA TELLEZ DOESN’T recall the year she moved to the Osa Peninsula, or exactly how old she was, but she remembers well why she came: free land. At the time, the peninsula, a 700-square-mile crook on the southern Pacific coast of Costa Rica, was a forest frontier, separated from the mainland by a neck of near-impenetrable mangroves and accessible mainly boat. Celedonia was pregnant when she arrived with her five children, six chickens, a dog, and 700 colones, about one dollar. She also brought her boyfriend, but he “hated nature, and would run away from insects,” she remembers. So she took an ax and cleared the land herself. “When I was cutting down the trees, I would think how they must have taken so long to grow, and I cut them down in an instant,” she says. “That’s what we did. We cut down the forest to live.” Some 40 years later, Doña Celedonia, as she is respectfully called by everyone, still lives on that same tract, in a town called La Palma. When I met her on a June day in 2019, she was wearing jeans and a blue and white floral print blouse. She showed me around her garden and house, and from her confident stride there was no telling that she is nearly blind.",
+            "url": "https://images.unsplash.com/photo-1571488839492-bf12b4b93dc7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+            "topic": "wildlife",
+            "id": 1
+        },
+        {
+            "title": "SARDINE RUN",
+            "author": "G. LECOEUR",
+            "article": "I captured this image during the migration of sardines along the wild coast of South Africa. Sardines are preyed upon by cape gannet birds and common dolphins. The hunt begins with common dolphins that have developed special hunting techniques. With remarkable eyesight, the gannets follow the dolphins before diving in a free fall from 30 to 40 meters high—piercing the surface of the water head-first at a speed of 80 kph to get their fill of sardines.",
+            "url": "https://images.unsplash.com/photo-1551651896-91a8d9657c0c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+            "topic": "wildlife",
+            "id": 2
+        },
+        {
+            "title": "FACE TO FACE IN A RIVER IN BORNEO",
+            "author": "JAYAPRAKASH JOGHEE BOJAN",
+            "article": "A male orangutan peers from behind a tree while crossing a river in Borneo, Indonesia. Rampant palm oil cultivation threatens this critically endangered ape, forcing the normally arboreal species to resort to unusual behavior—such as wading through crocodile-infested rivers—in order to survive.",
+            "url": "https://images.pexels.com/photos/2656647/pexels-photo-2656647.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+            "topic": "wildlife",
+            "id": 3
+        }
+    ],
+    "cities": [{
+            "title": "GREENLANDIC WINTER",
+            "author": "WEIMIN CHU",
+            "article": "Upernavik is a fishing village on a tiny island in west Greenland. Historically, Greenlandic buildings were painted different colors to indicate different functions, from red storefronts to blue fishermen’s homes—a useful distinction when the landscape is blanketed in snow. This photo was taken during my three-month, personal photo project to present life in Greenland.",
+            "url": "https://images.unsplash.com/photo-1546593064-053d21199be1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1268&q=80",
+            "topic": "cities",
+            "id": 1
+        },
+        {
+            "title": "SECOND PLACE WINNER, CITIES: IN THE AGE OF AVIATION",
+            "author": "JASSEN TODOROV",
+            "article": "There are four runways at San Francisco’s International Airport (SFO). This is a rare look at the approach end of runways 28 left and right. I had dreams of documenting the motion at SFO and [arranged] permission to fly directly overhead. What a windy day it was. Winds at SFO were 35-45 miles per hour, which meant a bumpy flight, and it was much harder to control the plane while photographing. The flight was challenging, but it was also so thrilling that I couldn’t sleep for several days afterward.",
+            "url": "https://images.unsplash.com/photo-1604089876786-4658776e4957?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+            "topic": "cities",
+            "id": 2
+        },
+        {
+            "title": "STREETS OF DHAKA",
+            "author": "SANDIPANI CHATTOPADHYAY",
+            "article": "People pray on the street in Dhaka, Bangladesh, during Ijtema. Bishwa Ijtema is one of the major Islamic religious gatherings which is [observed] annually in Dhaka, and millions of Muslims visit [during this time]. Dedicated prayer grounds are not [large] enough to handle this huge number of people, so large numbers of people come to [Tongi], the main street of Dhaka. All the ground transportation and [pedestrian crossings] are suspended during that time.",
+            "url": "https://images.unsplash.com/photo-1545653890-5fe12d2f6b9f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1333&q=80",
+            "topic": "cities",
+            "id": 3
+        },
+        {
+            "title": "FOLLOW THE LIGHT",
+            "author": "JUNHUI FANG",
+            "article": "This photo was taken at Seda Larung Gar Buddhist Academy. It's around a 14-hour drive to get to Larung Gar [from the nearest city], and the journey is quite tough due to the mountainous roads. This view [shows] small red homes on the left side, while empty green roads [curve] on the other side. The monks follow the lights to [return] home. I was lucky to document [the area] and was deeply moved by [the monks’] faith. I plan to [return] to Seda next summer [to make] more photos.",
+            "url": "https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1379&q=80",
+            "topic": "cities",
+            "id": 4
+        }
+    ],
+    "people": [{
+            "title": " SHOWTIME",
+            "author": "HUAIFENG LI",
+            "article": "Actors prepare for an evening opera performance in Licheng County, China. I spent the whole day with these actors, from makeup to [stage]. I’m a freelance photographer, and the series ‘Cave Life’ is a long-term project of mine. In China’s Loess Plateau, local residents dig holes in the loess layer [to create cave living spaces, known as yaodongs] and use the heat preservation properties to survive cold winters. This series mainly records the life, entertainment, belief, labor, and other [daily] scenes of the people living in the caves.",
+            "url": "https://images.pexels.com/photos/1110203/pexels-photo-1110203.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "topic": "people",
+            "id": 1
+        },
+        {
+            "title": "DAILY ROUTINE",
+            "author": "YOSHIKI FUJIWARA",
+            "article": "This photo was taken at a public park at Choi Hung House in Hong Kong. When I visited during the afternoon, it was very crowded with many young people taking pictures and playing basketball. But when I visited at sunrise, it was quiet and a different place. [The area] is [designated] for neighborhood residents in the early morning, and there was a sacred atmosphere. I felt divinity when I saw an old man doing tai chi in the sun.",
+            "url": "https://images.pexels.com/photos/5845081/pexels-photo-5845081.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+            "topic": "people",
+            "id": 2
+        }
+    ],
+    "landscapes": [{
+            "title": "ILLUMINATE",
+            "author": "MIKE OLBINSKI",
+            "article": "A summer thunderstorm unleashes lightning on the South Rim of the Grand Canyon.",
+            "url": "https://images.unsplash.com/photo-1472145246862-b24cf25c4a36?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80",
+            "topic": "landscapes",
+            "id": 1
+        },
+        {
+            "title": "COLD AND MISTY",
+            "author": "GHEORGHE POPA",
+            "article": "Morning fog blurs the dead trees of Romania’s Lake Cuejdel, a natural reservoir created by landslides.",
+            "url": "https://images.unsplash.com/photo-1446729444801-31245ddba81a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+            "topic": "landscapes",
+            "id": 2
+        },
+        {
+            "title": "KALSOY SUNSET",
+            "author": "DAVE VALLER",
+            "article": "Kalsoy Island and Kallur lighthouse in sunset light, Faroe Islands.",
+            "url": "https://images.unsplash.com/photo-1579878097837-5bb69f95e576?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+            "topic": "landscapes",
+            "id": 3
+        },
+        {
+            "title": "MORAINE LAKE",
+            "author": "WOJCIECH KRUCZYNSKI",
+            "article": "Its waters are the most amazing colour, a vivid shade of turquoise that changes in intensity through the summer as the glaciers melt. Set in the rugged Valley of the Ten Peaks, Moraine Lake is surrounded by mountains, waterfalls, and rock piles, creating a scene so stunning it almost seems unreal. Sit lakeside and absorb the sights and pure mountain air, or explore further by canoeing and hiking. It’s an iconically jaw-dropping place that is sure to leave a lasting impression. Moraine Lake is 14 kilometres southeast of the hamlet of Lake Louise. Glacier-fed, its brilliant blue-green colour is a result of light refracting off the rock flour in the glacier run-off which flows into the lake. The lake does not begin to melt until June. Water levels, and its vibrant colour, peak in late June. The Rockpile Trail is an easy and short path with switchbacks along the back of the moraine to the top of the natural dam. As the scene featured on the back of Canadian twenty dollar bills issued between 1969 and 1979.",
+            "url": "https://images.pexels.com/photos/356831/pexels-photo-356831.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+            "topic": "landscapes",
+            "id": 4
+        },
+        {
+            "title": "Travel time",
+            "author": "Fekete Tibor",
+            "article": "It was a long long time, to find this exact image to match the grid of the site. Still waiting for u to appreciate this effort. Wink, wink. ",
+            "url": "https://images.unsplash.com/photo-1601690204421-ea6811d7ed11?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80",
+            "topic": "landscapes",
+            "id": 6
+        },
+        {
+            "title": "Pórsmörk in Iceland",
+            "author": "NILS JUNKER",
+            "article": "If you are looking to visit Thorsmork Iceland, you are in for a real treat! This nature reserve located in the southern Icelandic highlands and is full of stunning remote nature and wonderful hikes in Iceland. The valley is named after the Norse god Thor and the name translates into “Thor’s Valley”  in English...\nThorsmork is one of the true last frontiers in Iceland and after you visit just one time it is easy to see why! From Arctic Foxes to canyons and mountains of compressed volcanic ash, Thorsmork Iceland will surprise you at every turn!\n\nThe name is spelled Þórsmörk in Icelandic but sounds like “Thorsmork” as the Þ in the Icelandic language sounds similar to “th” in English. As a result, if you are writing the name in English, Icelandic people ask that you spell it Thorsmork and not Porsmork!\n\nNow that we got the spelling and pronunciation of Thorsmork straightened out, there are a few things you need to know before visiting this off-the-beaten-path location in Iceland.",
+            "url": "https://images.pexels.com/photos/831058/pexels-photo-831058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "topic": "landscapes",
+            "id": 5
+        }
+    ],
+    "adventure": [{
+            "title": "TORRES DEL PAINE",
+            "author": "DANIEL KLAZKIN",
+            "article": "A JOURNEY THROUGH the wilds of Torres del Paine National Park is no small feat. To fully experience this rugged and beautiful landscape, it requires driving, hiking, horseback riding, and boating in unpredictable conditions. But the rewards are unparalleled: sunsets on the lagoon, hikes to the edges of glaciers, and sweeping views that will get your heart racing.\n\nWhen to Go: Torres del Paine National Park enjoys its warmest weather from October into April, though temperatures rarely rise above 68°F. Be prepared for changeable and very windy conditions.\n\nWhat to Know: Puerto Natales is the closest big town; buses travel the four-hour route to and from the park (quicker if by car). Accommodations range from design-forward upscale lodges to campsites and dormlike refugio rooms. Torres del Paine National Park charges an entrance fee: for adults in high season, 18,000 Chilean pesos ($28); low season, 10,000 CLP ($16).\n\nGo With Nat Geo: National Geographic Expeditions offers several trips to this Chilean national park, from the 13-day “Patagonia Hiking Adventure” to a 20-day small-ship cruise, “Rounding the Cape: Chilean Patagonia & Argentina’s Staten Island.” Or stay put at the architecturally striking Tierra Patagonia Hotel & Spa, a National Geographic Unique Lodge of the World.",
+            "url": "https://images.pexels.com/photos/4869041/pexels-photo-4869041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "topic": "adventure",
+            "id": 1
+        },
+        {
+            "title": " Mongolian horsemen",
+            "author": "ANTHONY LAU",
+            "article": "The winter in Inner Mongolia is very unforgiving. At a freezing temperature of minus 20 and lower, with a constant breeze of snow from all directions, it was pretty hard to convince myself to get out of the car and take photos. I saw horsemen showing off their skills and commanding the steed from a distance. I quickly grabbed my telephoto lens and captured the moment when one of the horsemen charged out from the morning mist.",
+            "url": "https://images.pexels.com/photos/2689623/pexels-photo-2689623.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "topic": "adventure",
+            "id": 2
+        },
+        {
+            "title": " Beach Gym",
+            "author": "DOTAN SAGUY",
+            "article": "A weightlifter lifts a barbell loaded with heavy plates while a bodybuilder performs an aerial handstand at the Muscle Beach Gym in Venice Beach, California.",
+            "url": "https://images.unsplash.com/photo-1600282996902-5670541c5f26?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+            "topic": "adventure",
+            "id": 3
+        },
+        {
+            "title": "MEANDERING CANYON",
+            "author": "DAVID SWINDLER",
+            "article": "On Thursday morning Diane and I woke up extra early at 3:30am and headed down to Moab where we drove through The Portal on our way to the Potash Boat Ramp and met up with our friends Jackson, Amy and Chris just after sunrise. We were going to be spending the next couple of days on a relaxing float through Meander Canyon on the calm waters of the Colorado River into the heart of Canyonlands National Park. I had such a great time in Labyrinth Canyon two years ago at this same time of the year, so I was really looking forward to another trip similar to that. Although Diane swore that she would never go on another river trip with me after our swift float through Slick Rock Canyon, I managed to talk her into giving it one more try after promising her that this would be all flat water with no rapids! Thankfully, she really enjoyed this trip and I think she will definitely be coming with me on future flat water adventures! I had hopes that we would be able to make it to The Confluence of the Green River and Colorado River in four days and three nights, but in the end we decided not to paddle as much as we could have and only made it to The Loop. I guess that means we will have to come back another time to see the rest of the canyon! This float was kind of a trial run so I could figure out how far we could make it on this flat water with Inflatable Kayaks, since when I get around to floating Stillwater Canyon we will absolutely need to make it to The Confluence, or we will miss our ride back on the Jetboat Shuttle. I guess we will need at least five days for that trip! The nice thing about Meander Canyon is that they will pick you up with the Jetboat anywhere along the way, since they pass by most days on their way to Spanish Bottom.We rigged our boats at the Potash Boat Ramp just after sunrise. Just like the rest of the western United States, the air was filled with smoke from wildfires and would pretty much stay that way for the entire trip.",
+            "url": "https://images.unsplash.com/photo-1501363529155-b42152cc0d79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1354&q=80",
+            "topic": "adventure",
+            "id": 4
+        },
+        {
+            "title": " Highest residental building in Asia",
+            "author": "ALBERT DROS",
+            "article": "Every country in the world dreams of constructing sometime big, fabulous and historic – mainly to put their trademark on the map. \nAnd in Asia, this dream is now becoming a modern reality. \nThe race to build mega structures is on, and these tallest \nbuildings in Asia is a proof that the future of architecture \nis here to mesmerize us all!\\n\\nWith more nations in the eastern \npart of the world beginning to construct humungous projects, \ndon’t be surprised to see Asia filled with cloud-kissing towers \nthat are so high – it almost reaches the sky. Wait till you see \nthe tower in Dubai that will surely put your knees trembling! \n",
+            "url": "https://images.pexels.com/photos/1366957/pexels-photo-1366957.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+            "topic": "adventure",
+            "id": 5
+        }
+    ],
+    "goldenhour": [{
+            "title": "Gardens of the Queen",
+            "author": "JENNIFER HAYES",
+            "article": "IN A REMOTE corner of the sea nearly untouched by the tide of time, Cuba's Gardens of the Queen (Jardines de la Reina) marine park is home to living things that have virtually vanished from the rest of the Caribbean. I'd been there before, in 2000, but I didn't know what to expect after 16 years. Our team desperately wanted to explore the park's elkhorn reefs. The fast-growing coral is now extremely rare and critically endangered, with 90 percent gone from most of the Caribbean. How well had these reefs survived as other populations perished? (See more about Cuba's marine reserve in a story by Hayes and her partner, photographer David Doubilet, in the November issue of National Geographic.) We headed to a shallow elkhorn reef as the wind died down one late afternoon. We dropped over the side of the boat into a gentle current and swam along a dense thicket of elkhorn that meandered as far as the eye could see. Grunts and snappers jostled for space in the broad branches. The grove of elkhorn was larger than I remembered from years ago. This population had not only held its own, but it had also expanded. The sun began to drop, casting a glow through the sea and creating a liquid gold forest sweeping outward toward the horizon. It was like being in a museum at closing time, when the lights dim and late light dances through the windows. Conditions are rarely perfect for a what we call a half and half. It seems there's always something: too many waves, a roaring current, lack of an interesting subject above or below water. It's a balancing act to hold the camera still and see both the setting sun and the hidden world of coral. Water droplets ruin the majority of frames, so it's a game of dunk, raise, shoot, swear, repeat. But that evening, I was swimming through a Monet painting under a wistful sky, so I wanted to make a half-and-half image that would allow others to feel the magical moment I was experiencing. TODAY’S POPULAR STORIES SCIENCE Alien hunters detect mysterious radio signal from nearby star HISTORY & CULTURE In West Virginia, finding your next meal can be a community effort ENVIRONMENT Another Australian wildfire ignites—in one of its most unique ecosystems\nI swam along, searching for the right stretch of coral bursting with fish as the sun dropped lower and lower, about to disappear—and take the shot with it. I watched the last dancing light, and I stopped swimming. I knelt down, raising the underwater housing so that the large glass dome was half in and half out of the water.As I stared through the viewfinder, I suddenly realized that this picture wasn't about fish at all.It was about shimmering light casting a golden glow across the queen’s garden.",
+            "url": "https://images.unsplash.com/photo-1599593752325-ffa41031056e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+            "topic": "goldenhour",
+            "id": 1
+        },
+        {
+            "title": "Adventures of a Lifetime",
+            "author": "DAN WESTERGREN",
+            "article": "EXOTIC-LOOKING TREES, COLORFUL rock outcroppings, and abundant coastlines are just a few of the ingredients that make South Australia a great place to shoot landscape photos. Experienced photographers know that the best time to shoot this type of shot is during the “golden hour,” that magical time just before and after the sun rises or sets.\n\nThe point is not to create photographic clichés of a sun-kissed horizon, but to turn away from the sun and capture the low-angled light striking the scenery. This light leads to a magical effect in photographs, especially in such a visually interesting place. Between the abundant sunshine in the outback and a southern coastline that offers both sunrise and sunset views, South Australia is an ideal place for capturing compelling landscapes.\n\nBreakaways Conservation Park\n\nThis collection of low hills and mesas, which appears to have “broken away” from the nearby higher escarpment, is located 20 miles from mining town Coober Pedy. The Breakaways stand proud from the surrounding desert and catch the day’s first and last rays of the sun. The low light accentuates the red, white, and brown rock layers. Add in a few ancient trees that have adapted to the harsh environment by growing into surreal shapes and you have a beautiful landscape that begs to be photographed. Wilpena Pound TODAY’S POPULAR STORIES SCIENCECORONAVIRUS COVERAGE FDA confirms Moderna’s vaccine is 94.1-percent effective; emergency approval expected this week ANIMALS Meet Phelan the rescue pup—now America’s fastest dog SCIENCE Who is really ‘first in line’ for the vaccine? It depends on your state. The Wilpena Pound is a natural amphitheater of mountains located in the Flinders Ranges National Park. There are two lookouts, both easily reached by car, where twilight helps accentuate the colored cliffs. Hucks Lookout is the place to be for sunrise and Stokes Hill for sunset. If you’ve had your fill of mountain scenes, head into the valley below to see how the light looks on majestic river red gum trees. Here you will find the famous Cazneaux’s tree, named for early Australian photographer Harold Cazneaux and his award-winning photo of the tree. For a more uncommon shot head up the road toward the Wilpena Pound Resort, where you will see a dead and leafless river red gum tree, standing majestically by itself at the side of the road. Its bright white branches catch the early rays of the sun before the surrounding landscape, making a perfect photographic tableau. Kangaroo Island This pristine wilderness island is located eight miles from the South Australia coast and features over 300 miles of rugged coastline, making it a great place to photograph the intersection of sea and land. Hanson Bay, located on the south shore, has a beach covered with sharp, light-catching piles of limestone that have fallen from the surrounding cliffs. The beach and rocks photograph particularly well in dawn and predawn light. This is a great place to set your camera to a slow shutter speed and capture the action of surf with a dreamy, blurry effect.",
+            "url": "https://images.pexels.com/photos/4846091/pexels-photo-4846091.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+            "topic": "goldenhour",
+            "id": 2
+        },
+        {
+            "title": "Dazzling Places to See Sunsets Around the World",
+            "author": "KELLY BARRETT",
+            "article": "No matter what time it is, there's someone in the world right now watching a sunset. This golden hour is perhaps our most universally adored sky show, yet it dazzles in so many different ways across the face of the planet. A sunset over the tundra appears quite different from one highlighting the shoreline of a lake, while cloud patterns, air quality, weather, and seasons change each view. Sunsets inspire artists, prompt national parks to playfully compete over bragging rights, and convince us to take a moment for the suspended drama of a slow but steady transition from day into night.\n\nWe recently asked our readers where they have witnessed the most impressive sunsets, and diverse answers poured in from our Facebook community. We enjoyed thousands of personal photos of colorful views around the world, reminding us to pause, look up, and enjoy nature's show. Here are just a few of our favorite reader recommendations to inspire you to chase after the next breathtaking display.\n\nHampi, India\n\"Among the places I visited, this is one of my favorites: Hampi, India, one of the UNESCO World Heritage sites. This is the Anjani Hills, the birthplace of Lord Hanuman. One needs to climb around 570 steps to reach the peak and witness the sunset. Also, the place is extremely serene with less visitors, where I can sit and soak in the quiet sunset.\" – Souptik Datta",
+            "url": "https://images.pexels.com/photos/70577/sunset-birds-flying-sky-70577.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+            "topic": "goldenhour",
+            "id": 3
+        }
+    ],
+    "subscribers": [{
+            "name": "Tóth Viktória",
+            "email": "szanto.laszlo45@gmail.com",
+            "id": 1
+        },
+        {
+            "name": "Tóth Viktória",
+            "email": "vikimail@valami.hu",
+            "id": 3
+        },
+        {
+            "name": "Valami User",
+            "email": "fekete.tibor9876@gmail.com",
+            "id": 4
+        },
+        {
+            "name": "Tóth Viki",
+            "email": "viki@valamail.com",
+            "id": 5
+        },
+        {
+            "name": "Garamvölgyi Emese",
+            "email": "garam@emese.com",
+            "id": 6
+        },
+        {
+            "name": "Tóth Viktória",
+            "email": "fekete.tibor981421247@gmail.com",
+            "id": 7
+        },
+        {
+            "name": "Tóth Viktória",
+            "email": "vikimail12@valami.hu",
+            "id": 8
+        },
+        {
+            "name": "Jani Kiss",
+            "email": "kissjanos@gmail.com",
+            "id": 9
+        },
+        {
+            "name": "Pataki Peter",
+            "email": "patakip@gmail.com",
+            "id": 10
+        },
+        {
+            "name": "Bak Zoli",
+            "email": "bzolika@zolika.com",
+            "id": 11
+        },
+        {
+            "name": "Bakoczy Zoli",
+            "email": "progmasters@gmail.com",
+            "id": 12
+        },
+        {
+            "name": "Tóth Viktória",
+            "email": "fekete.tibor987@gmail.com",
+            "id": 13
+        },
+        {
+            "name": "Nagy Rózsa",
+            "email": "rozsika@gmail.com",
+            "id": 14
+        },
+        {
+            "name": "Nagy Rozi",
+            "email": "rozika@gmail.com",
+            "id": 15
+        },
+        {
+            "name": "Nagy Rozi",
+            "email": "rozika@gmail.com",
+            "id": 16
+        },
+        {
+            "name": "Nagy Rozi",
+            "email": "rozika@gmail.com",
+            "id": 17
+        },
+        {
+            "name": "Nagy Rozi",
+            "email": "rozika@gmail.com",
+            "id": 18
+        },
+        {
+            "name": "Nagy Károly",
+            "email": "karoly@gmail.com",
+            "id": 19
+        },
+        {
+            "name": "Nagy Károly",
+            "email": "karoly@gmail.com",
+            "id": 20
+        },
+        {
+            "name": "Jakab Gábor",
+            "email": "gaborkajakab@gmail.com",
+            "id": 21
+        },
+        {
+            "name": "Jakab Gábor",
+            "email": "gaborkajakab@gmail.com",
+            "id": 22
+        }
+    ],
+    "users": [{
+            "userName": "Alpenmjölki",
+            "fullName": "Valami User",
+            "email": "fekete.tibor9876@gmail.com",
+            "password": "asdasd",
+            "id": 2,
+            "lastLoggedIn": false
+        },
+        {
+            "userName": "ERdS2",
+            "fullName": "Tóth Viki",
+            "email": "viki@valamail.com",
+            "password": "123456789",
+            "id": 3,
+            "lastLoggedIn": false
+        },
+        {
+            "userName": "Alpenmjölkie",
+            "fullName": "Valami User",
+            "email": "valami12@valamail.com",
+            "password": "asdasdasd",
+            "id": 4,
+            "lastLoggedIn": false
+        },
+        {
+            "userName": "Alpenmjölk",
+            "fullName": "Valami User",
+            "email": "valami1212@valamail.com",
+            "password": "YXNkYXNkYXNk",
+            "id": 5,
+            "lastLoggedIn": false
+        },
+        {
+            "userName": "Mesike74",
+            "fullName": "Garamvölgyi Emese",
+            "email": "garam@emese.com",
+            "password": "123456789",
+            "id": 6,
+            "lastLoggedIn": false
+        },
+        {
+            "userName": "Mesike745",
+            "fullName": "Garamvölgyi Emese",
+            "email": "garam@emse.com",
+            "password": "12345678",
+            "id": 7,
+            "lastLoggedIn": false
+        },
+        {
+            "userName": "ERdS22",
+            "fullName": "Tóth Viktória",
+            "email": "viki22@valamail.com",
+            "password": "asdasdasd",
+            "id": 8,
+            "lastLoggedIn": false
+        },
+        {
+            "userName": "Alpenmjölk1",
+            "fullName": "Valami User",
+            "email": "fekete.tibor91247@gmail.com",
+            "password": "asdasdasd",
+            "id": 9,
+            "lastLoggedIn": false
+        },
+        {
+            "userName": "Jani",
+            "fullName": "Jani Kiss",
+            "email": "kissjanos@gmail.com",
+            "password": "janos123",
+            "id": 10,
+            "lastLoggedIn": false
+        },
+        {
+            "userName": "ValamiCim",
+            "fullName": "valami user",
+            "email": "fekete.tibor98142faw1247@gmail.com",
+            "password": "asdasdasd",
+            "id": 11,
+            "lastLoggedIn": false
+        },
+        {
+            "userName": "PROGmasters",
+            "fullName": "Bakoczy Zoli",
+            "email": "progmasters@gmail.com",
+            "password": "Progmasters123!",
+            "id": 12,
+            "lastLoggedIn": false
+        },
+        {
+            "userName": "SzantoLaci",
+            "fullName": "Szántó László",
+            "email": "szanto.laszlo45@gmail.com",
+            "password": "asdasdasd",
+            "id": 13,
+            "lastLoggedIn": false
+        },
+        {
+            "userName": "Mesike73",
+            "fullName": "Garamvölgyi Emese",
+            "email": "garam@emsaae.com",
+            "password": "TWVzaWtl",
+            "id": 14,
+            "lastLoggedIn": false
+        },
+        {
+            "userName": "Admin",
+            "fullName": "Déta Csapat",
+            "email": "admin@gmail.com",
+            "password": "YWRtaW4xMjM=",
+            "id": 15,
+            "lastLoggedIn": false
+        }
+    ]
+}

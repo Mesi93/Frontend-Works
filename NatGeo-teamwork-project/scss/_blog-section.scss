@@ -1,0 +1,277 @@
+@use 'settings' as s;
+@use 'sass:map';
+
+/*************************************** SECTION BLOG ******************************************/
+
+@mixin Mesike74 {
+    .blog {
+        background: map.get(s.$colors-map, basic-background);
+        color: map.get(s.$colors-map, font-color);
+        font-family: map.get(s.$font-types-map, font-type-main);
+        padding-bottom: 2rem;
+    }
+    /************************** blog posts *****************************/
+    .blog-posts {
+        background: map.get(s.$colors-map, basic-background);
+        @media only screen and (min-width: 768px) {
+            @include s.flex-row-wrap;
+        }
+        .blog-card {
+            @include s.width-height(80%, 33rem);
+            margin: 0 auto;
+            perspective: 1000px;
+            cursor: pointer;
+            background: map.get(s.$colors-map, basic-gray);
+            filter: brightness(0.70);
+            &:hover {
+                filter: brightness(1);
+                transition: 0.7s;
+            }
+            @media only screen and (min-width: 768px) {
+                @include s.width-height(50%, 34rem);
+                filter: brightness(0.50);
+            }
+            @media only screen and (min-width: 1024px) {
+                @include s.width-height(25%, 44rem);
+            }
+            .blog-card-inner {
+                position: relative;
+                transition: transform 1s;
+                transform-style: preserve-3d;
+                text-align: center;
+                line-height: 1.5em;
+                .blog-card-back {
+                    font-size: 1em;
+                    padding: 2em;
+                    display: flex;
+                    flex-direction: column;
+                    h1 {
+                        padding: 1.5em;
+                    }
+                    @include s.flipcard(rotateY(180deg));
+                    .read-me-btn {
+                        @include s.read-me-button();
+                        padding-top: 3em;
+                        .btn-toggle {
+                            cursor: pointer;
+                            .btn-span {
+                                @include s.width-height(15px, 2px);
+                                position: relative;
+                                background-color: #fff;
+                                display: block;
+                                margin: 3px 0;
+                                margin-right: 7px;
+                                transition: .5s;
+                            }
+                        }
+                        &:hover {
+                            &::after {
+                                transform: scaleY(1);
+                            }
+                        }
+                        &::after {
+                            @include s.button-after();
+                            transform: scaleX(0);
+                            border-bottom: 2px solid white;
+                            transform-origin: left;
+                        }
+                    }
+                    @media only screen and (min-width: 768px) {
+                        padding: 3em;
+                        font-size: 1.2em;
+                        height: 34rem;
+                    }
+                    @media only screen and (min-width: 1024px) {
+                        font-size: 1em;
+                        padding: 2em;
+                        height: 44rem;
+                    }
+                }
+                .blog-card-front {
+                    @include s.flipcard(rotateY(0deg));
+                    &:hover {
+                        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    }
+                    .blog-card-img-holder {
+                        @include s.width-height(100%, 27rem);
+                        overflow: hidden;
+                        &:hover {
+                            transition: 0.3s;
+                            animation-name: border;
+                            border-bottom: 5px solid map.get(s.$colors-map, basic-yellow);
+                        }
+                        @media only screen and (min-width: 1024px) {
+                            @include s.width-height(100%, 35rem);
+                        }
+                        .blog-card-img-holder img {
+                            @include s.width-height(100%, 100%);
+                            transition: transform .5s;
+                            object-fit: cover;
+                            &:hover {
+                                transform: scale(3.5);
+                            }
+                            @media only screen and (min-width: 1024px) {
+                                height: 100%;
+                            }
+                        }
+                    }
+                    .blog-card-text {
+                        background: map.get(s.$colors-map, basic-gray);
+                        text-align: center;
+                        text-transform: uppercase;
+                        font-size: 0.9rem;
+                        padding-top: 1em;
+                        @media only screen and (min-width: 768px) {
+                            padding: 1.5em;
+                            max-height: 100%;
+                        }
+                        @media only screen and (min-width: 1024px) {
+                            padding-top: 2.5em;
+                            font-size: 0.9em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /************************** main post *******************************/
+    .blog-main-post {
+        @include s.width-height(80%, 100%);
+        max-width: 80%;
+        max-height: 100%;
+        margin: 1em auto;
+        @media only screen and (min-width: 768px) {
+            position: relative;
+        }
+        #photographer {
+            text-transform: uppercase;
+            padding-top: 1.5em;
+            padding-bottom: 5em;
+            font-size: 0.9em;
+        }
+        .blog-text-box-border {
+            border: 5px solid map.get(s.$colors-map, basic-yellow);
+            @include s.width-height(100%, 100%);
+            margin: 1.5em auto;
+            @media only screen and (min-width: 768px) {
+                margin: 22rem 0 0 0;
+                padding-top: 9rem;
+                @include s.width-height(60%, 100%);
+            }
+            @media only screen and (min-width: 1400px) {
+                margin: 27em 0 0 0;
+                padding-top: 0;
+                @include s.width-height(60%, 100%);
+            }
+            .blog-text-box {
+                max-width: 100%;
+                font-size: 1rem;
+                font-family: map.get(s.$font-types-map, font-type-secondary);
+                padding: 1.5em;
+                @media only screen and (min-width: 768px) {
+                    font-size: 1.5em;
+                }
+                h2 {
+                    padding-bottom: 1rem;
+                    margin-top: 1rem;
+                    font-family: map.get(s.$font-types-map, font-type-main);
+                }
+                @media only screen and (min-width: 1400px) {
+                    width: 50%;
+                    font-size: 1.5rem;
+                }
+                .default-button {
+                    @include s.default-button;
+                    position: relative;
+                    z-index: 1;
+                    &:hover {
+                        color: black;
+                        &::after {
+                            transform: scaleX(1);
+                        }
+                    }
+                    &::after {
+                        @include s.button-after();
+                        transform: scaleY(0);
+                        background: map.get(s.$colors-map, basic-yellow);
+                        transform-origin: bottom;
+                    }
+                }
+            }
+        }
+        .right-side {
+            position: relative;
+            height: 400px;
+            background: map.get(s.$colors-map, basic-background);
+            @media only screen and (min-width: 768px) {
+                @include s.position(-35%, 0, 0, 30%);
+                width: 70%;
+                position: absolute;
+            }
+            @media only screen and (min-width: 1400px) {
+                @include s.width-height(60%, 110%);
+                @include s.position(-50%, 0, 0, 40%);
+            }
+            .photo-border {
+                @include s.width-height(90%, 90%);
+                position: absolute;
+                @include s.position(none, 0, 0, 45%);
+                transform: translate(-50%, 0);
+                border: 10px solid map.get(s.$colors-map, basic-yellow);
+                @media only screen and (min-width: 768px) {
+                    @include s.position(0, 10%, 10%, none);
+                }
+                @media only screen and (min-width: 1400px) {
+                    @include s.position(10%, 5%, none, none);
+                }
+            }
+            .photo-border-angle {
+                border-right: 10px solid map.get(s.$colors-map, basic-yellow);
+                border-bottom: 10px solid map.get(s.$colors-map, basic-yellow);
+                @include s.width-height(2.5rem, 2.5rem);
+                position: absolute;
+                @include s.position(none, 0, -9%, none);
+                @media only screen and (min-width: 768px) {
+                    @include s.position(-8%, none, none, -8%);
+                    border: none;
+                    border-left: 10px solid map.get(s.$colors-map, basic-yellow);
+                    border-top: 10px solid map.get(s.$colors-map, basic-yellow);
+                }
+                @media only screen and (min-width: 1400px) {
+                    border: none;
+                    border-right: 10px solid map.get(s.$colors-map, basic-yellow);
+                    border-bottom: 10px solid map.get(s.$colors-map, basic-yellow);
+                    @include s.position(100%, none, none, 95%);
+                }
+            }
+            .photo-img-holder {
+                @include s.width-height(90%, 90%);
+                position: relative;
+                @include s.position(none, -10%, -1%, none);
+                overflow: hidden;
+                @media only screen and (min-width: 768px) {
+                    @include s.position(10%, none, none, 10%);
+                }
+                @media only screen and (min-width: 1400px) {
+                    @include s.position(0, none, none, none);
+                }
+                img {
+                    @include s.width-height(100%, 100%);
+                    transition: transform .5s;
+                    object-fit: cover;
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+    @keyframes fade {
+        from {
+            opacity: 10%;
+        }
+        to {
+            opacity: 100%;
+        }
+    }
+}

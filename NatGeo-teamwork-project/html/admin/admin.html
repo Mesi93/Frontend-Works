@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="icon" href="https://cdn.elebase.io/173fe953-8a63-4a8a-8ca3-1bacb56d78a5/dccea65f-2a77-44d1-801c-86a3eaf61834-natgeo-yellow-border-square.png" type="image/gif" sizes="16x16">
+    <title>NATGEO ADMIN</title>
+</head>
+
+<body>
+    <header class="home-header">
+        <nav class="navbar">
+
+            <div class="nav-logo-wrapper">
+                <a href="../index.html"><img class="nav-logo" src="../../03-project-nature-images/02614d7d102f1a441328312c6d3042ef.png" alt="logo"></a>
+            </div>
+            <div class="nav-toggle">
+                <span class="nav-span"></span>
+                <span class="nav-span"></span>
+                <span class="nav-span"></span>
+            </div>
+            <ul class="nav-main-menu" style="display: flex; top: -100%;">
+                <div class="toggle-logo-wrapper">
+                    <img class="nav-logo-toggle" src="../../03-project-nature-images/02614d7d102f1a441328312c6d3042ef.png" alt="logo">
+                </div>
+                <!-- <li id="nav-login-li"><a class="nav-link nav-click " id="nav-navbar-login-button" href="#home">Login</a></li> -->
+                <li><a class="nav-link nav-click" href="../index.html">HOME</a></li>
+                <li><a class="nav-link nav-click" href="../blog/article.html">BLOG</a></li>
+                <!-- <li><a class="nav-click" href="../Gallery/underwater-gallery.html">GALLERY</a></li> -->
+                <li><a class="nav-link nav-click" onclick="signAdminOut()" href="../index.html">SIGN OUT</a></li>
+
+                <div class="nav-list-icons">
+                    <i class="fab fa-2x fa-facebook-f nav-click"></i>
+                    <i class="fab fa-2x fa-twitter nav-click"></i>
+                    <i class="fab fa-2x fa-instagram nav-click"></i>
+                    <i class="fab fa-2x fa-youtube nav-click"></i>
+                </div>
+            </ul>
+            </div>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <div class="admin-background">
+
+            <div class="admin-container">
+                <div class="admin-navbar">
+                    <h1 id="admin-title">
+                        ADMIN PANEL <svg height="10" width="50">
+                            <line x1="20" y1="0" x2="60" y2="0" style="stroke:#fffdfd;stroke-width:4" />
+                        </svg> <span style="margin-left: 1em">STAGED</span>
+                    </h1>
+                    <label class="switch">
+                    <input class="switch-input" onclick="switchBlogs()" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="admin-flex-holder">
+                    <!-- <div class="admin-card-holder">
+                        <div class="admin-blog-holder">
+                            <div class="admin-blog-img-holder">
+                                <img src="https://images.unsplash.com/photo-1579878097837-5bb69f95e576?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="">
+                            </div>
+                            <div class="admin-blog-text-holder">
+                                <h3>SHOWTIME</h3>
+                                <h5>Author: HUAIFENG LI</h5>
+                                <h6>Topic: people</h6>
+
+                                <p>Actors prepare for an evening opera performance in Licheng County, China. I spent the whole day with these actors, from makeup to [stage]. I’m a freelance photographer, and the series ‘Cave Life’ is a long-term project
+                                    of mine. In China’s Loess Plateau, local residents dig holes in the loess layer [to create cave living spaces, known as yaodongs] and use the heat preservation properties to survive cold winters. This series mainly
+                                    records the life, entertainment, belief, labor, and other [daily] scenes of the people living in the caves.
+                                </p>
+                                <button onclick="" class="show-more-button">READ MORE</button>
+                            </div>
+
+                        </div>
+                        <div class="admin-card-button-holder">
+                            <button class="admin-card-button" id="admin-confirm-button">CONFIRM <i class="fas fa-check"></i></button>
+                            <button class="admin-card-button" id="admin-decline-button">DECLINE <i class="fas fa-times"></i></button>
+                        </div>
+                    </div> -->
+
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+    <script src="../../firebase-config/firebase-config.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/admin.js"></script>
+</body>
+
+</html>

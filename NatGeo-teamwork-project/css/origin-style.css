@@ -1,0 +1,472 @@
+:root {
+    --background: #1a1a1a;
+    --yellow: #facd3c;
+    --gray: #333333;
+    --font-color: white;
+    --font-type-main: 'Nunito';
+    --font-type-secondary: sans-serif;
+  }
+
+
+html, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+
+/* ---- FOOTER ----- */
+
+footer {
+    color: white;
+    background: var(--background);
+    padding: 1px;
+}
+
+footer h2, h3 {
+    font-family: var(--font-type-main);
+}
+
+footer p {
+    font-family: var(--font-type-secondary);
+}
+
+/* ---- FOOTER / TOP ------*/
+
+.footer-top {
+    background: var(--background);
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.footer-top-title {
+    width: 100%;
+    height: 120px;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 4px solid var(--yellow);
+}
+
+.footer-top-text {
+    line-height: 1.3rem;
+    margin: 2rem 0 2rem 0;
+    text-align: justify;
+}
+
+/* -------- FOOTER FORM ------------ */
+
+.footer-top-form form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    
+}
+
+.footer-top-form form input {
+    height: 2.2rem;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-top-form-button-holder{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-top-form-button {
+    height: 2.2rem;
+    background: var(--background);
+    color: white;
+    border: 3px solid var(--yellow);
+    font-family: var(--font-type-main);
+}
+
+.footer-top-form-button-unsubscribe{
+    margin-top: 0.5rem;
+    border-color: rgb(112, 107, 107);
+    
+}
+
+
+
+/* --------- FOOTER / BELOW --------- */
+
+.footer-below {
+    background: url(../03-project-nature-images/bede34b805e4263477be45b6aa3c7940.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: right 0 top 0rem; */
+    width: 100%;
+    
+}
+
+.footer-below-darken {
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}
+
+
+
+.footer-below-content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1px;
+    
+}
+
+.footer-below-img-holder{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer-below-img-holder img {
+    width: 100%;
+    
+}
+
+.footer-below-ikon-holder {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--yellow);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 0.8rem;
+}
+.footer-below-ikon-holder a {
+    text-decoration: none;
+    color: var(--yellow);
+}
+
+.footer-below-ikon-holder a:hover{
+    color: #dbae1b;
+}
+
+
+
+.footer-below-text-holder {
+    margin: 3rem 0 3rem 0;
+    text-align: center;
+}
+
+
+
+/* -------- FOOTER FORM MODAL -------- */
+.footer-modal {
+    display: none;
+    width: 65%;
+    height: 250px;
+    background: var(--gray);
+    color: white;
+    text-align: center;
+    border: 5px solid var(--yellow);
+    position: fixed; 
+    z-index: 2; 
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%);
+}
+
+
+
+
+.footer-modal-header{
+    width: 100%;
+    height: 25%;
+    background: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.footer-modal span {
+    display: block;
+    float: right;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 5%;
+    right: 2%;
+    transform: translate(-5%, -2%);
+}
+
+
+
+.footer-modal span:hover {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.footer-modal-content{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 0.7rem;
+}
+
+.footer-modal-content input{
+    width: 70%;
+    margin-top: 1.5rem;
+    height: 2.2rem;
+
+}
+
+.footer-modal-footer{
+    width: 100%;
+    height: 20%;
+    background: var(--background);
+    position: absolute;
+    bottom: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-modal-button {
+    height: 2.2rem;
+    width: 35%;
+    background: var(--background);
+    color: white;
+    border: 3px solid  rgb(112, 107, 107);;
+    font-family: var(--font-type-main);
+}
+
+.overlay{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.7);
+}
+
+
+
+
+
+/* --------- FOOTER TABLET VIEW --------- */
+
+@media only screen and (min-width: 768px){
+
+    /* ------ FOOTER TOP ------ */
+    .footer-top {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    
+    
+    
+    .footer-top-title {
+        width: 50%;
+        text-align: left;
+        justify-content: left;
+        padding: 2rem;
+    }
+    
+    .footer-top-text {
+        width: 50%;
+        height: 120px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+    }
+  
+    .footer-top-form{
+        width: 70%;
+    }
+
+    /* .footer-top-form form {
+        flex-direction: column;
+    } */
+    .footer-top-form-button-holder{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-top-form-button{
+        width: 49%;
+    }
+
+    .footer-top-form-button-unsubscribe{
+        margin-top: 0;
+    }
+
+    /* ---- FOOTER BELOW ------- */
+
+    .footer-below-content-top {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 2rem 0 2rem 0;
+    }
+
+    .footer-below-img-holder{
+        width: 40%;
+        height: 120px;
+        margin: 0;
+    }
+    
+    .footer-below-ikon-holder {
+        width: 30%;
+        height: 120px;
+        margin: 0;
+        justify-content: space-between;
+    }
+
+    /* ----- MODAL ------- */
+    .footer-modal {
+        width: 50%;
+    }
+    
+    .footer-modal span {
+        display: block;
+    }
+}
+
+
+
+/* -------- LAPTOP VIEW -------- */
+
+@media only screen and (min-width: 1024px){
+    /* ------ FOOTER TOP ------ */
+    .footer-top {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 2rem;
+    }
+    
+    
+    .footer-top-title {
+        width: 200px;
+        height: 200px; 
+        margin: 0;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .footer-top-text {
+        width: 30%;
+        height: 120px;
+        margin: 0;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+    }
+    
+    .footer-top-form{
+        width: 42%;
+        margin: 0;
+        padding: 2rem;
+    }
+
+        .footer-top-form-button-holder{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-top-form form button{
+        width: 48%;
+    }
+
+    .footer-top-form form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    /* BELOW */
+
+    .footer-below {
+        background-position: right 0 top -5rem;
+    }
+
+    .footer-below-img-holder{
+        width: 25%;
+    }
+    
+    .footer-below-ikon-holder {
+        width: 20%;
+    }
+
+    /* --- MODAL ---- */
+    .footer-modal {
+        width: 38%;
+    }
+
+}
+
+
+
+
+/* ----- MODAL ANIMATION ----- */
+
+.modal-moves-out {
+    -webkit-animation: modal-moves-out 1s; 
+    animation: modal-moves-out 1s;
+}
+
+
+
+.modal-moves-in {
+    -webkit-animation: modal-moves-in 1s;
+    animation: modal-moves-in 1s;
+}
+
+/* ---MODAL ANIMATION / keyframes -----  */
+
+@keyframes modal-moves-in {
+    0%      {top:-100px}
+
+    100%    {top:5%}
+}
+
+@-webkit-keyframes modal-moves-in {
+    0%      {top:-100px}
+    100%    {top:5%}
+} 
+
+
+@keyframes modal-moves-out {
+    0%      {top:5%}
+    100%    {top: -400px}
+}
+
+ @-webkit-keyframes modal-moves-out {
+    0%      {top:5%}
+    100%    {top:-400px}
+} 
+

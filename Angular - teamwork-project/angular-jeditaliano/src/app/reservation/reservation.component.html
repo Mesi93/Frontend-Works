@@ -1,0 +1,86 @@
+<section class="reservation">
+    <div class="darken">
+        <h1>Reservation</h1>
+        <form [formGroup]="reservationForm">
+            <div id="form">
+
+                <div class="user-data">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" formControlName="name">
+                    <small *ngIf="reservationForm.get('name').invalid && reservationForm.controls.name.dirty">Invalid name!</small>
+
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="email" formControlName="email">
+                    <small *ngIf="reservationForm.get('email').invalid && reservationForm.controls.email.dirty">Invalid email address!</small>
+
+
+                    <label for="phone">Phone: </label>
+                    <input type="tel" name="phone" id="phone" formControlName="phone">
+                    <small *ngIf="reservationForm.get('phone').invalid && reservationForm.controls.phone.dirty">Invalid phone number!</small>
+                </div>
+
+                <div id="table-data">
+                    <div>
+                        <label for="size">Guests:</label>
+                        <select name="size" id="size" formControlName="size" (change)="isBigEnought()">
+                            <option [value]="table" *ngFor=" let table of tableSize">{{table}}</option>
+                        </select>
+                        <small *ngIf="reservationForm.get('size').invalid && reservationForm.controls.size.dirty">Please select the number of guests!</small>
+
+                    </div>
+                    <div>
+                        <label for="time">Time:</label>
+                         <select name="time" id="time" formControlName="time" > <!--(change)="isAtGoodTime()" -->
+                            <option [value]="timeInValue[i]" *ngFor="let time of reservationTime; let i = index" id="timeInput">{{time}}</option>
+                        </select>
+                        <small *ngIf="reservationForm.get('time').invalid && reservationForm.controls.time.dirty"><br>Please select the time you pleased to come!</small>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="terms">
+                <p>The reservation is for one and a half hours. <br>
+                The reservation can be canceled by phone.<br>
+                In case of delay, we will not be able to hold the table for more than 20 minutes.</p>
+                <p>Address: <br> Budapest, Nyugati tér 6, 1055 <br>
+                    <br> Email: <br> info@ristorante.com <br>
+                    <br> Phone: <br> +36303576403
+                </p>
+
+            </div>
+
+            <div class="img-holder">
+                <img src="../../assets/tibikavezo_tibikavezo-5-borderless.jpg" alt="restaurant">
+                <button class="tableBtnTrue" id="table1" (click)="setTableBorder('table1')"></button>
+                <button class="tableBtnTrue" id="table2" (click)="setTableBorder('table2')"></button>
+                <button class="tableBtnTrue" id="table3" (click)="setTableBorder('table3')"></button>
+                <button class="tableBtnTrue" id="table4" (click)="setTableBorder('table4')"></button>
+                <button class="tableBtnTrue" id="table5" (click)="setTableBorder('table5')"></button>
+            </div>
+
+            <button (click)="saveReservation()" class="reserveTableBtn" [disabled]="reservationForm.invalid" data-toggle="modal" data-target="#modal-to-setup-reservation-reminder">Make
+                Reservation</button>
+        </form>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="modal-to-setup-reservation-reminder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="exampleModalLabel">Thank You for your reservation!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-dark">
+                    <p>We have sent you a confirmation. <br>
+                    The reservation can be canceled by phone.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

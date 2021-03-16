@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <title></title>
+</head>
+
+<body>
+    <div class="darken">
+        <div class="content">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <h1><span class="d-block text-center my-4 login-with display-4"> Login with</span></h1>
+
+                        <div data-toggle="modal" data-target="#modal-to-login" class="social-login text-center">
+                            <a class="login-btn btn btn-block">
+              Login with Email
+            </a>
+                        </div>
+                        <div class="social-login text-center mb-0 mb-lg-4 ">
+                            <a (click)="loginWithGmail()" class="google btn btn-block">
+                                <i class="fa fa-google"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 my-5 text-center " style="color: whitesmoke;">
+                        <h3 class="register-or"> ~ or ~ </h3>
+                    </div>
+                    <div class="col-lg-5 contents">
+                        <div class="form-block">
+                            <div class="mb-4 text-center">
+                                <h3>Register</h3>
+                                <!-- <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur
+                adipisicing.</p> -->
+                            </div>
+
+                            <form [formGroup]="registerForm" (ngSubmit)="showInputValues()">
+                                <div class="form-group first">
+                                    <label for="name"></label>
+                                    <input autocomplete="off" type="text" class="form-control" id="fullname" placeholder="Full Name" formControlName="name">
+                                    <small *ngIf="registerForm.get('name').invalid && registerForm.get('name').touched " class="text-danger">Invalid name</small>
+                                    <!-- <small  class="text-danger " id="form-already" *ngIf = "displayUsernameErrorSmall">Username already taken.</small> -->
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="username"></label>
+                                    <input autocomplete="off" type="text" class="form-control" id="register-name" placeholder="Username" formControlName="username">
+                                    <small *ngIf="registerForm.get('username').invalid && registerForm.get('username').touched " class="text-danger">Invalid username</small>
+                                    <small class="text-danger " id="form-already" *ngIf="displayUsernameErrorSmall">Username already taken.</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email"></label>
+                                    <input autocomplete="off" type="email" class="form-control" id="register-email" placeholder="Email" formControlName="email">
+                                    <small class="text-danger " id="form-already" *ngIf="displayEmailErrorSmall">Email already taken.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password"></label>
+                                    <input autocomplete="off" type="password" class="form-control" id="register-password" placeholder="Password" formControlName="password">
+                                    <small *ngIf="registerForm.get('password').invalid && registerForm.get('password').touched " class="text-danger">Password is too weak or common to use.</small>
+                                </div>
+                                <div class="form-group last mb-4">
+                                    <label for="re-password"></label>
+                                    <input autocomplete="off" type="password" class="form-control" id="register-re-password" placeholder="Re-type Password" formControlName="rePassword">
+                                    <small *ngIf="registerForm.get('rePassword').value !== registerForm.get('password').value && registerForm.get('rePassword').touched " class="text-danger">Passwords are not match.</small>
+                                </div>
+                                <div class="d-flex mb-5 align-items-center">
+                                    <label class="control control--checkbox mb-3 mb-sm-0">
+               <span class="caption"><a href="https://www.microsoft.com/hu-hu/servicesagreement/" target="_blank">Terms and Conditions</a></span>
+                      <input type="checkbox" checked="checked" id="register-checkbox" formControlName="terms">
+                     <div class="control__indicator"></div>
+              </label>
+
+                                </div>
+
+                                <button [disabled]="displayUsernameErrorSmall || displayEmailErrorSmall || registerForm.invalid   " type="submit" value="Register" class="register-btn btn text-white btn-block btn-primary" data-toggle="modal" data-target="#modal-to-login">Register</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- MODAL -->
+        <div class="modal fade" id="modal-to-login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">LOGIN</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="loginForm" (ngSubmit)="loginToPage()">
+                            <div class="form-group">
+                                <label for="user-email" class="col-form-label">Email:</label>
+                                <input type="email" class="form-control" id="user-email" formControlName="email">
+                                <small *ngIf="passwordOrEmailIsIncorrect" class="text-danger">The email address or password is incorrect.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-password" class="col-form-label">Password:</label>
+                                <input type="password" class="form-control" id="user-password" formControlName="password">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button [disabled]="loginForm.invalid" (click)="loginToPage()" type="submit" class="login-btn btn btn-primary">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

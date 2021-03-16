@@ -1,0 +1,362 @@
+section {
+    font-family: 'Merienda', cursive;
+    background-image: url("https://images.unsplash.com/photo-1579027989536-b7b1f875659b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80");
+    background-size: cover;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.darken {
+    background: linear-gradient(#252323f3, rgba(0, 0, 0, 0.7));
+    width: 100%;
+    min-height: 1000px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-holder {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.144);
+    padding: 1em;
+    box-shadow: 2px 0 8px 0 black;
+}
+
+.menu-holder .button-holder {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 15px 0 20px 0;
+}
+
+.menu-holder .button-holder button {
+    height: 2.5rem;
+    background: rgb(216, 104, 0);
+    margin: 10px 0 10px 0;
+}
+
+.menu-holder .selected-data-holder {
+    width: 100%;
+    min-height: 350px;
+}
+
+
+/* ----------------- REDEEM CODE ------------- */
+
+.redeem-code-holder {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 1em;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.247);
+    box-shadow: 2px 0 8px 0 black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.redeem-code-holder label {
+    margin-top: 1em;
+}
+
+.redeem-code-holder input {
+    border: none;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    color: rgb(216, 104, 0);
+    background: transparent;
+    width: 90%;
+}
+
+.redeem-code-holder input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(216, 104, 0);
+}
+
+.redeem-code-holder button {
+    width: 90%;
+    margin: 1em auto;
+    border: none;
+    outline: none;
+    padding: 0.5em;
+    border-radius: 3px;
+}
+
+.redeem-code-holder button:hover {
+    background: rgb(216, 104, 0);
+    color: white;
+}
+
+
+/* ------------------ KUPONOK --------------- */
+
+.data-holder-coupons .coupon {
+    position: relative;
+    width: 80%;
+    margin: 3% auto;
+    color: whitesmoke;
+    min-height: 180px;
+    max-height: 180px;
+    box-shadow: 4px 4px 8px 0 black;
+    background: rgba(68, 68, 68, 0.857);
+}
+
+.text-holder {
+    padding: 10px;
+}
+
+.text-holder p {
+    margin-top: 5.5rem;
+}
+
+.data-holder-coupons .coupon .svg-holder {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(-50%);
+    width: 20%;
+    margin: 0 auto;
+}
+
+.data-holder-coupons .coupon .svg-holder img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.data-holder-coupons .coupon .svg-holder .filter-white {
+    /* filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%); */
+    filter: brightness(0) invert(1);
+}
+
+
+/* KUPONOK HÁTTERE */
+
+.coupon-darken-background {
+    background: linear-gradient(#131212f3, rgba(0, 0, 0, 0.74));
+    background-size: cover;
+    min-height: 180px;
+}
+
+#dessert {
+    background-image: url('https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pizza {
+    background-image: url('https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#salad {
+    background-image: url('https://images.pexels.com/photos/257816/pexels-photo-257816.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pasta {
+    background-image: url('https://images.pexels.com/photos/6287534/pexels-photo-6287534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* ------------ ADDED MODAL ------------- */
+
+.succesfully-added-modal {
+    position: fixed;
+    top: 80%;
+    left: 55%;
+    transform: translate(-80%, -50%);
+    width: 350px;
+    height: 50px;
+    background: rgb(216, 104, 0);
+    color: white;
+    font-family: 'Merienda', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    border-radius: 5px;
+}
+
+
+/* ----------------- ORDER STATUS ------------------ */
+
+#data-holder-order-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#data-holder-order-status .order-status-img-holder {
+    width: 75%;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.order-status-img-holder img {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+}
+
+.order-status-img-holder h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* ------------------ KORÁBBI RENDELÉSEK ------------------- */
+
+#data-holder-table {
+    width: 100%;
+    font-family: 'Rokkitt', serif;
+}
+
+#data-holder-table table {
+    width: 80%;
+    margin: 0 auto;
+    /* border-bottom: 2px solid black; */
+}
+
+#data-holder-table table th {
+    border-bottom: 2px solid white;
+}
+
+#data-holder-table td {
+    padding-top: 1%;
+    max-width: 100px;
+}
+
+#data-holder-table button {
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+}
+
+#data-holder-table button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* ---------- USER INFO ---------- */
+
+.user-data-holder {
+    margin: 1.5rem auto;
+    width: 100%;
+    min-height: 100px;
+    background: rgba(255, 255, 255, 0.144);
+    padding: 1em;
+    font-family: 'Rokkitt', serif;
+    box-shadow: 2px 0 8px 0 black;
+}
+
+h2 {
+    font-family: 'Merienda', cursive;
+    text-align: center;
+    padding: 0.5em;
+    font-size: 1.8em;
+}
+
+.user-data-holder .change-data {
+    cursor: pointer;
+    /* border-bottom: 1px solid white; */
+    width: 100%;
+    color: white;
+}
+
+hr {
+    border-color: rgba(255, 255, 255, 0.13);
+}
+
+.user-data {
+    color: rgb(216, 104, 0);
+    font-size: 1.2em;
+}
+
+@media only screen and (min-width: 767px) {
+    /* ----- UPPER BOX ----- */
+    .menu-holder .button-holder {
+        flex-direction: row;
+        width: 95%;
+        justify-content: space-between;
+    }
+    .menu-holder .button-holder button {
+        width: 30%;
+    }
+    /* KUPONOK */
+    .data-holder-coupons {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .data-holder-coupons .coupon {
+        width: 45%;
+        margin: 2% auto;
+    }
+    .redeem-code-holder {
+        width: 60%;
+    }
+    /* RENDELÉSEK */
+    .user-data-holder {
+        width: 100%;
+    }
+    #data-holder-table {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #data-holder-table table {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    /* MENU DATA BOXES */
+    .container {
+        display: flex;
+    }
+    .menu-holder {
+        width: 55%;
+    }
+    .user-data-holder {
+        width: 45%;
+        margin: 0 1em;
+    }
+    /* KUPONOK */
+    .data-holder-coupons {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .data-holder-coupons .coupon .svg-holder {
+        top: 55%;
+        right: 0%;
+        transform: translate(-55%);
+        width: 20%;
+        margin: 0 auto;
+    }
+    .redeem-code-holder {
+        width: 95%;
+    }
+    /* RENDELÉSEK */
+    #data-holder-table {
+        width: 95%;
+    }
+    #data-holder-table td {
+        padding-top: 1%;
+        max-width: 100%;
+    }
+}

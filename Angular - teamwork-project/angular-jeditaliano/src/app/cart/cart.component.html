@@ -1,0 +1,327 @@
+<div class="cart-container">
+    <div class="darken">
+
+        <h2 class="text-center py-5">CART</h2>
+        <div class="cart container-fluid justify-content-around d-flex-column d-lg-inline-flex">
+            <div *ngIf="!cartIsEmptyIsActive && orderIsNotPlaced" class="cart-cards d-flex flex-column justify-content-between align-items-start col-12 col-lg-6 col-xl-5">
+
+                <div class="cart-card my-2 align-self-start" *ngFor="let food of cartFoodList, let index = index">
+                    <div class="img-holder">
+                        <img [src]="food.foodImg" alt="" class="">
+                    </div>
+                    <div class="cart-card-text">
+                        <p class="font-weight-bold">{{food.foodName}}</p>
+
+
+                        <div class="quantity-btns input-group mb-2">
+                            <span class="input-group-btn">
+                                <button (click)="decreaseQuantity(index, food.foodPrice, food.id)" type="button"
+                                    class="quantity-left-minus btn btn-danger btn-number" data-type="minus"
+                                    data-field="">
+                                    <span><i class="fa fa-minus"></i></span>
+                            </button>
+                            </span>
+                            <input readonly type="number" [id]="index" name="quantity" class="form-control input-number" value="1" min="1" max="10">
+                            <span class="input-group-btn">
+                                <button (click)="increaseQuantity(index, food.foodPrice)" type="button"
+                                    class="quantity-right-plus btn btn-success btn-number" data-type="plus"
+                                    data-field="">
+                                    <span><i class="fa fa-plus"></i></span>
+                            </button>
+                            </span>
+                        </div>
+
+
+                        <p>{{food.foodPrice}} EUR</p>
+
+                        <p><small>{{food.foodDescr}}</small></p>
+                    </div>
+                    <div class="close-btn">
+                        <button (click)="deleteFromCart(food.id)" type="button" class="close">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 class="my-2">TOTAL PRICE: <span style="color:rgb(216, 104, 0);">{{totalPrice}}0 EUR</span></h3>
+
+                <button type="button" routerLink="/menu" class="continueShoppingBtn btn btn-secondary w-100 mt-0 mb-2">Continue shopping</button>
+
+            </div>
+
+            <!--   IF CART IS EMPTY -->
+            <div *ngIf="cartIsEmptyIsActive" class="cart-is-empty">
+                <h3>Your cart is empty!</h3>
+                <button type="button" routerLink="/menu" class="continueShoppingBtn btn btn-secondary w-100 my-3">Continue shopping</button>
+            </div>
+
+
+
+            <div class="order-data col-12 col-lg-5 m-md-0 my-md-2">
+
+
+                <!-- LOGIN -->
+                <div *ngIf="loginIsActive" class="login">
+                    <div class="login-header">
+                        <h5 class="login-title text-center">LOGIN</h5>
+
+                    </div>
+                    <div class="login-body">
+                        <form [formGroup]="loginForm" (ngSubmit)="loginToPage()">
+                            <div class="form-group">
+                                <label for="user-email" class="col-form-label">Email:</label>
+                                <input type="email" class="form-control" id="user-email" formControlName="email">
+                                <small *ngIf="passwordOrEmailIsIncorrect" class="text-danger">The email address or
+                                    password is incorrect.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-password" class="col-form-label">Password:</label>
+                                <input type="password" class="form-control" id="user-password" formControlName="password">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="login-footer d-flex-column justify-content-center">
+                        <button [disabled]="loginForm.invalid" (click)="loginToPage()" type="button" class="login-btn btn btn-primary mb-2">Login</button>
+                        <button (click)="displayRegistrate()" type="button" class="reg-btn btn btn-primary mb-2">Registration</button>
+                        <button (click)="loginWithGmail()" type="button" class="btn btn-primary social-login mb-2">
+                            <i class="fa fa-google mx-2"></i>Sign in with Google
+                        </button>
+                        <button type="button" (click)="displayOrderWithoutAccount()" class="order-btn btn btn-secondary mb-2">Order without account</button>
+                    </div>
+                </div>
+
+
+                <!-- REGISTRATE -->
+
+                <div *ngIf="registrateIsActive" class="form-block">
+                    <div class="mb-4 text-center">
+                        <h3>Register</h3>
+                    </div>
+                    <form [formGroup]="registerForm" (ngSubmit)="showInputValues()">
+                        <div class="form-group first">
+                            <label for="name"></label>
+                            <input type="text" class="form-control" id="fullname" placeholder="Full Name" formControlName="name">
+                            <small *ngIf="registerForm.get('name').invalid && registerForm.get('name').touched " class="text-danger">Invalid name</small>
+                            <!-- <small  class="text-danger " id="form-already" *ngIf = "displayUsernameErrorSmall">Username already taken.</small> -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username"></label>
+                            <input type="text" class="form-control" id="register-name" placeholder="Username" formControlName="username">
+                            <small *ngIf="registerForm.get('username').invalid && registerForm.get('username').touched " class="text-danger">Invalid username</small>
+                            <small class="text-danger " id="form-already" *ngIf="displayUsernameErrorSmall">Username
+                                already taken.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"></label>
+                            <input type="email" class="form-control" id="register-email" placeholder="Email" formControlName="email">
+                            <small class="text-danger" id="form-already" *ngIf="displayEmailErrorSmall">Email already
+                                taken.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="password"></label>
+                            <input type="password" class="form-control" id="register-password" placeholder="Password" formControlName="password">
+                            <small *ngIf="registerForm.get('password').invalid && registerForm.get('password').touched" class="text-danger">Password is too weak or common to use.</small>
+                        </div>
+                        <div class="form-group last mb-4">
+                            <label for="re-password"></label>
+                            <input type="password" class="form-control" id="register-re-password" placeholder="Re-type Password" formControlName="rePassword">
+                            <small *ngIf="registerForm.get('rePassword').value !== registerForm.get('password').value && registerForm.get('rePassword').touched" class="text-danger">Passwords are not match.</small>
+                        </div>
+                        <div class="d-flex mb-5 align-items-center">
+                            <label class="control control--checkbox mb-3 mb-sm-0">
+                                <span class="caption"><a href="https://www.microsoft.com/hu-hu/servicesagreement/"
+                                        target="_blank">Terms and Conditions</a></span>
+                                <input type="checkbox" checked="checked" id="register-checkbox" formControlName="terms">
+                                <div class="control__indicator"></div>
+                            </label>
+                        </div>
+
+                        <button [disabled]="displayUsernameErrorSmall || displayEmailErrorSmall || registerForm.invalid" (click)="register" type="submit" value="Register" class="register-btn btn text-white btn-block btn-primary">Register</button>
+                        <button (click)="backToLogin()" type="button" class="btn btn-secondary w-100 mt-2">Back to
+                            Login</button>
+                    </form>
+
+                </div>
+
+
+
+
+                <!-- ORDER WITHOUT ACCOUNT -->
+                <div *ngIf="orderWithoutAccountIsActive" class="quick-order">
+                    <h3>QUICK ORDER</h3>
+                    <form [formGroup]="orderForm">
+                        <div class="form-group">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" formControlName="name">
+                            <small style="color: red" *ngIf="orderForm.get( 'name').invalid && orderForm.get( 'name').touched">Name is
+                                required</small>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="user-email" class="col-form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" formControlName="email">
+                            <small style="color: red" *ngIf="orderForm.get('email').invalid &&  orderForm.get( 'email').touched">Invalid Email
+                                Address</small>
+
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="phone" class="col-form-label">Phone number:</label>
+                            <input type="text" class="form-control" id="phone" formControlName="phone">
+                            <small style="color: red" *ngIf="orderForm.get( 'phone').invalid && orderForm.get( 'phone').touched">Invalid Phone
+                                Number</small>
+                        </div>
+
+
+                        <label>
+                            <span>District: </span>
+                            <select name="selection">
+                                <option value="select">Select your district...</option>
+                                <option value="I.">District I.</option>
+                                <option value="II.">District II.</option>
+                                <option value="III.">District III.</option>
+                                <option value="IV.">District IV.</option>
+                                <option value="V.">District V.</option>
+                                <option value="VI.">District VI.</option>
+                                <option value="VII.">District VII.</option>
+                                <option value="VIII.">District VIII.</option>
+                                <option value="IX.">District IX.</option>
+                                <option value="X.">District X.</option>
+                                <option value="XI.">District XI.</option>
+                                <option value="XII.">District XII.</option>
+                                <option value="XIII.">District XIII.</option>
+                                <option value="XIV..">District XIV.</option>
+                                <option value="XV.">District XV.</option>
+                                <option value="XVI,">District XVI.</option>
+                                <option value="XVII.">District XVII.</option>
+                                <option value="XVIII.">District XVIII.</option>
+                                <option value="XIX.">District XIX.</option>
+                                <option value="XX.">District XX.</option>
+                                <option value="XXI.">District XXI.</option>
+                                <option value="XXII.">District XXII.</option>
+                                <option value="XXIII.">District XXIII.</option>
+                            </select>
+                        </label>
+
+                        <label class="my-3 d-block">
+                            <span>Street Address: </span>
+                            <input class="mx-2" type="text" name="houseadd" formControlName="address">
+                        </label>
+                        <small style="color: red" *ngIf="orderForm.get('address').invalid && orderForm.get('address').touched">Address is
+                            required</small>
+
+
+                        <label class="my-3 d-block">
+                            <span>Postcode / ZIP: </span>
+                            <input class="mx-2" type="text" name="city" formControlName="postcode">
+                        </label>
+                        <small style="color: red" *ngIf="orderForm.get('postcode').invalid && orderForm.get('postcode').touched">Invalid
+                            postcode</small>
+                    </form>
+
+
+                    <div class="my-1">
+                        <div>
+                            <input type="radio" name="dbt" value="cd" checked> Cash on Delivery
+                        </div>
+                        <div>
+                            <input type="radio" name="dbt" value="dbt"> Direct Bank Transfer
+                        </div>
+                        <p>
+                            Make your payment directly into our bank account. Please use your Order ID as the payment reference.
+                        </p>
+
+
+                        <p class="my-2">TOTAL PRICE: <span style="color:rgb(216, 104, 0);">{{totalPrice}}0 EUR</span>
+                        </p>
+                        <button [disabled]="orderForm.invalid || cartIsEmptyIsActive" (click)="placeOrder(); changeActualImgAndText()" type="button" class="place-order-btn btn btn-primary mb-2">Place
+                            order</button>
+                        <button (click)="backToLogin()" type="button" class="btn btn-secondary w-100">Back to
+                            Login</button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IF ALREADY SIGNED IN -->
+
+                <div class="alreadySignedIn" *ngIf="alreadySignedInIsActive">
+                    <div>
+                        <p>My Coupons:</p>
+                        <div class="cuopon-holder">
+
+
+                            <div id="pasta" class="coupon" *ngIf="pastaCoupon" (click)="discountPasta()" [ngClass]="{'disabled': pastaIsInCart == false, 'enabled': pastaIsInCart == true}">
+                                <div class="coupon-darken-background">
+                                    <div class="text-holder">
+                                        <h5>Coupon for pasta</h5>
+                                        <p>Discount: 10%</p>
+                                    </div>
+                                    <div class="svg-holder"> <img class="filter-white" src="../../assets/spaguetti.svg" alt=""></div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="pizza" class="coupon" *ngIf="pizzaCoupon" (click)="discountPizza()" [ngClass]="{'disabled': pizzaIsInCart == false, 'enabled': pizzaIsInCart == true}">
+                                <div class="coupon-darken-background">
+                                    <div class="text-holder">
+                                        <h5>Coupon for pizza</h5>
+                                        <p>Discount: 20%</p>
+                                    </div>
+                                    <div class="svg-holder"> <img class="filter-white" src="../../assets/pizza.svg" alt=""></div>
+                                </div>
+                            </div>
+
+
+                            <div id="dessert" class="coupon" *ngIf="desserCoupon" (click)="discountDessert();" [ngClass]="{'disabled': dessertIsInCart == false, 'enabled': dessertIsInCart == true}">
+                                <div class="coupon-darken-background">
+                                    <div class="text-holder">
+                                        <h5>Coupon for dessert</h5>
+                                        <p>Discount: 5%</p>
+                                    </div>
+                                    <div class="svg-holder"> <img class="filter-white" src="../../assets/donut.svg" alt=""></div>
+                                </div>
+                            </div>
+
+
+                            <div id="salad" class="coupon" *ngIf="saladCoupon" (click)="discountSalad()" [ngClass]="{'disabled': saladIsInCart == false, 'enabled': saladIsInCart == true}">
+                                <div class="coupon-darken-background">
+                                    <div class="text-holder">
+                                        <h5>Coupon for salad</h5>
+                                        <p>Discount: 15%</p>
+                                    </div>
+                                    <div class="svg-holder"> <img class="filter-white" src="../../assets/salad.svg" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <p class="my-2">TOTAL PRICE: <span style="color:rgb(216, 104, 0);">{{totalPrice}}0 EUR</span></p>
+                    <button [disabled]="cartIsEmptyIsActive" (click)="placeOrder();  changeActualImgAndText()" type="button" id="place-order-btn" class="place-order-btn btn btn-primary mb-2">Place
+                        order</button>
+
+                </div>
+
+
+
+
+                <!-- SUCCESFULL ORDER -->
+                <div *ngIf="orderIsPlaced" class="order-finished">
+                    <!--  <h3>Thank you for your order!</h3>
+                    <p>You should receive a confirmation email. <br> Your order is out for delivery!</p> -->
+                    <div class="img-holder">
+
+                        <img [src]="actualImg" alt="actualText">
+                    </div>
+                    <h3 class="text-center">{{actualText}}</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

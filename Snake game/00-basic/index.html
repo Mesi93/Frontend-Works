@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 3px solid #456132;
+            padding: 10px;
+            text-align: center;
+            width: 60%;
+            margin: 5px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <button onclick="setTimeout(changeColor, 2000);">Új színt</button>
+        <p id="text">Ez a szöveg hamarosan piros lesz</p>
+    </div>
+    
+    <div>
+        <p id="counter"></p>
+        <button onclick="stopCounter();">Stop</button>
+    </div>
+
+
+    <script src="basic.js"></script>
+
+</body>
+
+</html>

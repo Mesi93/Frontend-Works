@@ -1,0 +1,14 @@
+{
+    "users": [{
+        "name": "Mesi93",
+        "email": "whatliesbeyond93@gmail.com",
+        "password": "0000000",
+        "id": 1
+    }],
+    "properties": [{
+        "propertyName": "Falusitanya",
+        "price": "12000000",
+        "imegUrl": "https://images.unsplash.com/photo-1598620064641-71ae8f57465d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1491&q=80",
+        "id": 1
+    }]
+}

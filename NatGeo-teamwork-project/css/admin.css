@@ -1,0 +1,759 @@
+/***********GALLERY SECTION*******/
+/********BLOG SECTION**********/
+/* ---------------- NAVBAR ----------------*/
+/*************************************** SECTION BLOG ******************************************/
+html,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+nav {
+  font-family: "Questrial";
+  background: #1a1a1a;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ---------------- HAMBURGER MENU ----------------*/
+.nav-block {
+  display: block;
+}
+
+nav .nav-main-menu {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: top 1.2s ease;
+  display: none;
+  background-color: #1a1a1a;
+}
+@media only screen and (min-width: 768px) {
+  nav .nav-main-menu nav .nav-main-menu {
+    z-index: -1;
+  }
+}
+nav ul {
+  border: 0.5rem solid #facd3c;
+}
+nav ul li {
+  list-style: none;
+  padding: 0 1rem 0 0;
+}
+nav ul li a {
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 2em;
+  z-index: 2000;
+}
+nav ul #nav-signedIn-user {
+  display: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  margin-left: 1rem;
+}
+
+.nav-span {
+  position: relative;
+  width: 36px;
+  height: 4px;
+  background-color: #fff;
+  display: block;
+  margin: 8px 0;
+  transition: 0.5s;
+}
+
+.nav-toggle {
+  padding: 1.7rem 0 1.7rem 0;
+  cursor: pointer;
+  z-index: 1000;
+  margin-right: 10%;
+}
+.nav-toggle .nav-span:nth-child(1) {
+  transform-origin: left;
+}
+.nav-toggle .nav-span:nth-child(2) {
+  transform-origin: center;
+}
+.nav-toggle .nav-span:nth-child(3) {
+  transform-origin: left;
+}
+
+.nav-toggle.active .nav-span:nth-child(1) {
+  transform: rotate(45deg);
+  left: 2px;
+}
+.nav-toggle.active .nav-span:nth-child(2) {
+  transform: rotate(315deg);
+  right: 3px;
+}
+.nav-toggle.active .nav-span:nth-child(3) {
+  transform: scaleX(0);
+}
+
+.nav-list-icons {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 100%;
+  color: white;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+.nav-list-icons a {
+  text-decoration: none;
+  color: white;
+}
+.nav-list-icons a:hover {
+  color: #facd3c;
+  transition: all 0.5s ease;
+}
+
+/* ---------------- NAVBAR HOVER ----------------*/
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #facd3c;
+  color: #facd3c;
+  overflow: hidden;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+nav ul li a:hover {
+  color: #facd3c;
+  transition: all 0.5s ease;
+}
+
+/* ---------------- LOGO ----------------*/
+.nav-logo-wrapper {
+  height: 100%;
+  max-height: 100%;
+  width: 10rem;
+  max-width: 10rem;
+  padding: 1.5rem 0 1.5rem 0;
+  margin-left: 10%;
+}
+
+.nav-logo {
+  width: 100%;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.toggle-logo-wrapper {
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.toggle-logo-wrapper img {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+/* ---------------- NAVBAR MEDIA QUERIES ----------------*/
+@media only screen and (max-height: 570px) {
+  .nav-list-icons {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .toggle-logo-wrapper {
+    display: none;
+  }
+  .toggle-logo-wrapper img {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  nav {
+    display: inline-block;
+    justify-content: flex-end;
+    position: relative;
+  }
+  nav .nav-main-menu {
+    height: 100px;
+    width: 90%;
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    border: none;
+  }
+  nav ul li:nth-child(6) {
+    margin-right: 0rem;
+    padding-right: 0;
+  }
+  nav ul li a {
+    color: white;
+    font-size: 1.5rem;
+    position: relative;
+    padding: 5px 0;
+  }
+  nav ul li a:hover {
+    color: white;
+  }
+
+  .nav-link {
+    margin-right: 1.2rem;
+  }
+
+  .nav-click {
+    padding: 5px 0;
+  }
+
+  .nav-logo {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .nav-list-icons {
+    display: none;
+  }
+
+  /* ---------------- NAVBAR ANIMATION ----------------*/
+  .nav-main-menu li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #facd3c;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: all 0.5s ease;
+  }
+  .nav-main-menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #facd3c;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.5s ease;
+  }
+  .nav-main-menu li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  .nav-main-menu li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+/* ----------------HOME SECTION----------------*/
+.home {
+  width: 100%;
+  max-width: 100%;
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-container {
+  width: 80%;
+  max-width: 80%;
+}
+
+.home-image-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+.home-image-wrapper img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.home-spectacular-wrapper {
+  width: 100%;
+  max-width: 100%;
+  color: white;
+  border: 6px solid #facd3c;
+  text-align: center;
+  text-align: justify;
+  font-family: "Questrial";
+  font-weight: lighter;
+  padding: 1.5rem 1rem;
+}
+.home-spectacular-wrapper h2,
+.home-spectacular-wrapper p {
+  margin: 1rem auto;
+}
+.home-spectacular-wrapper p {
+  line-height: 1.5rem;
+}
+
+.home-button {
+  width: 200px;
+  position: relative;
+  height: 2.2rem;
+  padding: 0.3rem 1.8rem;
+  background: #1a1a1a;
+  color: white;
+  border: 2px solid white;
+  font-family: "Questrial";
+  margin-bottom: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 1;
+  transition: color 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-button::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.3s ease-in;
+  transform: scalex(0);
+  background: whitesmoke;
+  transform-origin: left;
+}
+.home-button:hover {
+  color: black;
+}
+.home-button:hover::after {
+  transform: scaleX(1);
+}
+
+.home-gessel {
+  color: white;
+  text-transform: uppercase;
+  font-family: "Questrial";
+  font-size: 0.8rem;
+  margin: 0.8rem 0;
+  margin-bottom: 1em;
+}
+
+/* ---------------- MODAL ----------------*/
+.home-modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 30px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-family: "Lato";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+.home-modal-bg .home-modal {
+  position: relative;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+  width: 90%;
+  border: 4px solid #facd3c;
+  text-align: center;
+  padding-bottom: 1.5em;
+}
+.home-modal-bg .home-modal .home-modal-img-holder {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.home-modal-bg .home-modal .home-modal-img-holder img {
+  width: 100%;
+  max-width: 100%;
+}
+.home-modal-bg .home-modal p {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+.home-modal-bg .home-modal h2 {
+  font-size: 1.8rem;
+  margin: 3rem 0 1rem 0;
+  text-align: center;
+}
+.home-modal-bg .home-modal a {
+  font-size: 1.2rem;
+  color: #facd3c;
+  margin: 1rem 0 2rem 0;
+}
+.home-modal-bg .home-modal .home-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  transition: all ease 0.5s;
+}
+.home-modal-bg .home-modal .home-modal-close:hover {
+  color: #facd3c;
+}
+
+/* ---------------- HOME MEDIA QUERIES ----------------*/
+@media only screen and (min-width: 1024px) {
+  .home-text-and-image-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 450px;
+    margin-top: 3rem;
+  }
+
+  .home-button {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .home-image-wrapper {
+    width: 70%;
+    max-width: 70%;
+    height: 100%;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+  .home-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .home-spectacular-wrapper {
+    width: 30%;
+    max-width: 30%;
+    height: 100%;
+    margin-left: 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .home-spectacular-wrapper h2 {
+    font-size: 2rem;
+  }
+  .home-spectacular-wrapper p {
+    font-size: 1.2rem;
+  }
+
+  .home-gessel {
+    width: 100%;
+    display: block;
+  }
+
+  /* ---------------- MODAL ----------------*/
+  .home-modal-bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 30px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+  }
+  .home-modal-bg .home-modal {
+    position: relative;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: white;
+    width: 40%;
+    border: 4px solid #facd3c;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+  .home-modal-bg .home-modal .home-modal-img-holder {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .home-modal-bg .home-modal .home-modal-img-holder img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .home-modal-bg p {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+  .home-modal-bg h2 {
+    font-size: 2.5rem;
+    margin: 1.5rem 0;
+  }
+  .home-modal-bg a {
+    font-size: 1.3rem;
+    color: #facd3c;
+    margin-top: 1rem;
+  }
+  .home-modal-bg .home-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-weight: bold;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    transition: all ease 0.5s;
+  }
+  .home-modal-bg .home-modal-close:hover {
+    color: #facd3c;
+  }
+}
+main {
+  font-family: "Questrial";
+  background: url(https://images.pexels.com/photos/1666012/pexels-photo-1666012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+main .admin-background {
+  background: linear-gradient(#1a1a1ad8, rgba(0, 0, 0, 0.541));
+  width: 100%;
+  height: 100%;
+  min-height: 1000px;
+}
+main .admin-background .admin-container {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 2em;
+}
+main .admin-background .admin-container .admin-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+main .admin-background .admin-container .admin-navbar h1 {
+  color: white;
+}
+@media only screen and (max-width: 768px) {
+  main .admin-background .admin-container .admin-navbar h1 {
+    font-size: 1em;
+  }
+}
+main .admin-background .admin-container .admin-navbar .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+@media only screen and (max-width: 768px) {
+  main .admin-background .admin-container .admin-navbar .switch {
+    width: 40px;
+    height: 20px;
+  }
+}
+main .admin-background .admin-container .admin-navbar .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+main .admin-background .admin-container .admin-navbar .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+main .admin-background .admin-container .admin-navbar .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+@media only screen and (max-width: 768px) {
+  main .admin-background .admin-container .admin-navbar .slider:before {
+    width: 13px;
+    height: 13px;
+  }
+}
+main .admin-background .admin-container .admin-navbar input:checked + .slider {
+  background-color: #facd3c;
+}
+main .admin-background .admin-container .admin-navbar input:checked + .slider:before {
+  transform: translateX(26px);
+}
+@media only screen and (max-width: 768px) {
+  main .admin-background .admin-container .admin-navbar input:checked + .slider:before {
+    transform: translateX(17px);
+  }
+}
+@media only screen and (max-width: 339px) {
+  main .admin-background .admin-container .admin-navbar input:checked + .slider:before {
+    transform: translateX(90%);
+  }
+}
+main .admin-background .admin-container .admin-navbar .slider.round {
+  border-radius: 35px;
+}
+@media only screen and (max-width: 768px) {
+  main .admin-background .admin-container .admin-navbar .slider.round {
+    border-radius: 15px;
+  }
+}
+main .admin-background .admin-container .admin-navbar .slider.round:before {
+  border-radius: 50%;
+}
+main .admin-background .admin-container .admin-flex-holder {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder {
+  width: 100%;
+  padding: 1em 0;
+}
+@media only screen and (min-width: 768px) {
+  main .admin-background .admin-container .admin-flex-holder .admin-card-holder {
+    width: 49%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  main .admin-background .admin-container .admin-flex-holder .admin-card-holder {
+    width: 32%;
+  }
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-blog-holder {
+  width: 100%;
+  background: #1a1a1a;
+  margin: 0 auto;
+  height: 650px;
+  max-height: 650px;
+  overflow-y: scroll;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-blog-holder::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-blog-holder .admin-blog-img-holder {
+  width: 100%;
+  height: 250px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 5px solid #facd3c;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-blog-holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-blog-holder .admin-blog-text-holder {
+  color: white;
+  padding: 1.5em;
+  width: 100%;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-blog-holder .admin-blog-text-holder h3 {
+  padding-bottom: 1em;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-blog-holder .admin-blog-text-holder h5 {
+  padding-bottom: 1em;
+  color: grey;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-blog-holder .admin-blog-text-holder h6 {
+  padding-bottom: 1em;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-blog-holder .admin-blog-text-holder p {
+  padding-bottom: 0.5em;
+  line-height: 1.5em;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-card-button-holder {
+  width: 100%;
+  display: flex;
+  margin-top: 0.5em;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-card-button-holder .admin-card-button {
+  width: 50%;
+  margin: 0.5em;
+  padding: 0.5em;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-card-button-holder .admin-card-button i {
+  font-size: 1.1em;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-card-button-holder #admin-confirm-button {
+  border: 3px solid #facd3c;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-card-button-holder #admin-confirm-button:hover {
+  color: #facd3c;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-card-button-holder #admin-decline-button {
+  border: 3px solid grey;
+}
+main .admin-background .admin-container .admin-flex-holder .admin-card-holder .admin-card-button-holder #admin-decline-button:hover {
+  color: grey;
+}
+
+/*# sourceMappingURL=admin.css.map */

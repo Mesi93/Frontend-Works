@@ -1,0 +1,174 @@
+    /* UNDERWATER GALLERY --- G. EMESE */
+    
+    @use 'sass:map';
+    @use 'parts' as p;
+    @use 'settings' as s;
+    @include s.basic-css-settings;
+    @include p.header;
+    @include p.footer;
+    /*************************** Lightbox Gallery *******************************/
+    /* ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+} */
+    
+    main {
+        width: 100%;
+        background: map.get(s.$colors-map, basic-background);
+        color: map.get(s.$colors-map, font-color);
+        font-family: map.get(s.$font-types-map, font-type-main);
+        .underwater-gallery-wrapper {
+            width: 82%;
+            margin: 0 auto;
+            padding: 2rem 0;
+            h1 {
+                border-bottom: 4px solid map.get(s.$colors-map, basic-yellow);
+                font-family: map.get(s.$font-types-map, font-type-main);
+                margin-left: 10px;
+                padding-bottom: 1rem;
+                margin-bottom: 1em;
+                font-size: 2em;
+            }
+            .row:after {
+                @media only screen and (min-width: 768px) {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+            }
+            .img-container {
+                width: 100%;
+                margin: 0 auto;
+                overflow: hidden;
+                @media only screen and (min-width: 768px) {
+                    float: left;
+                    @include s.width-height(50%, 300px);
+                    overflow: hidden;
+                }
+                @media only screen and (min-width: 1024px) {
+                    width: 25%;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform .5s;
+                    padding: 0.6em;
+                    @media only screen and (min-width: 768px) {
+                        object-fit: cover;
+                        cursor: pointer;
+                    }
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 3000;
+                padding-top: 100px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: black;
+                .close {
+                    color: white;
+                    position: absolute;
+                    top: 10px;
+                    right: 25px;
+                    font-size: 4em;
+                    font-weight: bold;
+                    transition: transform .5s;
+                    &:hover,
+                    &:focus {
+                        color: map.get(s.$colors-map, basic-yellow);
+                        text-decoration: none;
+                        cursor: pointer;
+                        transform: scale(1.5);
+                    }
+                }
+                .modal-content {
+                    position: relative;
+                    background-color: black;
+                    margin: auto;
+                    padding: 0;
+                    width: 90%;
+                    max-width: 1600px;
+                    .mySlides {
+                        display: none;
+                        margin-bottom: 1em;
+                    }
+                    .cursor {
+                        cursor: pointer;
+                    }
+                    .prev,
+                    .next {
+                        cursor: pointer;
+                        position: absolute;
+                        top: 50%;
+                        width: auto;
+                        padding: 16px;
+                        margin-top: -50px;
+                        color: white;
+                        font-weight: bold;
+                        font-size: 30px;
+                        transition: 0.6s ease;
+                        border-radius: 0 3px 3px 0;
+                        user-select: none;
+                        -webkit-user-select: none;
+                        &:hover {
+                            background-color: map.get(s.$colors-map, basic-yellow);
+                            opacity: 0.8;
+                        }
+                    }
+                    .next {
+                        right: 0;
+                        border-radius: 3px 0 0 3px;
+                    }
+                    .prev {
+                        left: 0;
+                    }
+                }
+            }
+            img {
+                margin-bottom: -4px;
+            }
+            .mini-pic {
+                opacity: 0.4;
+            }
+            .active,
+            .mini-pic:hover {
+                opacity: 1;
+            }
+        }
+    }
+    /********************** Animation *******************************/
+    
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 0.5s;
+        animation-name: fade;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in;
+    }
+    
+    @-webkit-keyframes fade {
+        from {
+            opacity: 50%;
+        }
+        to {
+            opacity: 100%;
+        }
+    }
+    
+    @keyframes fade {
+        from {
+            opacity: 50%;
+        }
+        to {
+            opacity: 100%;
+        }
+    }

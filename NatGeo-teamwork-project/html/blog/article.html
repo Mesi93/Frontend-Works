@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="National Geographic">
+    <meta name="description" content="A National Geographic televíziós csatorna honlapja">
+    <meta name="keywords" content="National, Geographic, Natgeo, Nature, Photo">
+    <meta name="robots" content="index/follow">
+    <meta property="og:title" content="National Geographic">
+    <meta property="og:description" content="A National Geographic televíziós csatorna honlapja.">
+    <meta property="og:type" content="website">
+    <meta property="og:image:url" content="https://images.unsplash.com/photo-1508004680771-708b02aabdc0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fHBob3RvfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+    <meta property="og:url" content="www.Natgeo.hu">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/article.css">
+    <link rel="icon" href="https://cdn.elebase.io/173fe953-8a63-4a8a-8ca3-1bacb56d78a5/dccea65f-2a77-44d1-801c-86a3eaf61834-natgeo-yellow-border-square.png" type="image/gif" sizes="16x16">
+    <title>Winners of 2018</title>
+
+</head>
+
+<body>
+    <!-- HEADER / NAVBAR --- J. GÁBOR -->
+    <header class="home-header">
+        <nav class="navbar">
+
+            <div class="nav-logo-wrapper">
+                <a href="../index.html"><img class="nav-logo" src="../../03-project-nature-images/02614d7d102f1a441328312c6d3042ef.png" alt="logo"></a>
+            </div>
+            <div class="nav-toggle">
+                <span class="nav-span"></span>
+                <span class="nav-span"></span>
+                <span class="nav-span"></span>
+            </div>
+            <ul class="nav-main-menu" style="display: flex; top: -100%;">
+                <div class="toggle-logo-wrapper">
+                    <img class="nav-logo-toggle" src="../../03-project-nature-images/02614d7d102f1a441328312c6d3042ef.png" alt="logo">
+                </div>
+                <li id="nav-login-li"><a class="nav-link nav-click " id="nav-navbar-login-button" href="#home">Login</a></li>
+                <li><a class="nav-link nav-click" href="../index.html">HOME</a></li>
+                <!-- <li><a class="nav-link nav-click" href="../blog/article.html">BLOG</a></li> -->
+                <li><a class="nav-click" href="../Gallery/underwater-gallery.html">GALLERY</a></li>
+                <li><a id="nav-signedIn-user" class="nav-link nav-click">User</a></li>
+
+                <div class="nav-list-icons">
+                    <i class="fab fa-2x fa-facebook-f nav-click"></i>
+                    <i class="fab fa-2x fa-twitter nav-click"></i>
+                    <i class="fab fa-2x fa-instagram nav-click"></i>
+                    <i class="fab fa-2x fa-youtube nav-click"></i>
+                </div>
+            </ul>
+            </div>
+        </nav>
+        <hr>
+    </header>
+    <!------------------------ viki ------------------------------------------>
+    <section id="blog-section">
+
+        <div id="title-wrapper">
+            <p>National Geographic's Photo Community</p>
+        </div>
+
+        <article id="title-article">
+
+            <div id="def-wrapper">
+                <p id="def-title">WHAT WAS IT LIKE TO BE A PHOTOGRAPHER IN 2020?</p>
+                <svg height="10" width="100">
+                    <line x1="0" y1="0" x2="100" y2="0" style="stroke:#facd3c;stroke-width:4" />
+                </svg>
+                <p>Which photo won grand prize in the 2016 National Geographic Nature Photographer of the Year Contest?
+                    <br> Photographers submitted images of scenes from around the world, from sardine hunts to powerful tornadoes. Nat Geo editors and expert judges reviewed thousands of images before selecting the finalists. Browse this gallery of winners
+                    to find out which images won top prizes and visit our contest homepage to explore even more photography.
+                </p>
+            </div>
+
+            <div id="slideshow-wrapper">
+                <div id="fix-heights">
+                    <div id="slideshow-container" class="slideshow-container">
+                        <!-- ide jönnek képek -->
+                        <a class="prev" onclick="navAllSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="navAllSlides(1)">&#10095;</a>
+                    </div>
+
+                    <div id="categories-wrapper">
+                        <button class="btn" onclick="getBlogList('wildlife')">WILDLIFE</button>
+                        <button class="btn" onclick="getBlogList('landscapes')">LANDSCAPES</button>
+                        <button class="btn" onclick="getBlogList('goldenhour')">GOLDENHOUR</button>
+                        <button class="btn  active" onclick="getBlogList('adventure')">ADVENTURE</button>
+                        <button class="btn" onclick="getBlogList('cities')">CITIES</button>
+                        <button class="btn" onclick="getBlogList('people')">PEOPLE</button>
+                    </div>
+
+                    <div id="slidestory-container" class="slidestory-container">
+                        <!-- ide meg a storik -->
+                    </div>
+                </div>
+
+            </div>
+
+        </article>
+
+        <article id="blog-article">
+            <div id="img-upload">
+                <button  onclick="openTopicModal(); openLoginModal()"> SHARE <br> YOUR <br> STORY!</button>
+            </div>
+
+        </article>
+
+
+    </section>
+    <!-- FOOTER / FORM --- F. TIBOR -->
+    <footer>
+        <section class="footer-top">
+            <div class="footer-top-title">
+                <h2>Travel <br> With Us</h2>
+            </div>
+
+            <div class="footer-top-text">
+                <p>Get amazing videos, travel tips, and pictures of the world's most beautiful and far-flung places, plus special offers.
+                </p>
+            </div>
+
+            <div class="footer-top-form">
+                <form name="form">
+
+                    <input class="footer-form-name-input" type="text" id="fullname" name="fullname" placeholder="Your full name">
+
+                    <input class="footer-form-email-input" type="email" id="email" name="email" placeholder="Your email address">
+                    <div class="footer-top-form-button-holder">
+                        <button class="footer-top-form-button footer-top-form-button-subscribe" type="button" disabled>SUBSCRIBE</button>
+                        <button class="footer-top-form-button footer-top-form-button-unsubscribe" type="button">UNSUBSCRIBE</button>
+                    </div>
+                    <p id="footer-to-login-holder"> <button class="footer-form-click-login" id="footer-login-btn" type="button">click here </button> <span id="footer-to-login">to log in</span> </p>
+                </form>
+            </div>
+        </section>
+
+
+        <section class="footer-below">
+            <div class="footer-below-darken">
+                <div class="footer-below-content">
+                    <div class="footer-below-content-top">
+                        <div class="footer-below-img-holder">
+                            <img src="../../03-project-nature-images/02614d7d102f1a441328312c6d3042ef.png" alt="mountains picture">
+                        </div>
+
+                        <div class="footer-below-ikon-holder">
+                            <a href="https://www.facebook.com/natgeo" target="_blank"><i
+                                    class="fab fa-2x fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/natgeo" target="_blank"><i
+                                    class="fab fa-2x fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/natgeo/" target="_blank"><i
+                                    class="fab fa-2x fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/user/NationalGeographic" target="_blank"><i
+                                    class="fab fa-2x fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <hr>
+                    </div>
+
+                    <div class="footer-below-text-holder">
+                        <p>Copyright © 2018 National Geographic Society. All rights reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <div class="subs-modal-bg"></div>
+        <div class="subs-fail-modal-bg"></div>
+        <div class="unSub-modal-bg"></div>
+
+
+        <div class="login-modal-bg">
+        </div>
+        <div class="register-modal-bg">
+        </div>
+        <div class="forgot-password-modal-bg">
+        </div>
+        <div class="generate-confirm-code-modal-bg">
+        </div>
+        <div class="topic-register-modal-bg">
+        </div>
+
+        <div class="alert-modal"></div>
+    </footer>
+
+    <!-- <script src="../js/footer-form-validator.js"></script> -->
+    
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+    <script src="../../firebase-config/firebase-config.js"></script>
+    <script src="../../js/weekly-reg.js"></script>
+    <script src="../../js/final.js"></script>
+    <script src="../../js/footer-form-validator.js"></script>
+    <script src="../../js/register-modal.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</body>
+
+</html>
