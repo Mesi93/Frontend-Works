@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<main>
+    <h1>Tic Tac Toe</h1>
+    <div class="points">
+        <p>Player One Points: 
+        <span id="playerOnePoints"></span></p>
+        <p>Player Two Points:
+        <span id="playerTwoPoints"></span> </p>
+    </div>
+    
+    <section class="canvas">
+        <div class="box 1" data-number="1"></div>
+        <div class="box 2" data-number="2"></div>
+        <div class="box 3" data-number="3"></div>
+        <div class="box 4" data-number="4"></div>
+        <div class="box 5" data-number="5"></div>
+        <div class="box 6" data-number="6"></div>
+        <div class="box 7" data-number="7"></div>
+        <div class="box 8" data-number="8"></div>
+        <div class="box 9" data-number="9"></div>
+    </section>
+
+    <div id="winner-box">
+        <h1 id="winnerPlayerText"></h1>
+        <button id="new-game">Start new Game!</button>
+    </div>
+</main>
+
+<script src="main.js"></script>
+
+</body>
+</html>
