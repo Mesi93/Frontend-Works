@@ -186,22 +186,22 @@
     }
     
     .photoshop {
-        width: 60%;
-        background-color: rgb(112, 80, 68);
-    }
-    
-    .illustrator {
-        width: 50%;
-        background-color: rgb(112, 80, 68);
-    }
-    
-    .html-css {
         width: 45%;
         background-color: rgb(112, 80, 68);
     }
     
+    .illustrator {
+        width: 30%;
+        background-color: rgb(112, 80, 68);
+    }
+    
+    .html-css {
+        width: 85%;
+        background-color: rgb(112, 80, 68);
+    }
+    
     .js {
-        width: 10%;
+        width: 60%;
         background-color: rgb(112, 80, 68);
     }
     
