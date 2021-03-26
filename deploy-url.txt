@@ -1,1 +1,3 @@
 Tic-tac-toe: https://tic-tac-toe-aab85.web.app/
+Angular practice: https://dog-project-18c10.web.app/
+Angular Project: https://jeditaliano-c133c.web.app/
