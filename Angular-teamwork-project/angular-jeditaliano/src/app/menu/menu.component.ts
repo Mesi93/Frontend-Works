@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { CartServiceService } from '../service/cart-service.service';
-import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
+
+  /*** EMESE ****/
+
+
 export class MenuComponent implements OnInit {
   foodIsAlreadyInCart = false;
   foodTypes: string[] = ['Salad', 'Pasta', 'Pizza', 'Dessert'];

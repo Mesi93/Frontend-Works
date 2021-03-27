@@ -10,7 +10,7 @@ import "firebase/auth";
 
 
 
-
+/* GÁBOR */
 
 
 @Component({

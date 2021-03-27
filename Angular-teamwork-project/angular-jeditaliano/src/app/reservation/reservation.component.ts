@@ -3,6 +3,7 @@ import { CartServiceService } from '../service/cart-service.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 
+/* VIKI */
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',

@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   lat = 47.511262204654194;
   lng = 19.05465256174719;
 
+  /* EMESE*/
   //for menu cards
   firstCardActualImg: string = "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
   secondCardActualImg: string = "https://images.pexels.com/photos/3649208/pexels-photo-3649208.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260";

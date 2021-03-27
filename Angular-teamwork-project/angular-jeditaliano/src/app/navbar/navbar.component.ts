@@ -57,7 +57,7 @@ export class NavbarComponent implements OnInit {
   }
 
 
-  
+  /* GÁBOR */
 
   signOut() {
     localStorage.removeItem('UserEmail');
