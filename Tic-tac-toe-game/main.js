@@ -89,7 +89,7 @@ startGame = () => {
                 checkIfWin();
             }
 
-            if (boxes[index].innerText == "O" | "X") {
+            if (boxes[index].innerText == "O" || "X") {
                 boxes[index].classList.add("disabled");
             } else if (boxes[index].innerHTML == "") {
                 boxes[index].classList.remove("disabled");
